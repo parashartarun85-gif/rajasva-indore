@@ -369,7 +369,7 @@
   <header>
     <p class="campaign">मुख्यमंत्री जन-विश्वास अभियान 2026 के अंतर्गत नागरिक सुविधा</p>
     <h1>नामांतरण, नवीन खाता एवं सुधार &#8212; आवश्यक दस्तावेज़</h1>
-    <p>राजस्व विभाग &middot; नगर पालिक निगम इन्दौर</p>
+    <p>राजस्व विभाग &middot; नगर पालिक निगम इन्दौर</p><a class="lang" href="en.html" style="background:#123B70">English</a>
   </header>
 
   <p class="lead">अपना प्रकरण चुनें। नीचे केवल वे दस्तावेज़ दिए हैं जो <b>आवेदक को स्वयं प्रस्तुत करने</b> हैं। आवेदन प्रपत्र भी यहीं से डाउनलोड कर सकते हैं।</p>
@@ -426,7 +426,7 @@
       <span class="lbl">कार्यालय की जानकारी</span>
     </a>
   
- <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">📋</span><span class="lbl">ट्रेड लाइसेंस आवेदन जानकारी</span></a>
+ <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">📋</span><span class="lbl">ट्रेड लाइसेंस आवेदन जानकारी</span></a><a href="#licwiz" onclick="var d=document.getElementById('licwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#3E7A2B">&#9989;</span><span class="lbl">आवेदन से पहले जाँच</span></a>
   <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D">&#128199;</span><span class="lbl">लाइसेंस खोजें</span></a>
 <a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C">&#8377;</span><span class="lbl">लाइसेंस शुल्क व कोड जानें</span></a>
  </div>
@@ -1272,6 +1272,295 @@
   <div id="ls_out"></div>
  </div>
 </div>
+
+<!--LICWIZ-START-->
+<style>
+#licwiz{--w1:#E8820C;--w2:#C2571A}
+#licwiz .lw-card{background:#fff;border:1.5px solid #E8820C;border-radius:14px;overflow:hidden;margin:18px 0}
+#licwiz .lw-hd{background:linear-gradient(135deg,#E8820C 0%,#F2A33D 100%);color:#fff;padding:13px 16px}
+#licwiz .lw-hd b{display:block;font-size:18px;line-height:1.3}
+#licwiz .lw-hd span{display:block;font-size:13.5px;opacity:.95;margin-top:3px}
+#licwiz .lw-bd{padding:14px 16px 16px;font-size:15.5px;line-height:1.55;color:var(--ink,#222)}
+#licwiz .lw-prog{height:5px;background:#F3E3CF;border-radius:4px;margin:0 0 12px;overflow:hidden}
+#licwiz .lw-prog i{display:block;height:100%;background:#E8820C;transition:width .25s}
+#licwiz .lw-q{font-weight:700;font-size:16.5px;margin:0 0 4px}
+#licwiz .lw-h{font-size:13.5px;color:var(--soft,#666);margin:0 0 10px}
+#licwiz .lw-opt{display:block;width:100%;text-align:left;font:inherit;font-size:15.5px;background:#FFF8EF;border:1.5px solid #F0D5B0;border-radius:10px;padding:11px 13px;margin:7px 0;color:inherit;cursor:pointer;min-height:44px}
+#licwiz .lw-opt:active,#licwiz .lw-opt.on{background:#FFE9CC;border-color:#E8820C}
+#licwiz .lw-in{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid #D9C3A5;border-radius:10px;margin:2px 0 8px;background:#fff;color:inherit}
+#licwiz .lw-nav{display:flex;gap:8px;margin-top:12px}
+#licwiz .lw-btn{flex:1;font:inherit;font-weight:700;font-size:15px;border:0;border-radius:10px;padding:12px;background:linear-gradient(135deg,#E8820C 0%,#F2A33D 100%);color:#fff;cursor:pointer;min-height:44px}
+#licwiz .lw-btn.alt{background:#F3E3CF;color:#7A4300}
+#licwiz .lw-btn[disabled]{opacity:.45}
+#licwiz .lw-chip{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;background:#F6F1E9;border-radius:9px;padding:8px 10px;margin:6px 0;font-size:14.5px}
+#licwiz .lw-chip button{border:0;background:none;font-size:20px;line-height:1;color:#8C2F16;cursor:pointer;padding:0 4px}
+#licwiz .lw-res{max-height:260px;overflow:auto;margin:4px 0}
+#licwiz .lw-r{padding:9px 10px;border-bottom:1px solid #EEE;cursor:pointer;font-size:14.5px}
+#licwiz .lw-r small{color:#777}
+#licwiz .lw-box{border-radius:9px;padding:10px 12px;margin:9px 0;font-size:14.5px;line-height:1.55}
+#licwiz .lw-red{background:#FBF1EE;border-left:4px solid #8C2F16;color:#5A1A0A}
+#licwiz .lw-yel{background:#FFF3DF;border-left:4px solid #C77400;color:#7A4300}
+#licwiz .lw-grn{background:#EEF6EA;border-left:4px solid #3E7A2B;color:#244A18}
+#licwiz h4{margin:14px 0 4px;font-size:16px;color:#7A4300}
+#licwiz ol{margin:4px 0 4px 20px;padding:0}#licwiz li{margin:4px 0}
+#licwiz .lw-tot{font-size:18px;font-weight:700}
+#licwiz .lw-chk{display:flex;gap:9px;align-items:flex-start;padding:7px 2px;font-size:15px}
+#licwiz .lw-chk input{width:20px;height:20px;margin-top:2px;flex:none}
+#licwiz .lw-sm{font-size:12.5px;color:#777;margin-top:10px}
+@media print{body *{visibility:hidden}#licwiz,#licwiz *{visibility:visible}#licwiz{position:absolute;left:0;top:0;width:100%}#licwiz .lw-nav,#licwiz .lw-prog,#licwiz .lw-chip button{display:none}}
+</style>
+<div id="licwiz" class="lw-root"><div class="lw-card">
+<div class="lw-hd"><b id="lw_t"></b><span id="lw_s"></span></div>
+<div class="lw-bd" id="lw_app"></div>
+</div></div>
+<script>
+(function(){
+'use strict';
+var L='hi';
+var BASE='https://parashartarun85-gif.github.io/rajasva-indore/';
+var app=document.getElementById('lw_app');if(!app)return;
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var T={
+hi:{
+ title:'आवेदन से पहले जाँच',sub:'6 सवाल, 2 मिनट — ट्रेड लाइसेंस आवेदन निरस्त होने से बचें। कोई नाम / मोबाइल / आधार नहीं माँगा जाता।',
+ start:'जाँच शुरू करें',next:'आगे',back:'पीछे',skip:'छोड़ें / पता नहीं',
+ q1:'आपका व्यवसाय क्या है?',h1:'नाम लिखकर खोजें और चुनें। एक से अधिक व्यवसाय हों तो सभी जोड़ें।',ph1:'जैसे: किराना, होटल, ब्यूटी पार्लर',
+ none:'कोई व्यवसाय नहीं मिला। दूसरा शब्द लिखें।',loading:'सूची लोड हो रही है…',loadFail:'सूची लोड नहीं हो सकी। पन्ना फिर खोलें।',
+ q2:'दुकान / स्थान का क्षेत्रफल (वर्गफुट)?',h2:'कुछ व्यवसायों में क्षेत्रफल के अनुसार अलग कोड होता है। हम सही कोड अपने-आप चुन देंगे।',ph2:'जैसे: 250',
+ q3:'जगह किसकी है?',o3:['मेरी अपनी','किराए की (मकान मालिक अलग)','माता / पिता / भाई / पति की','निगम की किराए की मार्केट दुकान'],
+ q4:'संपत्तिकर खाते में उपयोग क्या दर्ज है?',h4:'संपत्तिकर रसीद में देखें — "उपयोग / Use"।',o4:['वाणिज्यिक (दुकान / Commercial)','आवासीय (Residential)','मालूम नहीं'],
+ q5:'क्या संपत्तिकर या कचरा (SWM) शुल्क बकाया है?',h5:'अधिकांश दुकानों में यही दो शुल्क होते हैं।',o5:['नहीं, सब जमा है','हाँ, बकाया है','मालूम नहीं'],
+ q6:'फर्म का प्रकार और विशेष व्यवसाय',h6:'जो लागू हो चुनें।',
+ f:['स्वयं / एकल स्वामित्व','पार्टनरशिप फर्म','प्राइवेट लिमिटेड कंपनी'],
+ sp:['डॉक्टर / निजी क्लिनिक','ब्यूटी पार्लर / स्पा सेंटर','बीमा व्यवसाय','सिक्योरिटी सर्विसेस','साहूकारी','फायनेंस कंपनी','हॉस्पिटल'],
+ result:'आपकी जाँच-सूची',codes:'सही कोड एवं शुल्क',code:'कोड',total:'कुल सांकेतिक शुल्क',unit:' (दर प्रति इकाई — संख्या अनुसार बढ़ेगा)',
+ auto:function(a,c){return 'क्षेत्रफल '+a+' वर्गफुट के अनुसार कोड '+c+' चुना गया।'},
+ multi:'एक से अधिक व्यवसाय हैं — सभी कोड एक ही आवेदन में जोड़ें। शुल्क हर कोड की दर के अनुसार जुड़ेगा।',
+ area_manual:'इस व्यवसाय में क्षेत्रफल की श्रेणी हो सकती है। कोड एवं दर सूची (PDF) में सही श्रेणी देखकर चुनें।',
+ stopH:'पहले यह करें (रुकें)',
+ w_res:'संपत्तिकर खाता आवासीय है — व्यापार की अनुमति केवल वाणिज्यिक उपयोग वाली संपत्ति पर मिलती है। पहले खाते में उपयोग का सुधार कराएँ, फिर लाइसेंस के लिए आवेदन करें।',
+ w_res_link:'उपयोग सुधार की जानकारी →',
+ w_unk4:'संपत्तिकर रसीद में "उपयोग" देख लें। आवासीय हो तो पहले उपयोग सुधारें, वरना आवेदन निरस्त होगा।',
+ w_dues:'बकाया संपत्तिकर / कचरा शुल्क पहले जमा करें। बकाया रहते आवेदन निरस्त हो जाता है।',
+ w_unk5:'e-NagarPalika पर संपत्तिकर और कचरा शुल्क की बकाया स्थिति देख लें। बकाया हो तो पहले जमा करें।',
+ w_rel:'किरायानामा न लगाएँ। संपत्तिकर रसीद में दर्शित मालिक का, आपके नाम पर, 50 रुपये के स्टाम्प पर नोटराइज्ड सहमति पत्र लगाएँ।',
+ w_mkt:'निगम की मार्केट दुकान का लाइसेंस केवल मार्केट किराया रसीद में उल्लेखित व्यक्ति के नाम से ही मिलता है। किसी अन्य के नाम से आवेदन न करें।',
+ w_rent:'किराएदार हों तो रेंट एग्रीमेंट लगाएँ (संपत्तिकर रसीद मकान मालिक के नाम की रहेगी)।',
+ w_blur:'हर दस्तावेज़ की साफ़, पूरी और पढ़ने योग्य प्रति लगाएँ। धुँधली फ़ोटो से आवेदन निरस्त होता है।',
+ docs:'आपके लिए दस्तावेज़ सूची',
+ d_base:['आवेदक का पासपोर्ट साइज फोटो','दुकान का फोटो','पहचान पत्र (आधार / पैन / ड्राइविंग लाइसेंस)'],
+ d_ptax_own:'संपत्तिकर जमा रसीद (आवेदक के नाम की)',
+ d_ptax_other:'संपत्तिकर जमा रसीद (मालिक के नाम की)',
+ d_rent:'रेंट एग्रीमेंट',d_cons:'50 रुपये के स्टाम्प पर नोटराइज्ड सहमति पत्र (रसीद में दर्शित मालिक द्वारा, आवेदक के नाम)',d_mkt:'निगम की मार्केट किराया रसीद (आवेदक के नाम की)',
+ d_pvt:'कंपनी मेमोरेंडम तथा डायरेक्टर द्वारा आवेदक के नाम पर दिया गया अथॉरिटी लेटर',d_part:'पार्टनरशिप डीड',
+ d_sp:['मेडिकल काउंसिल का सर्टिफिकेट अथवा डिग्री की प्रति','संबंधित थाना क्षेत्र की पुलिस वेरिफिकेशन रिपोर्ट (आवेदक के नाम एवं व्यवसाय स्थल के पते की)','आई.आर.डी.ए. का लाइसेंस अथवा स्वीकृति रिपोर्ट','आई.जी. ऑफिस की चालू रसीद','एस.पी. कार्यालय का चरित्र प्रमाण पत्र, आयुक्त के नाम 50 लाख रुपये की एफ.डी. एवं 3 वर्ष की सी.ए. सर्टिफाइड बैलेंस शीट','आर.बी.आई. का लाइसेंस (फायनेंस कंपनी के नाम)','सी.एच.एम.ओ. का सर्टिफिकेट (हॉस्पिटल के नाम)'],
+ fmt:'फ़ाइल: jpg, png, svg या pdf — अधिकतम 10 MB प्रति फ़ाइल।',
+ ready:'आपकी जानकारी के अनुसार कोई रुकावट नहीं दिखती। ऊपर की सूची के साथ आवेदन करें।',
+ wa:'WhatsApp पर भेजें',prn:'प्रिंट / PDF सहेजें',again:'दोबारा जाँचें',pdf:'कोड एवं दर सूची (PDF)',
+ note:'यह सहायक सामान्य मार्गदर्शन है। दर सांकेतिक है; अंतिम निर्णय व शुल्क निगम कार्यालय की जाँच के बाद तय होंगे। आपकी कोई व्यक्तिगत जानकारी दर्ज या संग्रहित नहीं होती।',
+ shareHead:'ट्रेड लाइसेंस — आवेदन से पहले जाँच-सूची',foot:'राजस्व विभाग, नगर पालिक निगम इन्दौर'
+},
+en:{
+ title:'Pre-application check',sub:'6 questions, 2 minutes — avoid a rejected Trade Licence application. No name / mobile / Aadhaar is asked.',
+ start:'Start the check',next:'Next',back:'Back',skip:'Skip / Not sure',
+ q1:'What is your business?',h1:'Type to search and pick. If you have more than one business, add all of them.',ph1:'e.g. grocery, hotel, beauty parlour',
+ none:'No business found. Try another word.',loading:'Loading list…',loadFail:'Could not load the list. Please reopen the page.',
+ q2:'Area of the shop / premises (sq ft)?',h2:'Some businesses have a different code by area. We will pick the correct code for you.',ph2:'e.g. 250',
+ q3:'Whose premises is it?',o3:['My own','Rented (landlord is someone else)',"Mother's / Father's / Brother's / Husband's",'Corporation-rented market shop'],
+ q4:'What use is recorded in the property-tax account?',h4:'Check "Use" on your property-tax receipt.',o4:['Commercial (shop)','Residential','Not sure'],
+ q5:'Is any property tax or garbage (SWM) fee pending?',h5:'For most shops these are the only two charges.',o5:['No, all paid','Yes, pending','Not sure'],
+ q6:'Firm type and special businesses',h6:'Select whatever applies.',
+ f:['Self / Sole proprietor','Partnership firm','Private Limited company'],
+ sp:['Doctor / private clinic','Beauty parlour / spa','Insurance business','Security services','Money-lending','Finance company','Hospital'],
+ result:'Your checklist',codes:'Correct code(s) and fee',code:'Code',total:'Total indicative fee',unit:' (rate per unit — will increase with quantity)',
+ auto:function(a,c){return 'Code '+c+' chosen for area '+a+' sq ft.'},
+ multi:'You have more than one business — add all the codes in a single application. The fee adds up code by code.',
+ area_manual:'This business may have area categories. Check the code and rate list (PDF) and pick the right category.',
+ stopH:'Do this first (stop)',
+ w_res:'The property-tax account is residential — business is allowed only on commercial-use property. First get the use corrected in the account, then apply for the licence.',
+ w_res_link:'How to correct the use →',
+ w_unk4:'Check "Use" on your property-tax receipt. If it is residential, correct it first, otherwise the application will be rejected.',
+ w_dues:'Pay the pending property tax / garbage fee first. The application is rejected while dues remain.',
+ w_unk5:'Check the pending status of property tax and garbage fee on e-NagarPalika. Pay any dues first.',
+ w_rel:"Do not attach a rent agreement. Attach a notarised consent letter on ₹50 stamp paper, in your name, from the owner shown on the property-tax receipt.",
+ w_mkt:'A licence for a Corporation market shop is issued only in the name of the person on the market rent receipt. Do not apply in anyone else\'s name.',
+ w_rent:'As a tenant, attach the rent agreement (the property-tax receipt stays in the landlord\'s name).',
+ w_blur:'Attach a clear, complete, readable copy of every document. Blurry photos get applications rejected.',
+ docs:'Documents for you',
+ d_base:['Passport-size photo of the applicant','Photo of the shop','ID proof (Aadhaar / PAN / Driving licence)'],
+ d_ptax_own:'Property-tax paid receipt (in the applicant\'s name)',
+ d_ptax_other:'Property-tax paid receipt (in the owner\'s name)',
+ d_rent:'Rent agreement',d_cons:'Notarised consent letter on ₹50 stamp paper (from the owner on the receipt, in the applicant\'s name)',d_mkt:'Corporation market rent receipt (in the applicant\'s name)',
+ d_pvt:'Company memorandum and an authority letter from the director in the applicant\'s name',d_part:'Partnership deed',
+ d_sp:['Medical Council certificate or copy of degree','Police verification report from the local police station (applicant\'s name and business address)','IRDA licence or approval report','Current receipt from the IG office','Character certificate from the SP office, ₹50 lakh FD in the Commissioner\'s name and 3-year CA-certified balance sheet','RBI licence (in the finance company\'s name)','CHMO certificate (in the hospital\'s name)'],
+ fmt:'Files: jpg, png, svg or pdf — max 10 MB each.',
+ ready:'Based on your answers, no obstacle is seen. Apply with the list above.',
+ wa:'Share on WhatsApp',prn:'Print / Save PDF',again:'Check again',pdf:'Code and rate list (PDF)',
+ note:'This helper is general guidance. Rates are indicative; the final decision and fee are determined after the Corporation office verifies. No personal information is entered or stored.',
+ shareHead:'Trade Licence — pre-application checklist',foot:'Revenue Department, Indore Municipal Corporation'
+}};
+var X=T[L];
+$('lw_t').textContent=X.title;$('lw_s').textContent=X.sub;
+
+/* area groups: pick[i] chosen by cuts; incl = a value equal to a cut goes to the lower code */
+var AG=[
+ {pick:['49043','49044','49045'],cuts:[200,400],incl:[false,true],hi:'खेरची किराना व्यवसाय',en:'Retail grocery (kirana)'},
+ {pick:['42205','42204','42203'],cuts:[200,400],incl:[false,true],hi:'जनरल स्टोर्स',en:'General stores'},
+ {pick:['49032','49033','49034'],cuts:[200,400],incl:true,hi:'टिफिन सेन्टर',en:'Tiffin centre'},
+ {pick:['49037','49036'],cuts:[300],incl:true,hi:'होटल',en:'Hotel'},
+ {pick:['49041','49040'],cuts:[300],incl:true,hi:'भोजनालय',en:'Eatery'},
+ {pick:['42117','42116'],cuts:[300],incl:true,hi:'ब्यूटी पार्लर / हेयर सेलून',en:'Beauty parlour / hair salon'},
+ {pick:['48938','551335'],cuts:[1000],incl:false,hi:'गोडाउन (दुकान के अतिरिक्त)',en:'Godown (other than shop)'},
+ {pick:['42104','42102'],cuts:[200],incl:true,verify:true,hi:'मोटर रिपेअर कारखाना (4 पहिया एवं अधिक)',en:'Motor repair workshop (4 wheel and above)'}
+];
+function agFor(c){for(var i=0;i<AG.length;i++)if(AG[i].pick.indexOf(c)>-1)return AG[i];return null}
+function pickByArea(g,a){var i=0;while(i<g.cuts.length&&((Array.isArray(g.incl)?g.incl[i]:g.incl)?a>g.cuts[i]:a>=g.cuts[i]))i++;return g.pick[i]}
+function onCut(g,a){return g.cuts.indexOf(a)>-1}
+var rows=null,byCode={};
+function loadRows(cb){
+ function ok(a){rows=a.filter(function(r){return r&&r.c&&r.t!=='टेस्ट प्रविष्टि'&&isFinite(Number(r.r))}).map(function(r){return {c:String(r.c),d:String(r.d||''),e:String(r.e||''),r:Number(r.r)}});rows.forEach(function(r){byCode[r.c]=r});cb(true)}
+ if(window.LIC_RATES){ok(window.LIC_RATES);return}
+ try{google.script.run.withSuccessHandler(function(d){if(d&&d.rows&&d.rows.length)ok(d.rows);else cb(false)}).withFailureHandler(function(){cb(false)}).getLicenseData()}catch(e){cb(false)}
+}
+function nm(r){return L==='en'&&r.e?r.e:r.d}
+function norm(s){return String(s).toLowerCase().replace(/\u093c/g,'').replace(/\u0901/g,'\u0902').replace(/[()\-\/.,]/g,' ').replace(/\s+/g,' ').trim()}
+function stem(t){return t.length>3?t.replace(/[\u093e-\u094c\u0902]+$/,''):t}
+
+var st,step;
+function reset(){st={biz:[],area:'',prop:-1,use:-1,due:-1,firm:0,sp:{}};step=0}
+reset();
+var STEPS=6;
+function prog(){return '<div class="lw-prog"><i style="width:'+Math.round(step/STEPS*100)+'%"></i></div>'}
+function nav(canNext){
+ return '<div class="lw-nav"><button class="lw-btn alt" data-a="back">'+X.back+'</button><button class="lw-btn" data-a="next"'+(canNext?'':' disabled')+'>'+X.next+'</button></div>'
+}
+function intro(){
+ app.innerHTML='<p style="margin:0 0 12px">'+esc(X.sub)+'</p><button class="lw-btn" data-a="start">'+X.start+'</button>';
+}
+function drawBiz(){
+ var h=prog()+'<p class="lw-q">1/6 · '+X.q1+'</p><p class="lw-h">'+X.h1+'</p>';
+ st.biz.forEach(function(c,i){var r=byCode[c],g0=agFor(c);h+='<div class="lw-chip"><span>'+esc(g0?g0[L]:nm(r))+' <small>'+(g0?'':'('+r.c+' · ₹'+r.r+')')+'</small></span><button data-a="rm" data-i="'+i+'" aria-label="remove">×</button></div>'});
+ h+='<input class="lw-in" id="lw_q" type="search" autocomplete="off" placeholder="'+esc(X.ph1)+'"><div class="lw-res" id="lw_res"></div>'+nav(st.biz.length>0);
+ app.innerHTML=h;
+ var q=$('lw_q');q.addEventListener('input',function(){showRes(q.value)});
+}
+function showRes(v){
+ var el=$('lw_res');v=norm(v);if(!v){el.innerHTML='';return}
+ if(!rows){el.innerHTML='<p class="lw-h">'+X.loading+'</p>';return}
+ var toks=v.split(' ').map(stem),out=[];
+ for(var i=0;i<rows.length&&out.length<40;i++){var r=rows[i],hay=norm(r.d+' '+r.e+' '+r.c);
+  if(toks.every(function(t){return hay.indexOf(t)>-1}))out.push(r)}
+ var seen={},list=[];
+ out.forEach(function(r){var g=agFor(r.c);if(g){var k=g.pick[0];if(seen[k])return;seen[k]=1;list.push({c:r.c,g:g})}else list.push({c:r.c,r:r})});
+ list=list.slice(0,12);
+ el.innerHTML=list.length?list.map(function(x){var g=x.g;
+  return '<div class="lw-r" data-a="add" data-c="'+x.c+'">'+esc(g?g[L]:nm(x.r))+' <small>'+(g?(L==='en'?'(code chosen by area)':'(कोड क्षेत्रफल से)'):('· '+x.c+' · ₹'+x.r.r))+'</small></div>'}).join(''):'<p class="lw-h">'+X.none+'</p>';
+}
+function drawArea(){
+ app.innerHTML=prog()+'<p class="lw-q">2/6 · '+X.q2+'</p><p class="lw-h">'+X.h2+'</p><input class="lw-in" id="lw_a" type="number" inputmode="numeric" min="1" max="100000" placeholder="'+X.ph2+'" value="'+esc(st.area)+'"><div class="lw-nav"><button class="lw-btn alt" data-a="back">'+X.back+'</button><button class="lw-btn" data-a="next">'+X.next+'</button></div><button class="lw-opt" data-a="skip" style="margin-top:10px">'+X.skip+'</button>';
+}
+function drawOpts(n,q,h,opts,key){
+ var hh=prog()+'<p class="lw-q">'+n+'/6 · '+q+'</p>'+(h?'<p class="lw-h">'+h+'</p>':'');
+ opts.forEach(function(o,i){hh+='<button class="lw-opt'+(st[key]===i?' on':'')+'" data-a="opt" data-k="'+key+'" data-i="'+i+'">'+esc(o)+'</button>'});
+ hh+='<div class="lw-nav"><button class="lw-btn alt" data-a="back">'+X.back+'</button></div>';
+ app.innerHTML=hh;
+}
+function drawFirm(){
+ var h=prog()+'<p class="lw-q">6/6 · '+X.q6+'</p><p class="lw-h">'+X.h6+'</p>';
+ X.f.forEach(function(o,i){h+='<button class="lw-opt'+(st.firm===i?' on':'')+'" data-a="firm" data-i="'+i+'">'+esc(o)+'</button>'});
+ h+='<div style="margin-top:8px">';
+ X.sp.forEach(function(o,i){h+='<label class="lw-chk"><input type="checkbox" data-a="sp" data-i="'+i+'"'+(st.sp[i]?' checked':'')+'><span>'+esc(o)+'</span></label>'});
+ h+='</div><div class="lw-nav"><button class="lw-btn alt" data-a="back">'+X.back+'</button><button class="lw-btn" data-a="next">'+X.next+'</button></div>';
+ app.innerHTML=h;
+}
+function compute(){
+ var a=parseInt(st.area,10);if(!isFinite(a)||a<1)a=0;
+ var items=[],notes=[],tot=0,unit=false;
+ st.biz.forEach(function(c){
+  var g=agFor(c),use=c;
+  if(g){ if(a){use=pickByArea(g,a);notes.push(X.auto(a,use)+(onCut(g,a)||g.verify?' ('+X.area_manual+')':''))}
+        else notes.push(X.area_manual) }
+  var r=byCode[use]||byCode[c];items.push(r);tot+=r.r;
+  if(/प्रति|per (loom|mill|machine|branch|seat|flat|set)/i.test(r.d+' '+r.e))unit=true;
+ });
+ var stop=[],warn=[],docs=[];
+ if(st.use===1)stop.push({t:X.w_res,link:true});else if(st.use===2)warn.push(X.w_unk4);
+ if(st.due===1)stop.push({t:X.w_dues});else if(st.due===2)warn.push(X.w_unk5);
+ docs=docs.concat(X.d_base);
+ if(st.prop===0){docs.push(X.d_ptax_own)}
+ else if(st.prop===1){docs.push(X.d_ptax_other,X.d_rent);warn.push(X.w_rent)}
+ else if(st.prop===2){docs.push(X.d_ptax_other,X.d_cons);warn.push(X.w_rel)}
+ else if(st.prop===3){docs.push(X.d_mkt);warn.push(X.w_mkt)}
+ else docs.push(X.d_ptax_own);
+ if(st.firm===1)docs.push(X.d_part);if(st.firm===2)docs.push(X.d_pvt);
+ Object.keys(st.sp).forEach(function(i){if(st.sp[i])docs.push(X.sp[i]+': '+X.d_sp[i])});
+ warn.push(X.w_blur);
+ return {items:items,tot:tot,unit:unit,notes:notes,stop:stop,warn:warn,docs:docs};
+}
+function money(n){return '₹'+Number(n).toLocaleString('en-IN')}
+var last=null;
+function drawResult(){
+ var R=last=compute();
+ var h='<p class="lw-q">'+X.result+'</p>';
+ if(R.stop.length){h+='<div class="lw-box lw-red"><b>'+X.stopH+'</b><ol>'+R.stop.map(function(s){return '<li>'+esc(s.t)+(s.link?' <a href="#s13" data-a="s13" style="color:#C2571A;font-weight:600">'+X.w_res_link+'</a>':'')+'</li>'}).join('')+'</ol></div>'}
+ h+='<h4>'+X.codes+'</h4>';
+ R.items.forEach(function(r){h+='<div class="lw-chip"><span>'+esc(nm(r))+'<br><small>'+X.code+' '+r.c+'</small></span><b>'+money(r.r)+'</b></div>'});
+ h+='<p class="lw-tot">'+X.total+': '+money(R.tot)+(R.unit?'<small style="font-weight:400;font-size:13px">'+X.unit+'</small>':'')+'</p>';
+ if(R.items.length>1)h+='<div class="lw-box lw-yel">'+X.multi+'</div>';
+ R.notes.forEach(function(n){h+='<div class="lw-box lw-yel">'+esc(n)+'</div>'});
+ if(R.warn.length){h+='<div class="lw-box lw-yel"><ol>'+R.warn.map(function(w){return '<li>'+esc(w)+'</li>'}).join('')+'</ol></div>'}
+ h+='<h4>'+X.docs+'</h4><ol>'+R.docs.map(function(d){return '<li>'+esc(d)+'</li>'}).join('')+'</ol><p class="lw-sm">'+X.fmt+'</p>';
+ if(!R.stop.length&&st.use===0&&st.due===0)h+='<div class="lw-box lw-grn">'+X.ready+'</div>';
+ h+='<div class="lw-nav" style="flex-wrap:wrap"><button class="lw-btn" data-a="wa">'+X.wa+'</button><button class="lw-btn alt" data-a="prn">'+X.prn+'</button></div>';
+ h+='<div class="lw-nav"><a class="lw-btn alt" style="text-decoration:none;text-align:center;box-sizing:border-box" target="_blank" rel="noopener" href="'+BASE+'forms/license_code_list.pdf">'+X.pdf+'</a><button class="lw-btn alt" data-a="again">'+X.again+'</button></div>';
+ h+='<p class="lw-sm">'+X.note+'</p>';
+ app.innerHTML=h;
+}
+function shareText(){
+ var R=last||compute(),s='*'+X.shareHead+'*\n\n';
+ R.items.forEach(function(r){s+=X.code+' '+r.c+' — '+nm(r)+' — '+money(r.r)+'\n'});
+ s+=X.total+': '+money(R.tot)+'\n';
+ if(R.stop.length){s+='\n⛔ '+X.stopH+':\n';R.stop.forEach(function(x){s+='• '+x.t+'\n'})}
+ if(R.warn.length){s+='\n⚠️\n';R.warn.forEach(function(x){s+='• '+x+'\n'})}
+ s+='\n📄 '+X.docs+':\n';R.docs.forEach(function(d,i){s+=(i+1)+'. '+d+'\n'});
+ s+='\n'+X.foot+'\n'+BASE;
+ return s;
+}
+function draw(){
+ if(step===0){intro();return}
+ if(step===1){drawBiz();return}
+ if(step===2){drawArea();return}
+ if(step===3){drawOpts(3,X.q3,'',X.o3,'prop');return}
+ if(step===4){drawOpts(4,X.q4,X.h4,X.o4,'use');return}
+ if(step===5){drawOpts(5,X.q5,X.h5,X.o5,'due');return}
+ if(step===6){drawFirm();return}
+ drawResult();
+}
+function go(n){step=n;draw();var c=app.closest?app.closest('.lw-card'):null;if(c&&step>0)c.scrollIntoView({behavior:'smooth',block:'start'})}
+app.addEventListener('click',function(e){
+ var el=e.target.closest?e.target.closest('[data-a]'):null;if(!el)return;
+ var a=el.getAttribute('data-a');
+ if(a==='s13'){e.preventDefault();var d=document.getElementById('s13');if(d){d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'})}return}
+ if(a==='start'){loadRows(function(ok){if(!ok){app.innerHTML='<p>'+X.loadFail+'</p>';return}go(1)});if(!rows)app.innerHTML='<p class="lw-h">'+X.loading+'</p>';return}
+ if(a==='add'){var c=el.getAttribute('data-c');if(st.biz.indexOf(c)<0)st.biz.push(c);drawBiz();return}
+ if(a==='rm'){st.biz.splice(parseInt(el.getAttribute('data-i'),10),1);drawBiz();return}
+ if(a==='opt'){st[el.getAttribute('data-k')]=parseInt(el.getAttribute('data-i'),10);go(step+1);return}
+ if(a==='firm'){st.firm=parseInt(el.getAttribute('data-i'),10);drawFirm();return}
+ if(a==='skip'){st.area='';go(3);return}
+ if(a==='next'){if(step===2){var v=$('lw_a');st.area=v?v.value:''}go(step+1);return}
+ if(a==='back'){if(step===2){var v2=$('lw_a');if(v2)st.area=v2.value}go(step-1);return}
+ if(a==='again'){reset();go(0);return}
+ if(a==='prn'){window.print();return}
+ if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
+});
+app.addEventListener('change',function(e){var el=e.target;if(el.getAttribute&&el.getAttribute('data-a')==='sp'){st.sp[el.getAttribute('data-i')]=el.checked}});
+draw();
+window.LICWIZ={state:function(){return st},shareText:shareText};
+})();
+</script>
+<!--LICWIZ-END-->
+
 
 <div class="acctbox" id="licbox">
  <div class="hd"><span class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><rect x="2" y="4.5" width="20" height="15" rx="2.6" fill="#FFFFFF"/><circle cx="8.6" cy="10.6" r="2.1" fill="#E8820C"/><path d="M5.3 16.4c.5-1.7 1.8-2.5 3.3-2.5s2.8.8 3.3 2.5" fill="none" stroke="#E8820C" stroke-width="1.9" stroke-linecap="round"/><path d="M14.2 9.3h5M14.2 12.5h5M14.2 15.7h3" stroke="#123B70" stroke-width="1.7" stroke-linecap="round"/></svg></span>ट्रेड लाइसेंस शुल्क जानें</div>
