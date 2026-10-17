@@ -2694,7 +2694,7 @@ var bar=document.createElement('div');bar.id='fbar';
 bar.innerHTML='<button type="button" class="fb-back"></button><span class="fb-t"></span><button type="button" class="fb-wa"></button>';
 nav.parentNode.insertBefore(bar,nav.nextSibling);
 bar.querySelector('.fb-back').textContent=T.back;bar.querySelector('.fb-wa').textContent=T.wa;
-var curG=null;
+var curG=null;kids.forEach(function(el){if(el.hasAttribute('data-grp'))el.classList.add('fo-h')});
 function hasG(g){return !!wrap.querySelector('[data-grp~="'+g+'"]')}
 function labelOf(g){var a=nav.querySelector('a[href="#'+g+'"] .lbl');return a?a.textContent.trim():''}
 function pageLink(g){
@@ -2702,7 +2702,7 @@ function pageLink(g){
  return BASEURL+'#'+g;
 }
 function showAll(push){
- curG=null;kids.forEach(function(el){el.classList.remove('fo-h')});
+ curG=null;kids.forEach(function(el){if(el.hasAttribute('data-grp')&&!ALWAYS.test(el.tagName.replace(/^P$/,'X')))el.classList.add('fo-h');else el.classList.remove('fo-h')});
  var sb=document.querySelector('.searchbox');if(sb)sb.classList.remove('fo-h');
  bar.classList.remove('on');[].forEach.call(nav.querySelectorAll('a'),function(a){a.classList.remove('fo-cur')});
  if(push)setHash('')
@@ -2759,8 +2759,8 @@ bar.querySelector('.fb-wa').addEventListener('click',function(){
 });
 function fromUrl(){
  var t=(OPEN||'')||(location.hash||'').replace('#','');
- if(!t){if(curG)showAll(false);return}
- if(!reveal(t,false)&&curG)showAll(false);
+ if(!t){showAll(false);return}
+ if(!reveal(t,false))showAll(false);
 }
 window.addEventListener('popstate',function(){OPEN='';fromUrl()});
 window.addEventListener('hashchange',function(){OPEN='';fromUrl()});
@@ -2769,6 +2769,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 
 
