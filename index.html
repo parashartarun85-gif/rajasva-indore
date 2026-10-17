@@ -540,7 +540,7 @@
         <li>मोबाइल पर प्राप्त OTP दर्ज करें और <b>&#8220;वेरिफाई करें&#8221;</b> पर क्लिक करें।</li>
         <li>पूछी गई जानकारी तथा सुधार का कारण भरें, संबंधित दस्तावेज़ की PDF अपलोड करें, फिर <b>&#8220;आगे बढ़ें&#8221;</b> पर क्लिक करें।</li>
         <li>भरी गई जानकारी की एक बार समीक्षा करें और <b>&#8220;सबमिट&#8221;</b> पर क्लिक करें।</li>
-        <li>शिकायत सफलतापूर्वक दर्ज हो जाएगी तथा एक <b>शिकायत संख्या</b> प्राप्त होगी। इसी संख्या से इंदौर 311 ऐप पर स्थिति ट्रैक की जा सकती है।</li>
+        <li>शिकायत सफलतापूर्वक दर्ज हो जाएगी तथा एक <b>शिकायत संख्या</b> प्राप्त होगी। इसी संख्या से इंदौर 311 ऐप पर स्थिति ट्रैक की जा सकती है। <i>उदाहरण: <b>CPC-2026-000000</b></i></li>
       </ol>
       <div class="note">आवेदन की सुविधा हेतु संपत्ति से संबंधित दस्तावेज़ों की PDF पहले से मोबाइल में तैयार रखें, ताकि अपलोड करने में असुविधा न हो।</div>
       <a class="dlext" href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore" target="_blank" rel="noopener">इंदौर 311 ऐप डाउनलोड करें</a>
@@ -771,6 +771,145 @@ window.MUTWIZ={state:function(){return st},shareText:shareText};
 })();
 </script>
 <!--MUTWIZ-END-->
+<!--ERRWIZ-START-->
+<style>
+#errwiz{--w1:#1F6F8B;--w2:#14506A}
+#errwiz .lw-card{background:#fff;border:1.5px solid #1F6F8B;border-radius:14px;overflow:hidden;margin:18px 0}
+#errwiz .lw-hd{background:linear-gradient(135deg,#1F6F8B 0%,#4FA3C0 100%);color:#fff;padding:13px 16px}
+#errwiz .lw-hd b{display:block;font-size:18px;line-height:1.3}
+#errwiz .lw-hd span{display:block;font-size:13.5px;opacity:.95;margin-top:3px}
+#errwiz .lw-bd{padding:14px 16px 16px;font-size:15.5px;line-height:1.55;color:var(--ink,#222)}
+#errwiz .lw-prog{height:5px;background:#D6E8F0;border-radius:4px;margin:0 0 12px;overflow:hidden}
+#errwiz .lw-prog i{display:block;height:100%;background:#1F6F8B;transition:width .25s}
+#errwiz .lw-q{font-weight:700;font-size:16.5px;margin:0 0 4px}
+#errwiz .lw-h{font-size:13.5px;color:var(--soft,#666);margin:0 0 10px}
+#errwiz .lw-opt{display:block;width:100%;text-align:left;font:inherit;font-size:15.5px;background:#F1F8FB;border:1.5px solid #BCDCE8;border-radius:10px;padding:11px 13px;margin:7px 0;color:inherit;cursor:pointer;min-height:44px}
+#errwiz .lw-opt:active,#errwiz .lw-opt.on{background:#D9EEF6;border-color:#1F6F8B}
+#errwiz .lw-in{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid #B5CFDB;border-radius:10px;margin:2px 0 8px;background:#fff;color:inherit}
+#errwiz .lw-nav{display:flex;gap:8px;margin-top:12px}
+#errwiz .lw-btn{flex:1;font:inherit;font-weight:700;font-size:15px;border:0;border-radius:10px;padding:12px;background:linear-gradient(135deg,#1F6F8B 0%,#4FA3C0 100%);color:#fff;cursor:pointer;min-height:44px}
+#errwiz .lw-btn.alt{background:#D6E8F0;color:#14506A}
+#errwiz .lw-btn[disabled]{opacity:.45}
+#errwiz .lw-chip{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;background:#F6F1E9;border-radius:9px;padding:8px 10px;margin:6px 0;font-size:14.5px}
+#errwiz .lw-chip button{border:0;background:none;font-size:20px;line-height:1;color:#8C2F16;cursor:pointer;padding:0 4px}
+#errwiz .lw-res{max-height:260px;overflow:auto;margin:4px 0}
+#errwiz .lw-r{padding:9px 10px;border-bottom:1px solid #EEE;cursor:pointer;font-size:14.5px}
+#errwiz .lw-r small{color:#777}
+#errwiz .lw-box{border-radius:9px;padding:10px 12px;margin:9px 0;font-size:14.5px;line-height:1.55}
+#errwiz .lw-red{background:#FBF1EE;border-left:4px solid #8C2F16;color:#5A1A0A}
+#errwiz .lw-yel{background:#FFF3DF;border-left:4px solid #C77400;color:#14506A}
+#errwiz .lw-grn{background:#EEF6EA;border-left:4px solid #3E7A2B;color:#244A18}
+#errwiz h4{margin:14px 0 4px;font-size:16px;color:#14506A}
+#errwiz ol{margin:4px 0 4px 20px;padding:0}#errwiz li{margin:4px 0}
+#errwiz .lw-tot{font-size:18px;font-weight:700}
+#errwiz .lw-chk{display:flex;gap:9px;align-items:flex-start;padding:7px 2px;font-size:15px}
+#errwiz .lw-chk input{width:20px;height:20px;margin-top:2px;flex:none}
+#errwiz .lw-sm{font-size:12.5px;color:#777;margin-top:10px}
+@media print{body *{visibility:hidden}#errwiz,#errwiz *{visibility:visible}#errwiz{position:absolute;left:0;top:0;width:100%}#errwiz .lw-nav,#errwiz .lw-prog,#errwiz .lw-chip button{display:none}}
+</style><style>#errwiz .lw-chk label{flex:1;cursor:pointer}#errwiz .lw-cnt{font-size:13.5px;color:#14506A;margin:2px 0 6px}#errwiz .lw-list{max-height:420px;overflow:auto}</style>
+<div id="errwiz" class="lw-root"><div class="lw-card">
+<div class="lw-hd"><b id="ew_t"></b><span id="ew_s"></span></div>
+<div class="lw-bd" id="ew_app"></div>
+</div></div>
+<script>
+(function(){
+'use strict';
+var L='hi',CATS=['cat_pt','catWater','catWaste'],U5='u5';
+var app=document.getElementById('ew_app');if(!app)return;
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var T={
+hi:{title:'त्रुटि सुधार सहायक',sub:'दो सवाल, 1 मिनट — आपकी समस्या के लिए सही दस्तावेज़ सूची। नाम / मोबाइल / आधार नहीं पूछा जाता।',
+ start:'शुरू करें',back:'पीछे',q_acct:'किस खाते में सुधार करवाना है?',o_acct:['संपत्तिकर खाता','जलकर (नल) खाता','कचरा प्रबंधन शुल्क खाता'],
+ q_prob:'समस्या कौन-सी है?',h_prob:'अपनी समस्या के सबसे नज़दीक वाला विकल्प चुनें।',
+ q_need:'क्या ये सब तैयार हैं?',result:'आपकी जाँच-सूची',docs:'आपके लिए दस्तावेज़ सूची',
+ writeH:'आवेदन में यह लिखें',ready:'तैयार',tick:'जो दस्तावेज़ तैयार हो जाए उस पर ☑ लगाते जाएँ।',
+ tip1:'हर दस्तावेज़ की साफ़, पूरी और पढ़ने योग्य प्रति लगाएँ। अधूरे या धुंधले दस्तावेज़ पर आवेदन लौट सकता है।',
+ tip2:'आवेदन में अपना खाता नंबर / संपत्ति ID अवश्य लिखें।',
+ form:'आवेदन प्रपत्र डाउनलोड करें',openfull:'इस समस्या की पूरी सूची खोलें',h311:'इंदौर 311 ऐप पर शिकायत कैसे दर्ज करें',wa:'WhatsApp पर भेजें',prn:'प्रिंट / PDF सहेजें',again:'दोबारा जाँचें',
+ note:'यह सहायक सामान्य मार्गदर्शन है। मौका रिपोर्ट, टीप आदि कार्यालय स्तर पर तैयार होती हैं। परिस्थिति अनुसार अतिरिक्त दस्तावेज़ माँगे जा सकते हैं। आपकी कोई व्यक्तिगत जानकारी दर्ज या संग्रहित नहीं होती।',
+ shareHead:'त्रुटि सुधार — जाँच-सूची',foot:'राजस्व विभाग, नगर पालिक निगम इन्दौर',acctName:['संपत्तिकर','जलकर','कचरा शुल्क'],loadFail:'सूची नहीं मिली। कृपया पेज दोबारा खोलें।'},
+en:{title:'Correction helper',sub:'Two questions, 1 minute — the right document list for your problem. No name / mobile / Aadhaar is asked.',
+ start:'Start',back:'Back',q_acct:'Which account needs the correction?',o_acct:['Property tax account','Water charges (tap) account','Solid waste management fee account'],
+ q_prob:'What is the problem?',h_prob:'Choose the option closest to your problem.',
+ q_need:'Is everything ready?',result:'Your checklist',docs:'Documents for you',
+ writeH:'Write this in the application',ready:'ready',tick:'Tick ☑ each document as it gets ready.',
+ tip1:'Attach a clear, complete, readable copy of every document. An application with missing or blurred documents may be returned.',
+ tip2:'Always write your account number / property ID in the application.',
+ form:'Download application form',openfull:'Open the full list for this problem',h311:'How to file a complaint on the Indore 311 app',wa:'Share on WhatsApp',prn:'Print / Save PDF',again:'Check again',
+ note:'This helper is general guidance. Spot reports and notings are prepared by the office. Additional documents may be asked for depending on the case. No personal information is entered or stored.',
+ shareHead:'Correction — checklist',foot:'Revenue Department, Indore Municipal Corporation',acctName:['Property tax','Water charges','Waste fee'],loadFail:'List not found. Please reopen the page.'}};
+var X=T[L];$('ew_t').textContent=X.title;$('ew_s').textContent=X.sub;
+var st,step,last=null,list=[];
+function reset(){st={acct:-1,prob:-1};step=0;last=null}reset();
+function probs(a){
+ var h=$(CATS[a]),out=[];if(!h)return out;var n=h.nextElementSibling;
+ while(n&&!(n.tagName==='H2'&&n.classList.contains('cat'))){
+  if(n.tagName==='DETAILS'&&n.id){var s=n.querySelector('summary .t');if(s)out.push({id:n.id,t:s.textContent.replace(/\s+/g,' ').trim()})}
+  n=n.nextElementSibling}
+ return out;
+}
+function clean(s){return s.replace(/\s+/g,' ').replace(/\s*\((?:[^)]*(?:नीचे|below)[^)]*)\)/,'').trim()}
+function blockData(id){
+ var b=$(id);if(!b)return null;var ol=b.querySelector('.body ol');if(!ol)return null;
+ var docs=[].map.call(ol.children,function(li){return clean(li.textContent)});
+ var nt=b.querySelector('.body .note');var fa=b.querySelector('a.dl[data-form]');
+ return {docs:docs,note:nt?nt.textContent.replace(/\s+/g,' ').trim():'',form:fa&&fa.getAttribute('href')};
+}
+function drawStep(){
+ if(step===0){app.innerHTML='<p style="margin:0 0 12px">'+esc(X.sub)+'</p><button class="lw-btn" data-a="start">'+X.start+'</button>';return}
+ if(step===1){var h=prog(0)+'<p class="lw-q">1/2 · '+X.q_acct+'</p>';
+  X.o_acct.forEach(function(o,i){h+='<button class="lw-opt'+(st.acct===i?' on':'')+'" data-a="acct" data-i="'+i+'">'+esc(o)+'</button>'});
+  app.innerHTML=h+'<div class="lw-nav"><button class="lw-btn alt" data-a="back">'+X.back+'</button></div>';return}
+ if(step===2){list=probs(st.acct);var h2=prog(50)+'<p class="lw-q">2/2 · '+X.q_prob+'</p><p class="lw-h">'+X.h_prob+'</p><div class="lw-list">';
+  list.forEach(function(p,i){h2+='<button class="lw-opt'+(st.prob===i?' on':'')+'" data-a="prob" data-i="'+i+'">'+esc(p.t)+'</button>'});
+  app.innerHTML=h2+'</div><div class="lw-nav"><button class="lw-btn alt" data-a="back">'+X.back+'</button></div>';return}
+ drawResult();
+}
+function prog(p){return '<div class="lw-prog"><i style="width:'+p+'%"></i></div>'}
+function drawResult(){
+ var p=list[st.prob],D=p&&blockData(p.id);
+ if(!D){app.innerHTML='<p>'+X.loadFail+'</p>';return}
+ last={id:p.id,t:p.t,D:D};
+ var h='<p class="lw-q">'+X.result+' — '+esc(X.acctName[st.acct])+': '+esc(p.t)+'</p>';
+ if(D.note)h+='<div class="lw-box lw-grn"><b>'+X.writeH+':</b> '+esc(D.note.replace(/^[^:：]*[:：]\s*/,''))+'</div>';
+ h+='<h4>'+X.docs+'</h4><p class="lw-h">'+X.tick+'</p><div class="lw-cnt" id="ew_cnt"></div>';
+ D.docs.forEach(function(d,i){h+='<div class="lw-chk"><input type="checkbox" id="ew_c'+i+'" data-a="chk"><label for="ew_c'+i+'">'+esc(d)+'</label></div>'});
+ h+='<div class="lw-box lw-yel"><ol><li>'+X.tip1+'</li><li>'+X.tip2+'</li></ol></div>';
+ var fh=D.form;
+ h+='<div class="lw-nav" style="flex-wrap:wrap">'+((fh&&fh!=='#')?'<a class="lw-btn" style="text-decoration:none;text-align:center;box-sizing:border-box" target="_blank" rel="noopener" href="'+esc(fh)+'">'+X.form+'</a>':'')+'<button class="lw-btn alt" data-a="full">'+X.openfull+'</button></div>';
+ h+='<div class="lw-nav" style="flex-wrap:wrap">'+($(U5)?'<button class="lw-btn alt" data-a="h311">'+X.h311+'</button>':'')+'</div>';
+ h+='<div class="lw-nav" style="flex-wrap:wrap"><button class="lw-btn" data-a="wa">'+X.wa+'</button><button class="lw-btn alt" data-a="prn">'+X.prn+'</button><button class="lw-btn alt" data-a="again">'+X.again+'</button></div><p class="lw-sm">'+X.note+'</p>';
+ app.innerHTML=h;cnt();
+}
+function cnt(){var c=app.querySelectorAll('input[data-a=chk]'),n=0;[].forEach.call(c,function(x){if(x.checked)n++});var e=$('ew_cnt');if(e)e.textContent=n+'/'+c.length+' '+X.ready}
+function shareText(){
+ if(!last)return '';var s='*'+X.shareHead+' — '+X.acctName[st.acct]+'*\n'+last.t+'\n';
+ if(last.D.note)s+='\n✍️ '+last.D.note+'\n';
+ s+='\n📄 '+X.docs+':\n';last.D.docs.forEach(function(d,i){s+=(i+1)+'. '+d+'\n'});
+ return s+'\n'+X.tip1+'\n\n'+X.foot;
+}
+function go(id){var d=$(id);if(d){d.open=true;var g=document.createElement('a');g.href='#'+id;var w=document.querySelector('.wrap');w.appendChild(g);g.click();w.removeChild(g)}}
+app.addEventListener('change',function(e){if(e.target&&e.target.getAttribute('data-a')==='chk')cnt()});
+app.addEventListener('click',function(e){
+ var el=e.target.closest?e.target.closest('[data-a]'):null;if(!el)return;var a=el.getAttribute('data-a');
+ if(a==='chk')return;
+ if(a==='start'){step=1;drawStep();return}
+ if(a==='acct'){var i=parseInt(el.getAttribute('data-i'),10);if(i!==st.acct)st.prob=-1;st.acct=i;step=2;drawStep();return}
+ if(a==='prob'){st.prob=parseInt(el.getAttribute('data-i'),10);step=3;drawStep();return}
+ if(a==='back'){step=Math.max(0,step-1);drawStep();return}
+ if(a==='again'){reset();drawStep();return}
+ if(a==='prn'){window.print();return}
+ if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
+ if(a==='full'){if(last)go(last.id);return}
+ if(a==='h311'){go(U5);return}
+});
+drawStep();
+window.ERRWIZ={state:function(){return st},shareText:shareText};
+})();
+</script>
+<!--ERRWIZ-END-->
+
 
 
   <details class="acc" style="border-color:#8C2F16" id="reject1">
@@ -2532,7 +2671,7 @@ kids.forEach(function(el){
  if(el.tagName==='H2'&&el.classList.contains('cat')){cur=(id==='catUseful')?['catUseful','u1']:[id];add(el,cur);return}
  if(cur&&(el.matches('details.acc')||el.classList.contains('catnote')||el.classList.contains('geo'))){add(el,cur);return}
  if(el.classList.contains('acctbox')||el.classList.contains('office-box')||id==='howto'){cur=null;if(id)add(el,[id]);return}
- if(el.id==='mutwiz'){add(el,['guide1']);cur=null;return}
+ if(el.id==='mutwiz'||el.id==='errwiz'){add(el,['guide1']);cur=null;return}
  if(el.classList.contains('lw-root')){add(el,['licwiz']);cur=null}
 });
 ['s40','s41','s42','licsrch','licwiz','licbox'].forEach(function(i){var e=document.getElementById(i);if(e)add(e,['catLicense'])});
@@ -2616,6 +2755,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 
 </body>
