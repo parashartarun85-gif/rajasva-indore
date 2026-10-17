@@ -2705,7 +2705,7 @@ function setHash(g){try{var u=location.pathname+location.search+(g?'#'+g:'');his
 function focus(g,push){
  curG=g;
  kids.forEach(function(el){
-  if(ALWAYS.test(el.tagName)||el.classList.contains('navgrid')||el.classList.contains('visit')||el.classList.contains('sharebox')||el.classList.contains('fbbox')||el.classList.contains('pwabanner')||el===bar){el.classList.remove('fo-h');return}
+  if((ALWAYS.test(el.tagName)&&!el.hasAttribute('data-grp'))||el.classList.contains('navgrid')||el.classList.contains('visit')||el.classList.contains('sharebox')||el.classList.contains('fbbox')||el.classList.contains('pwabanner')||el===bar){el.classList.remove('fo-h');return}
   var a=(el.getAttribute('data-grp')||'').split(' ');
   if(a.indexOf(g)>-1)el.classList.remove('fo-h');else el.classList.add('fo-h');
  });
@@ -2763,6 +2763,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 
 
