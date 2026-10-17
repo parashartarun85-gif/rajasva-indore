@@ -376,6 +376,15 @@
 
   
   <div class="navgrid">
+    <!--WZROW-START--><style>
+.wzh{grid-column:1/-1;font-weight:800;font-size:14.5px;color:var(--ink);margin:0 0 -2px}
+.wzgrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
+.navgrid .wzgrid a.wz{flex-direction:column;justify-content:flex-start;align-items:center;gap:4px;padding:11px 4px 9px;border-radius:14px;color:#fff;box-shadow:0 3px 9px rgba(20,33,58,.25);text-align:center}
+.navgrid .wzgrid a.wz .ico{width:auto;height:auto;background:none!important;box-shadow:none;font-size:27px;border-radius:0}
+.navgrid .wzgrid a.wz .lbl{color:#fff;max-width:none;font-size:13px;line-height:1.25}
+.navgrid .wzgrid a.wz .lbl small{display:block;font-weight:600;font-size:10.5px;opacity:.95;margin-top:2px}
+.wzlink{font-size:14.5px}.wzlink a{font-weight:700}
+</style><div class="wzh">✅ आवेदन से पहले जाँच (2 मिनट)</div><div class="wzgrid"><a class="wz" href="#mutwiz" style="background:linear-gradient(135deg,#E8820C,#F2A33D)" onclick="var d=document.getElementById('mutwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico">🏠</span><span class="lbl"><b>नामांतरण</b> <small>आवेदन से पहले जाँच</small></span></a><a class="wz" href="#errwiz" style="background:linear-gradient(135deg,#1F6F8B,#4FA3C0)" onclick="var d=document.getElementById('errwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico">✏️</span><span class="lbl"><b>त्रुटि सुधार</b> <small>आवेदन से पहले जाँच</small></span></a><a class="wz" href="#licwiz" style="background:linear-gradient(135deg,#3E7A2B,#6BA84F)" onclick="var d=document.getElementById('licwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico">🏪</span><span class="lbl"><b>ट्रेड लाइसेंस</b> <small>आवेदन से पहले जाँच</small></span></a></div><!--WZROW-END-->
     <a href="#u1" onclick="return openUseful(event);">
       <span class="ico" style="background:#8A6D1F">💡</span>
       <span class="lbl">उपयोगी जानकारी</span>
@@ -426,7 +435,7 @@
       <span class="lbl">कार्यालय की जानकारी</span>
     </a>
   
- <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">📋</span><span class="lbl">ट्रेड लाइसेंस आवेदन जानकारी</span></a><a href="#licwiz" onclick="var d=document.getElementById('licwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#3E7A2B">&#9989;</span><span class="lbl">आवेदन से पहले जाँच</span></a>
+ <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">📋</span><span class="lbl">ट्रेड लाइसेंस आवेदन जानकारी</span></a>
   <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D">&#128199;</span><span class="lbl">लाइसेंस खोजें</span></a>
 <a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C">&#8377;</span><span class="lbl">लाइसेंस शुल्क व कोड जानें</span></a>
  </div>
@@ -929,6 +938,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
   </details>
 
   <h2 class="cat" id="catMut">नामांतरण <span>म.प्र. न.पा.नि. अधिनियम 1956 की धारा 167 के अंतर्गत</span></h2>
+<p class="catnote wzlink">✅ आवेदन से पहले जाँच करें: <a href="#mutwiz">नामांतरण सहायक खोलें →</a></p>
   <details class="acc" id="s1">
     <summary><span class="t">नामांतरण — रजिस्ट्री द्वारा क्रय</span><span class="c"></span></summary>
     <div class="body">
@@ -1043,6 +1053,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
     </div>
   </details>
   <h2 class="cat" id="cat_pt">संपत्तिकर खाते में त्रुटि सुधार <span>20 प्रकार</span></h2>
+<p class="catnote wzlink">✅ आवेदन से पहले जाँच करें: <a href="#errwiz">त्रुटि सुधार सहायक खोलें →</a></p>
   <div class="catnote">संपत्तिकर खातों में 50,000 रु. से अधिक मांग राशि कम करने हेतु अपर आयुक्त (राजस्व) का अनुमोदन आवश्यक होता है, अतः ऐसे प्रकरणों में समय अधिक लगता है।</div>
   <details class="acc" id="s7">
     <summary><span class="t">वार्ड गलत होना</span><span class="c"></span></summary>
@@ -1384,6 +1395,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
     </div>
   </details>
   <h2 class="cat" id="catWater">जलकर से संबंधित सुधार <span>10 प्रकार</span></h2>
+<p class="catnote wzlink">✅ आवेदन से पहले जाँच करें: <a href="#errwiz">त्रुटि सुधार सहायक खोलें →</a></p>
   <div class="catnote">जलकर खातों में 25,000 रु. से अधिक मांग राशि कम करने हेतु अपर आयुक्त (राजस्व) का अनुमोदन आवश्यक होता है।</div>
   <details class="acc" id="s22">
     <summary><span class="t">कनेक्शन विच्छेदन उपरांत बिल माफी</span><span class="c"></span></summary>
@@ -1532,6 +1544,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
   </details>
 
   <h2 class="cat" id="catWaste">कचरा प्रबंधन शुल्क से संबंधित सुधार <span>8 प्रकार</span></h2>
+<p class="catnote wzlink">✅ आवेदन से पहले जाँच करें: <a href="#errwiz">त्रुटि सुधार सहायक खोलें →</a></p>
   <details class="acc" id="s28">
     <summary><span class="t">सेवा बंद होने के बावजूद बिल प्राप्त होना</span><span class="c"></span></summary>
     <div class="body">
@@ -1649,6 +1662,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
   </details>
 
   <h2 class="cat" id="catLicense">ट्रेड लाइसेंस (नया) आवेदन की जानकारी <span>3 जानकारियाँ</span></h2>
+<p class="catnote wzlink">✅ आवेदन से पहले जाँच करें: <a href="#licwiz">ट्रेड लाइसेंस सहायक खोलें →</a></p>
 <details class="acc" id="s40">
 <summary><span class="t">नवीन ट्रेड लाइसेंस हेतु आवश्यक दस्तावेज़</span><span class="c"></span></summary>
 <div class="body">
@@ -2671,10 +2685,10 @@ kids.forEach(function(el){
  if(el.tagName==='H2'&&el.classList.contains('cat')){cur=(id==='catUseful')?['catUseful','u1']:[id];add(el,cur);return}
  if(cur&&(el.matches('details.acc')||el.classList.contains('catnote')||el.classList.contains('geo'))){add(el,cur);return}
  if(el.classList.contains('acctbox')||el.classList.contains('office-box')||id==='howto'){cur=null;if(id)add(el,[id]);return}
- if(el.id==='mutwiz'||el.id==='errwiz'){add(el,['guide1']);cur=null;return}
+ if(el.id==='mutwiz'||el.id==='errwiz'){add(el,[el.id]);cur=null;return}
  if(el.classList.contains('lw-root')){add(el,['licwiz']);cur=null}
 });
-['s40','s41','s42','licsrch','licwiz','licbox'].forEach(function(i){var e=document.getElementById(i);if(e)add(e,['catLicense'])});
+['s40','s41','s42','licsrch','licbox'].forEach(function(i){var e=document.getElementById(i);if(e)add(e,['catLicense'])});
 var gl=document.getElementById('catLicense'); // wizard style sibling stays hidden-safe
 var bar=document.createElement('div');bar.id='fbar';
 bar.innerHTML='<button type="button" class="fb-back"></button><span class="fb-t"></span><button type="button" class="fb-wa"></button>';
@@ -2755,6 +2769,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 
 
