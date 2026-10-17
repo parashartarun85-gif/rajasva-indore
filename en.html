@@ -516,7 +516,7 @@
         <li>Indore depends heavily on water pumped from the distant Narmada river. Bringing this water to the city takes enormous energy and expense.</li>
         <li>The groundwater level in the city keeps falling. Borewells are being dug deeper, and several areas face water scarcity in summer.</li>
         <li>A rainwater harvesting unit stops rainwater from running off and lets it soak into the ground, improving the water table nearby and keeping borewells working longer.</li>
-        <li>For this reason a rainwater harvesting unit is required on constructed buildings, and mutation is not completed without it.</li>
+        <li>For this reason a rainwater harvesting unit is required on buildings constructed on plots of 1500 sq ft or more (all multi-storey buildings fall here), and mutation is not completed without it.</li>
       </ol>
       <div class="note">This is not a formality &#8212; it directly affects the water level in your own locality. One unit can send thousands of litres into the ground in a single monsoon.</div>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
@@ -576,15 +576,195 @@
         <tr><td>The owner has died; the property must go to the heirs</td><td><a href="#s2" onclick="var d=document.getElementById('s2');if(d)d.open=true;" style="color:var(--ink)">Mutation &#8212; inheritance &#8594;</a></td></tr>
         <tr><td>I bought a flat / plot in a multi-storey building or colony</td><td><a href="#s3" onclick="var d=document.getElementById('s3');if(d)d.open=true;" style="color:var(--ink)">Mutation &#8212; multi-storey / colony &#8594;</a></td></tr>
         <tr><td>The property has no account at all; a new one is needed</td><td><a href="#s1" onclick="var d=document.getElementById('s1');if(d)d.open=true;" style="color:var(--ink)">New account &#8594;</a></td></tr>
-        <tr><td>Name, address, area, ward or use is recorded wrongly</td><td><a href="#s32" onclick="var d=document.getElementById('s32');if(d)d.open=true;" style="color:var(--ink)">Property tax correction &#8594;</a></td></tr>
+        <tr><td>Name, address, area, ward or use is recorded wrongly</td><td><a href="#cat_pt" style="color:var(--ink)">Property tax correction &#8594;</a></td></tr>
         <tr><td>Tax is too high, or a payment is not credited</td><td><a href="#s9" onclick="var d=document.getElementById('s9');if(d)d.open=true;" style="color:var(--ink)">Property tax correction &#8594;</a></td></tr>
         <tr><td>There is no water connection but a bill keeps coming</td><td><a href="#s23" onclick="var d=document.getElementById('s23');if(d)d.open=true;" style="color:var(--ink)">Water charges correction &#8594;</a></td></tr>
         <tr><td>The waste collection vehicle does not come but a fee is charged</td><td><a href="#s29" onclick="var d=document.getElementById('s29');if(d)d.open=true;" style="color:var(--ink)">Solid waste fee correction &#8594;</a></td></tr>
-        <tr><td>Two accounts are running for the same property</td><td><a href="#s32" onclick="var d=document.getElementById('s32');if(d)d.open=true;" style="color:var(--ink)">See &#8220;closing one of two accounts&#8221; &#8594;</a></td></tr>
+        <tr><td>Two accounts are running for the same property</td><td><a href="#s19" onclick="var d=document.getElementById('s19');if(d)d.open=true;" style="color:var(--ink)">See &#8220;closing one of two accounts&#8221; &#8594;</a></td></tr>
       
         <tr><td>Want to file a correction complaint by mobile, without visiting the office</td><td><a href="#u5" onclick="var d=document.getElementById('u5');if(d)d.open=true;" style="color:var(--ink)">311 app correction complaint &#8594;</a></td></tr></table>
     </div>
   </details>
+<!--MUTWIZ-START-->
+<style>
+#mutwiz{--w1:#E8820C;--w2:#C2571A}
+#mutwiz .lw-card{background:#fff;border:1.5px solid #E8820C;border-radius:14px;overflow:hidden;margin:18px 0}
+#mutwiz .lw-hd{background:linear-gradient(135deg,#E8820C 0%,#F2A33D 100%);color:#fff;padding:13px 16px}
+#mutwiz .lw-hd b{display:block;font-size:18px;line-height:1.3}
+#mutwiz .lw-hd span{display:block;font-size:13.5px;opacity:.95;margin-top:3px}
+#mutwiz .lw-bd{padding:14px 16px 16px;font-size:15.5px;line-height:1.55;color:var(--ink,#222)}
+#mutwiz .lw-prog{height:5px;background:#F3E3CF;border-radius:4px;margin:0 0 12px;overflow:hidden}
+#mutwiz .lw-prog i{display:block;height:100%;background:#E8820C;transition:width .25s}
+#mutwiz .lw-q{font-weight:700;font-size:16.5px;margin:0 0 4px}
+#mutwiz .lw-h{font-size:13.5px;color:var(--soft,#666);margin:0 0 10px}
+#mutwiz .lw-opt{display:block;width:100%;text-align:left;font:inherit;font-size:15.5px;background:#FFF8EF;border:1.5px solid #F0D5B0;border-radius:10px;padding:11px 13px;margin:7px 0;color:inherit;cursor:pointer;min-height:44px}
+#mutwiz .lw-opt:active,#mutwiz .lw-opt.on{background:#FFE9CC;border-color:#E8820C}
+#mutwiz .lw-in{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid #D9C3A5;border-radius:10px;margin:2px 0 8px;background:#fff;color:inherit}
+#mutwiz .lw-nav{display:flex;gap:8px;margin-top:12px}
+#mutwiz .lw-btn{flex:1;font:inherit;font-weight:700;font-size:15px;border:0;border-radius:10px;padding:12px;background:linear-gradient(135deg,#E8820C 0%,#F2A33D 100%);color:#fff;cursor:pointer;min-height:44px}
+#mutwiz .lw-btn.alt{background:#F3E3CF;color:#7A4300}
+#mutwiz .lw-btn[disabled]{opacity:.45}
+#mutwiz .lw-chip{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;background:#F6F1E9;border-radius:9px;padding:8px 10px;margin:6px 0;font-size:14.5px}
+#mutwiz .lw-chip button{border:0;background:none;font-size:20px;line-height:1;color:#8C2F16;cursor:pointer;padding:0 4px}
+#mutwiz .lw-res{max-height:260px;overflow:auto;margin:4px 0}
+#mutwiz .lw-r{padding:9px 10px;border-bottom:1px solid #EEE;cursor:pointer;font-size:14.5px}
+#mutwiz .lw-r small{color:#777}
+#mutwiz .lw-box{border-radius:9px;padding:10px 12px;margin:9px 0;font-size:14.5px;line-height:1.55}
+#mutwiz .lw-red{background:#FBF1EE;border-left:4px solid #8C2F16;color:#5A1A0A}
+#mutwiz .lw-yel{background:#FFF3DF;border-left:4px solid #C77400;color:#7A4300}
+#mutwiz .lw-grn{background:#EEF6EA;border-left:4px solid #3E7A2B;color:#244A18}
+#mutwiz h4{margin:14px 0 4px;font-size:16px;color:#7A4300}
+#mutwiz ol{margin:4px 0 4px 20px;padding:0}#mutwiz li{margin:4px 0}
+#mutwiz .lw-tot{font-size:18px;font-weight:700}
+#mutwiz .lw-chk{display:flex;gap:9px;align-items:flex-start;padding:7px 2px;font-size:15px}
+#mutwiz .lw-chk input{width:20px;height:20px;margin-top:2px;flex:none}
+#mutwiz .lw-sm{font-size:12.5px;color:#777;margin-top:10px}
+@media print{body *{visibility:hidden}#mutwiz,#mutwiz *{visibility:visible}#mutwiz{position:absolute;left:0;top:0;width:100%}#mutwiz .lw-nav,#mutwiz .lw-prog,#mutwiz .lw-chip button{display:none}}
+</style>
+<div id="mutwiz" class="lw-root"><div class="lw-card">
+<div class="lw-hd"><b id="mw_t"></b><span id="mw_s"></span></div>
+<div class="lw-bd" id="mw_app"></div>
+</div></div>
+<script>
+(function(){
+'use strict';
+var L='en',IDS={reg:'s1',war:'s2',multi:'s3'};
+var app=document.getElementById('mw_app');if(!app)return;
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var T={
+hi:{
+ title:'नामांतरण सहायक',sub:'कुछ सवाल, 2 मिनट — आपके प्रकरण की सही दस्तावेज़ सूची और ज़रूरी सावधानियाँ। कोई नाम / मोबाइल / आधार नहीं माँगा जाता।',
+ start:'शुरू करें',next:'आगे',back:'पीछे',
+ q_basis:'नामांतरण किस आधार पर करवाना है?',o_basis:['रजिस्ट्री से खरीदा है (विक्रय पत्र)','स्वामी की मृत्यु हो गई है — वारिसनाते','बहुमंजिला इमारत / कॉलोनी में फ्लैट या प्लॉट लिया है'],
+ q_prop:'संपत्ति किस प्रकार की है?',o_prop:['बना हुआ मकान / दुकान','फ्लैट (बहुमंजिला इमारत में)','खाली प्लॉट'],
+ q_plot:'प्लॉट का क्षेत्रफल कितना है?',h_plot:'वर्षा जल संचयन ईकाई 1500 वर्गफुट या उससे बड़े प्लॉट पर आवश्यक है।',o_plot:['1500 वर्गफुट या अधिक','1500 वर्गफुट से कम','मालूम नहीं'],
+ q_rain:'क्या वर्षा जल संचयन ईकाई लगी है?',h_rain:'इसके बिना नामांतरण पूर्ण नहीं होता।',o_rain:['हाँ, लगी है','नहीं लगी','मालूम नहीं'],
+ q_will:'क्या संपत्ति वसीयत / इच्छापत्र के आधार पर मिली है?',o_will:['नहीं, वसीयत नहीं है','हाँ, पंजीकृत (रजिस्टर्ड) वसीयत','हाँ, गैर-पंजीकृत वसीयत / इच्छापत्र'],
+ q_due:'क्या संपत्तिकर, जलकर या कचरा शुल्क बकाया है?',o_due:['नहीं, सब जमा है','हाँ, बकाया है','मालूम नहीं'],
+ q_area:'क्या रजिस्ट्री का क्षेत्रफल और निगम के संपत्तिकर खाते का क्षेत्रफल मिलता है?',o_area:['हाँ, मिलता है','नहीं मिलता','मालूम नहीं'],
+ result:'आपकी जाँच-सूची',docs:'आपके लिए दस्तावेज़ सूची',stopH:'पहले यह करें (रुकें)',
+ w_due:'बकाया संपत्तिकर / जलकर / कचरा शुल्क पहले जमा करें। निगम की देय राशि शेष रहते नामांतरण नहीं होता।',
+ w_due_u:'e-NagarPalika पर तीनों शुल्कों की बकाया स्थिति देख लें। बकाया हो तो पहले जमा करें।',
+ w_rain_n:'वर्षा जल संचयन ईकाई पहले लगवाएँ। इसके बिना नामांतरण प्रक्रिया पूर्ण नहीं होती।',
+ w_rain_u:'वर्षा जल संचयन ईकाई है या नहीं, यह जाँच लें। 1500 वर्गफुट या बड़े प्लॉट के भवन पर यह आवश्यक है।',
+ w_plot_u:'प्लॉट का क्षेत्रफल रजिस्ट्री में देख लें। 1500 वर्गफुट या उससे बड़े प्लॉट पर वर्षा जल संचयन ईकाई आवश्यक है।',
+ w_rain_flat:'बहुमंजिला इमारत में वर्षा जल संचयन ईकाई आवश्यक है (ऐसी इमारतें 1500 वर्गफुट से बड़े प्लॉट पर होती हैं)।',
+ w_area_n:'रजिस्ट्री और निगम खाते का क्षेत्रफल अलग हो तो पहले उसका मिलान / सुधार करवाएँ। अन्यथा आवेदन लौट सकता है।',
+ w_area_u:'रजिस्ट्री में अंकित क्षेत्रफल और संपत्तिकर रसीद में दर्ज क्षेत्रफल मिलाकर देख लें।',
+ w_time:'समय: जाहिर सूचना की अवधि के बाद, आपत्ति न आने पर अधिकतम 21 दिन में तथा आपत्ति आने पर अधिकतम 45 दिन में प्रकरण निराकृत किया जाता है।',
+ w_blur:'हर दस्तावेज़ की साफ़, पूरी और पढ़ने योग्य प्रति लगाएँ।',
+ form:'आवेदन प्रपत्र डाउनलोड करें',openfull:'इस प्रकरण की पूरी सूची खोलें',wa:'WhatsApp पर भेजें',prn:'प्रिंट / PDF सहेजें',again:'दोबारा जाँचें',
+ note:'यह सहायक सामान्य मार्गदर्शन है। मौका रिपोर्ट, टीप आदि कार्यालय स्तर पर तैयार होती हैं। परिस्थिति अनुसार अतिरिक्त दस्तावेज़ माँगे जा सकते हैं। आपकी कोई व्यक्तिगत जानकारी दर्ज या संग्रहित नहीं होती।',
+ shareHead:'नामांतरण — जाँच-सूची',foot:'राजस्व विभाग, नगर पालिक निगम इन्दौर',basisName:['रजिस्ट्री द्वारा क्रय','वारिसनाते','बहुमंजिला / कॉलोनी'],loadFail:'सूची नहीं मिली। पन्ना फिर खोलें।'
+},
+en:{
+ title:'Mutation helper',sub:'A few questions, 2 minutes — the right document list for your case and the precautions you need. No name / mobile / Aadhaar is asked.',
+ start:'Start',next:'Next',back:'Back',
+ q_basis:'On what basis do you want the mutation?',o_basis:['Bought by registered sale deed','The owner has died — inheritance','Took a flat or plot in a multi-storey building / colony'],
+ q_prop:'What kind of property is it?',o_prop:['Constructed house / shop','Flat (in a multi-storey building)','Vacant plot'],
+ q_plot:'What is the plot area?',h_plot:'A rainwater harvesting unit is required on plots of 1500 sq ft or more.',o_plot:['1500 sq ft or more','Less than 1500 sq ft','Not sure'],
+ q_rain:'Is a rainwater harvesting unit installed?',h_rain:'Mutation is not completed without it.',o_rain:['Yes, installed','Not installed','Not sure'],
+ q_will:'Did the property come through a will / bequest?',o_will:['No, there is no will','Yes, a registered will','Yes, an unregistered will / bequest'],
+ q_due:'Is any property tax, water charge or garbage fee pending?',o_due:['No, all paid','Yes, pending','Not sure'],
+ q_area:'Does the area in the registry match the area in the Corporation property tax account?',o_area:['Yes, it matches','No, it does not match','Not sure'],
+ result:'Your checklist',docs:'Documents for you',stopH:'Do this first (stop)',
+ w_due:'Pay the pending property tax / water charge / garbage fee first. Mutation is not done while any amount is due to the Corporation.',
+ w_due_u:'Check the pending status of all three charges on e-NagarPalika. Pay any dues first.',
+ w_rain_n:'Install the rainwater harvesting unit first. Mutation is not completed without it.',
+ w_rain_u:'Check whether a rainwater harvesting unit exists. It is required on a building on a plot of 1500 sq ft or more.',
+ w_plot_u:'Check the plot area in the registry. A rainwater harvesting unit is required on plots of 1500 sq ft or more.',
+ w_rain_flat:'A rainwater harvesting unit is required in a multi-storey building (such buildings stand on plots larger than 1500 sq ft).',
+ w_area_n:'If the area differs between the registry and the Corporation account, get it matched / corrected first, otherwise the application may come back.',
+ w_area_u:'Compare the area written in the registry with the area on the property tax receipt.',
+ w_time:'Time: after the public-notice period, the case is decided within 21 days if no objection is received, and within 45 days if an objection is received.',
+ w_blur:'Attach a clear, complete, readable copy of every document.',
+ form:'Download application form',openfull:'Open the full list for this case',wa:'Share on WhatsApp',prn:'Print / Save PDF',again:'Check again',
+ note:'This helper is general guidance. Spot reports and notings are prepared by the office. Additional documents may be asked for depending on the case. No personal information is entered or stored.',
+ shareHead:'Mutation — checklist',foot:'Revenue Department, Indore Municipal Corporation',basisName:['Purchase by registered deed','Inheritance','Multi-storey / colony'],loadFail:'List not found. Please reopen the page.'
+}};
+var X=T[L];$('mw_t').textContent=X.title;$('mw_s').textContent=X.sub;
+var st,step,last=null;
+function reset(){st={basis:-1,prop:-1,plot:-1,rain:-1,will:-1,due:-1,area:-1};step=0}reset();
+function steps(){
+ var a=['basis','prop'];
+ if(st.prop===0)a.push('plot');
+ var needRain=(st.prop===1)||(st.prop===0&&(st.plot===0||st.plot===2));
+ if(needRain)a.push('rain');
+ if(st.basis===1)a.push('will');
+ a.push('due','area');return a;
+}
+function prog(i,n){return '<div class="lw-prog"><i style="width:'+Math.round(i/n*100)+'%"></i></div>'}
+function drawStep(){
+ var S=steps();
+ if(step===0){app.innerHTML='<p style="margin:0 0 12px">'+esc(X.sub)+'</p><button class="lw-btn" data-a="start">'+X.start+'</button>';return}
+ if(step>S.length){drawResult();return}
+ var k=S[step-1],n=S.length,h=prog(step-1,n)+'<p class="lw-q">'+step+'/'+n+' · '+X['q_'+k]+'</p>'+(X['h_'+k]?'<p class="lw-h">'+X['h_'+k]+'</p>':'');
+ X['o_'+k].forEach(function(o,i){h+='<button class="lw-opt'+(st[k]===i?' on':'')+'" data-a="opt" data-k="'+k+'" data-i="'+i+'">'+esc(o)+'</button>'});
+ h+='<div class="lw-nav"><button class="lw-btn alt" data-a="back">'+X.back+'</button></div>';app.innerHTML=h;
+}
+function blockDocs(id,will){
+ var b=$(id);if(!b)return null;var ol=b.querySelector('.body ol');if(!ol)return null;var out=[];
+ [].forEach.call(ol.children,function(li){
+  var ul=li.querySelector('ul');
+  if(ul||li.hasAttribute('data-will')){
+   if(will<=0)return;
+   var head=(li.firstChild&&li.firstChild.textContent&&li.querySelector('b'))?li.querySelector('b').textContent.trim():'';
+   var sub=[];[].forEach.call(ul.children,function(x){var w=x.getAttribute('data-w');if(w==='unreg'&&will!==2)return;sub.push(x.textContent.replace(/^\s*[☐]\s*/,'').replace(/\s+/g,' ').trim())});
+   out.push({t:head.replace(/:$/,''),sub:sub});return}
+  out.push(li.textContent.replace(/\s+/g,' ').trim());
+ });return out;
+}
+function compute(){
+ var id=[IDS.reg,IDS.war,IDS.multi][st.basis],docs=blockDocs(id,st.basis===1?st.will:0);
+ var stop=[],warn=[],flat=(st.prop===1),plotQ=(st.prop===0);
+ if(st.due===1)stop.push(X.w_due);else if(st.due===2)warn.push(X.w_due_u);
+ if(flat){if(st.rain===1)stop.push(X.w_rain_n);else if(st.rain===2)warn.push(X.w_rain_u);else if(st.rain===-1)warn.push(X.w_rain_flat)}
+ if(plotQ){
+  if(st.plot===2)warn.push(X.w_plot_u);
+  if((st.plot===0||st.plot===2)){if(st.rain===1)stop.push(X.w_rain_n);else if(st.rain===2)warn.push(X.w_rain_u)}
+ }
+ if(st.area===1)warn.unshift(X.w_area_n);else if(st.area===2)warn.push(X.w_area_u);
+ warn.push(X.w_time,X.w_blur);
+ return {id:id,docs:docs,stop:stop,warn:warn};
+}
+function drawResult(){
+ var R=last=compute(),h='<p class="lw-q">'+X.result+' — '+esc(X.basisName[st.basis])+'</p>';
+ if(!R.docs){app.innerHTML='<p>'+X.loadFail+'</p>';return}
+ if(R.stop.length)h+='<div class="lw-box lw-red"><b>'+X.stopH+'</b><ol>'+R.stop.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol></div>';
+ if(R.warn.length)h+='<div class="lw-box lw-yel"><ol>'+R.warn.map(function(w){return '<li>'+esc(w)+'</li>'}).join('')+'</ol></div>';
+ h+='<h4>'+X.docs+'</h4><ol>'+R.docs.map(function(d){if(typeof d==='object')return '<li><b>'+esc(d.t)+'</b><ul style="list-style:none;margin:3px 0 0;padding:0">'+d.sub.map(function(x){return '<li>☐ '+esc(x)+'</li>'}).join('')+'</ul></li>';return '<li>'+esc(d)+'</li>'}).join('')+'</ol>';
+ var fa=$(R.id)&&$(R.id).querySelector('a.dl[data-form]'),fh=fa&&fa.getAttribute('href');
+ h+='<div class="lw-nav" style="flex-wrap:wrap">'+((fh&&fh!=='#')?'<a class="lw-btn" style="text-decoration:none;text-align:center;box-sizing:border-box" target="_blank" rel="noopener" href="'+esc(fh)+'">'+X.form+'</a>':'')+'<button class="lw-btn alt" data-a="full">'+X.openfull+'</button></div>';
+ h+='<div class="lw-nav" style="flex-wrap:wrap"><button class="lw-btn" data-a="wa">'+X.wa+'</button><button class="lw-btn alt" data-a="prn">'+X.prn+'</button><button class="lw-btn alt" data-a="again">'+X.again+'</button></div><p class="lw-sm">'+X.note+'</p>';
+ app.innerHTML=h;
+}
+function shareText(){
+ var R=last||compute(),s='*'+X.shareHead+' — '+X.basisName[st.basis]+'*\n';
+ if(R.stop.length){s+='\n⛔ '+X.stopH+':\n';R.stop.forEach(function(x){s+='• '+x+'\n'})}
+ if(R.warn.length){s+='\n⚠️\n';R.warn.forEach(function(x){s+='• '+x+'\n'})}
+ s+='\n📄 '+X.docs+':\n';(R.docs||[]).forEach(function(d,i){if(typeof d==='object'){s+=(i+1)+'. '+d.t+'\n';d.sub.forEach(function(x){s+='    ☐ '+x+'\n'})}else s+=(i+1)+'. '+d+'\n'});
+ return s+'\n'+X.foot;
+}
+app.addEventListener('click',function(e){
+ var el=e.target.closest?e.target.closest('[data-a]'):null;if(!el)return;var a=el.getAttribute('data-a');
+ if(a==='start'){step=1;drawStep();return}
+ if(a==='opt'){st[el.getAttribute('data-k')]=parseInt(el.getAttribute('data-i'),10);
+  if(el.getAttribute('data-k')==='prop'){st.plot=-1;st.rain=-1}
+  if(el.getAttribute('data-k')==='plot'){st.rain=-1}
+  step++;drawStep();return}
+ if(a==='back'){step=Math.max(0,step-1);drawStep();return}
+ if(a==='again'){reset();drawStep();return}
+ if(a==='prn'){window.print();return}
+ if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
+ if(a==='full'){var d=$(last&&last.id);if(d){d.open=true;try{if(window.LICFOCUS){}}catch(x){}var g=document.createElement('a');g.href='#'+last.id;var w=document.querySelector('.wrap');w.appendChild(g);g.click();w.removeChild(g)}return}
+});
+drawStep();
+window.MUTWIZ={state:function(){return st},shareText:shareText};
+})();
+</script>
+<!--MUTWIZ-END-->
+
 
   <details class="acc" style="border-color:#8C2F16" id="reject1">
     <summary style="background:#FBF1EE;color:#8C2F16"><span class="t">Common reasons applications are returned &#8212; avoid these</span><span class="c"></span></summary>
@@ -595,8 +775,9 @@
         <li>Property tax, water charges or solid waste fee remaining unpaid</li>
         <li>Not attaching a self-attested copy of the sale deed &#8212; the copy must carry the applicant's signature</li>
         <li>Missing Aadhaar cards or notarised affidavit of all heirs in inheritance cases</li>
-        <li>No rainwater harvesting unit on a constructed building &#8212; mutation is not completed without it</li>
+        <li>No rainwater harvesting unit on a building on a plot of 1500 sq ft or more (including all multi-storey buildings) &#8212; mutation is not completed without it</li>
         <li>The area in the sale deed not matching the area recorded in the Corporation's property tax account &#8212; always compare the two before buying</li>
+              <li>In inheritance by will / bequest, not attaching the witnesses' affidavits (for an unregistered will) or the documents from the present owner back to the deceased, and documents not being self-attested</li>
       </ol>
     </div>
   </details>
@@ -616,7 +797,7 @@
         <li>Public notice published in a daily newspaper (विज्ञप्ति)</li>
         <li>Mutation fee receipt</li>
       </ol>
-      <div class="note">Mutation is completed only if a rainwater harvesting unit exists on the constructed building.</div>
+      <div class="note">Mutation is completed only if a rainwater harvesting unit exists on a building constructed on a plot of 1500 sq ft or more (including multi-storey buildings).</div>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl1" href="#">Download application form</a>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
@@ -632,6 +813,7 @@
         <li>Photocopy of water charges receipt</li>
         <li>Solid waste management fee receipt</li>
         <li>Death certificate</li>
+        <li data-will="1"><b>If the property came through a will / bequest, also attach:</b><ul style="list-style:none;margin:4px 0 0;padding-left:0"><li>&#9744; Self-attested copy of the will / bequest</li><li data-w="unreg">&#9744; In the case of an unregistered will / bequest, <b>affidavits of the witnesses</b></li><li>&#9744; All registered / notarised documents from the present owner back to the deceased (the full chain of title)</li><li>&#9744; All documents must be <b>self-attested</b></li></ul></li>
         <li>Photocopies of Aadhaar cards of all legal heirs</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
         <li>Notarised affidavit (शपथ पत्र) of all heirs on Rs. 200 stamp</li>
@@ -658,6 +840,7 @@
         <li>Public notice published in a daily newspaper (विज्ञप्ति)</li>
         <li>Mutation fee receipt</li>
       </ol>
+      <div class="note" data-rw="1">Mutation is completed only if a rainwater harvesting unit exists on the multi-storey building.</div>
       <div class="note">Any amount due to the Corporation must be cleared first.</div>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl1" href="#">Download application form</a>
@@ -713,11 +896,12 @@
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
-  <h2 class="cat" id="cat_pt">Property Tax Account &#8212; Error Correction (त्रुटि सुधार) <span>14 types</span></h2>
+  <h2 class="cat" id="cat_pt">Property Tax Account &#8212; Error Correction (त्रुटि सुधार) <span>20 types</span></h2>
   <div class="catnote">Reducing a demand of more than Rs. 50,000 in a property tax account requires approval of the Additional Commissioner (Revenue), so such cases take longer.</div>
   <details class="acc" id="s7">
-    <summary><span class="t">Wrong ward / zone</span><span class="c"></span></summary>
+    <summary><span class="t">Wrong ward</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the ward number recorded in the account / receipt and the correct ward number.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
@@ -725,13 +909,30 @@
         <li>Photocopy of the registered document</li>
         <li>Screenshot of the Google Map location</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
-        <li>Applicant's Aadhaar card</li>
-      </ol>
+        <li>Applicant's Aadhaar card</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl3" href="#">Download application form</a>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+  <details class="acc" id="s7b">
+    <summary><span class="t">Wrong zone</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the zone recorded in the account / receipt and the correct zone.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Photocopy of the latest property tax receipt</li>
+        <li>Photocopy of the registered document</li>
+        <li>Screenshot of the Google Map location</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li>
+        <li>Applicant's Aadhaar card</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <a class="dl" data-form="dl3" href="#">Download application form</a>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
   <details class="acc" id="s8">
     <summary><span class="t">Wrong rate zone</span><span class="c"></span></summary>
     <div class="body">
@@ -748,6 +949,22 @@
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+  <details class="acc" id="s8r">
+    <summary><span class="t">Wrong rate applied (as per the rate zone)</span><span class="c"></span></summary>
+    <div class="body">
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Photocopy of the latest property tax receipt</li>
+        <li>Screenshot of the Google Map location</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li>
+        <li>Applicant's Aadhaar card</li></ol>
+            <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <a class="dl" data-form="dl3" href="#">Download application form</a>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
   <details class="acc" id="s9">
     <summary><span class="t">Receipt not credited to the account</span><span class="c"></span></summary>
     <div class="body">
@@ -793,41 +1010,77 @@
     </div>
   </details>
   <details class="acc" id="s12">
-    <summary><span class="t">Name / area not corrected after mutation</span><span class="c"></span></summary>
+    <summary><span class="t">Name not corrected after mutation</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the name recorded in the account and the correct name as per the mutation certificate.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
-        <li>Copy of the mutation order</li>
-        <li>Self-assessment return</li>
+        <li>Copy of the mutation certificate</li>
         <li>Photocopy of the registered sale deed</li>
         <li>Photocopy of the latest property tax receipt</li>
-        <li>Applicant's Aadhaar card</li>
-      </ol>
+        <li>Applicant's Aadhaar card</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <a class="dl" data-form="dl3" href="#">Download application form</a>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+  <details class="acc" id="s12b">
+    <summary><span class="t">Area not corrected after mutation</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the area recorded in the account and the area as per the registry / actual area.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Copy of the mutation certificate</li>
+        <li>Self-Assessment Return</li>
+        <li>Photocopy of the registered sale deed</li>
+        <li>Photocopy of the latest property tax receipt</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li>
+        <li>Applicant's Aadhaar card</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl3" href="#">Download application form</a>
       <a class="dl" data-form="dl4" href="#">Download Self-Assessment Return</a>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+
   <details class="acc" id="s13">
-    <summary><span class="t">Wrong use / type of construction</span><span class="c"></span></summary>
+    <summary><span class="t">Wrong use</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the use recorded in the account (residential / commercial) and the actual use.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
         <li>Photocopy of the latest property tax receipt</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
-        <li>Self-assessment return</li>
-        <li>Copy of the building permission (if obtained)</li>
-        <li>Applicant's Aadhaar card</li>
-      </ol>
+        <li>Self-Assessment Return</li>
+        <li>Applicant's Aadhaar card</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl3" href="#">Download application form</a>
       <a class="dl" data-form="dl4" href="#">Download Self-Assessment Return</a>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+  <details class="acc" id="s13b">
+    <summary><span class="t">Wrong type of construction</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the type of construction recorded in the account (e.g. R.C.C. / pucca / kachcha) and the actual type.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Photocopy of the latest property tax receipt</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li>
+        <li>Self-Assessment Return</li>
+        <li>Copy of the building permission (if obtained)</li>
+        <li>Applicant's Aadhaar card</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <a class="dl" data-form="dl3" href="#">Download application form</a>
+      <a class="dl" data-form="dl4" href="#">Download Self-Assessment Return</a>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
   <details class="acc" id="s14">
     <summary><span class="t">Wrong assessment year or year of construction</span><span class="c"></span></summary>
     <div class="body">
@@ -902,21 +1155,37 @@
     </div>
   </details>
   <details class="acc" id="s18">
-    <summary><span class="t">Correction of name and address</span><span class="c"></span></summary>
+    <summary><span class="t">Correction of name</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the name recorded in the account and the correct name.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
         <li>Registered document</li>
         <li>Identity proof</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
-        <li>Newspaper public notice, if the name does not match the account</li>
-      </ol>
+        <li>Newspaper public notice (जाहिर सूचना) if the name does not match the account</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl3" href="#">Download application form</a>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+  <details class="acc" id="s18b">
+    <summary><span class="t">Correction of address</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the address recorded in the account and the correct address.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Registered document</li>
+        <li>Identity proof</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <a class="dl" data-form="dl3" href="#">Download application form</a>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
   <details class="acc" id="s19">
     <summary><span class="t">Closing one of two accounts at the same address</span><span class="c"></span></summary>
     <div class="body">
@@ -968,7 +1237,7 @@
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
-  <h2 class="cat" id="catWater">Water Charges &#8212; Corrections (जलकर सुधार) <span>8 types</span></h2>
+  <h2 class="cat" id="catWater">Water Charges &#8212; Corrections (जलकर सुधार) <span>10 types</span></h2>
   <div class="catnote">Reducing a demand of more than Rs. 25,000 in a water charges account requires approval of the Additional Commissioner (Revenue).</div>
   <details class="acc" id="s22">
     <summary><span class="t">Waiver of bill after disconnection</span><span class="c"></span></summary>
@@ -1056,36 +1325,67 @@
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
-  <details class="acc" id="s27">
-    <summary><span class="t">Correction of name and address</span><span class="c"></span></summary>
+  <details class="acc" id="s27_2">
+    <summary><span class="t">Correction of name</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the name recorded in the account and the correct name.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
         <li>Details of the property tax account</li>
         <li>Registered document or property tax mutation order</li>
-        <li>Aadhaar card</li>
-      </ol>
+        <li>Aadhaar card</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
-  <details class="acc" id="s27">
-    <summary><span class="t">Correction of ward / zone</span><span class="c"></span></summary>
+  <details class="acc" id="s27_2b">
+    <summary><span class="t">Correction of address</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the address recorded in the account and the correct address.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Details of the property tax account</li>
+        <li>Registered document or property tax mutation order</li>
+        <li>Aadhaar card</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
+  <details class="acc" id="s27_3">
+    <summary><span class="t">Correction of ward</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the ward number recorded in the account and the correct ward number.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
         <li>Photocopy of the ward / zone recorded in the property tax account</li>
         <li>Screenshot of the Google Map location</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
-        <li>Applicant's Aadhaar card</li>
-      </ol>
+        <li>Applicant's Aadhaar card</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
-  <h2 class="cat" id="catWaste">Solid Waste Management Fee &#8212; Corrections (कचरा प्रबंधन शुल्क सुधार) <span>6 types</span></h2>
+  <details class="acc" id="s27b">
+    <summary><span class="t">Correction of zone</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the zone recorded in the account and the correct zone.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Photocopy of the ward / zone recorded in the property tax account</li>
+        <li>Screenshot of the Google Map location</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li>
+        <li>Applicant's Aadhaar card</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
+  <h2 class="cat" id="catWaste">Solid Waste Management Fee &#8212; Corrections (कचरा प्रबंधन शुल्क सुधार) <span>8 types</span></h2>
   <details class="acc" id="s28">
     <summary><span class="t">Bill received although the service has stopped</span><span class="c"></span></summary>
     <div class="body">
@@ -1116,19 +1416,35 @@
     </div>
   </details>
   <details class="acc" id="s30">
-    <summary><span class="t">Change of category (by use / business)</span><span class="c"></span></summary>
+    <summary><span class="t">Change of category — by use</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the present category and the correct category as per the use.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Photocopy of the solid waste management fee receipt</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li>
+        <li>Applicant's Aadhaar card</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+  <details class="acc" id="s30b">
+    <summary><span class="t">Change of category — by business</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the present category and the correct category as per the business.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
         <li>Photocopy of the solid waste management fee receipt</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
         <li>Applicant's Aadhaar card</li>
-      </ol>
+        <li>Copy of the trade licence (if obtained)</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+
   <details class="acc" id="s31">
     <summary><span class="t">Posting a payment to the account</span><span class="c"></span></summary>
     <div class="body">
@@ -1157,20 +1473,35 @@
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
-  <details class="acc" id="s32">
-    <summary><span class="t">Correction of name and address</span><span class="c"></span></summary>
+  <details class="acc" id="s32_2">
+    <summary><span class="t">Correction of name</span><span class="c"></span></summary>
     <div class="body">
+      <div class="note"><b>Write in the application:</b> the name recorded in the account and the correct name.</div>
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
         <li>Application form (download below)</li>
         <li>Details of the property tax account</li>
         <li>Registered document or property tax mutation order</li>
-        <li>Aadhaar card</li>
-      </ol>
+        <li>Aadhaar card</li></ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+  <details class="acc" id="s32_2b">
+    <summary><span class="t">Correction of address</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the address recorded in the account and the correct address.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Details of the property tax account</li>
+        <li>Registered document or property tax mutation order</li>
+        <li>Aadhaar card</li></ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
   <h2 class="cat" id="catLicense">Trade Licence (New) &#8212; Application Information (ट्रेड लाइसेंस आवेदन) <span>3 topics</span></h2>
 <details class="acc" id="s40">
 <summary><span class="t">Documents required for a new Trade Licence</span><span class="c"></span></summary>
@@ -2195,6 +2526,7 @@ kids.forEach(function(el){
  if(el.tagName==='H2'&&el.classList.contains('cat')){cur=(id==='catUseful')?['catUseful','u1']:[id];add(el,cur);return}
  if(cur&&(el.matches('details.acc')||el.classList.contains('catnote')||el.classList.contains('geo'))){add(el,cur);return}
  if(el.classList.contains('acctbox')||el.classList.contains('office-box')||id==='howto'){cur=null;if(id)add(el,[id]);return}
+ if(el.id==='mutwiz'){add(el,['guide1']);cur=null;return}
  if(el.classList.contains('lw-root')){add(el,['licwiz']);cur=null}
 });
 ['s40','s41','s42','licsrch','licwiz','licbox'].forEach(function(i){var e=document.getElementById(i);if(e)add(e,['catLicense'])});
@@ -2278,6 +2610,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 </body>
 </html>
