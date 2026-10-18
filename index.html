@@ -372,6 +372,17 @@
     <p>राजस्व विभाग &middot; नगर पालिक निगम इन्दौर</p><a class="lang" href="en.html" style="background:#123B70">English</a>
   </header>
 
+  <!--FSZ-START-->
+<style>.fszrow{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin:6px 0 0;font-size:13px;color:var(--soft,#666)}
+.fszrow button{font:inherit;font-weight:800;font-size:15px;min-width:44px;min-height:40px;border-radius:10px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
+.fszrow button[aria-pressed=true]{background:#123B70;color:#fff}
+@media print{.wrap{zoom:1!important}.fszrow{display:none}}</style>
+<div class="fszrow" id="fszrow"><span>अक्षर का आकार</span><button type="button" data-z="1" aria-label="normal">A</button><button type="button" data-z="1.18" aria-label="larger">A+</button><button type="button" data-z="1.36" aria-label="largest">A++</button></div>
+<script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
+function set(z,save){w.style.zoom=(z==='1')?'':z;[].forEach.call(r.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===z?'true':'false')});if(save){try{localStorage.setItem('fsz',z)}catch(e){}}}
+var s='1';try{s=localStorage.getItem('fsz')||'1'}catch(e){}set(['1','1.18','1.36'].indexOf(s)<0?'1':s,false);
+r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button');if(b)set(b.getAttribute('data-z'),true)})})();</script>
+<!--FSZ-END-->
   <p class="lead">अपना प्रकरण चुनें। नीचे केवल वे दस्तावेज़ दिए हैं जो <b>आवेदक को स्वयं प्रस्तुत करने</b> हैं। आवेदन प्रपत्र भी यहीं से डाउनलोड कर सकते हैं।</p>
 
   
@@ -396,6 +407,10 @@
     <a href="#reject1" onclick="var d=document.getElementById('reject1');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#8C2F16">⚠️</span>
       <span class="lbl">आवेदन लौटने के कारण</span>
+    </a>
+    <a href="#howto" onclick="var d=document.getElementById('howto');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#4B5D7A">📍</span>
+      <span class="lbl">आवेदन की स्थिति देखें</span>
     </a>
     <a href="#catMut" onclick="var d=document.getElementById('catMut');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#12653F">🏠</span>
@@ -934,6 +949,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>रजिस्ट्री में अंकित क्षेत्रफल तथा निगम के संपत्तिकर खाते में प्रचलित क्षेत्रफल का मेल न होना &#8212; क्रय से पूर्व दोनों का मिलान अवश्य कर लें</li>
               <li>वसीयत / इच्छापत्र के आधार पर वारिसनाते में गवाहों के शपथ पत्र (गैर-पंजीकृत वसीयत की स्थिति में) अथवा वर्तमान संपत्तिधारक से मृतक तक के दस्तावेज़ न लगाना, और दस्तावेज़ स्व-प्रमाणित न होना</li>
       </ol>
+      <div class="rj-go" style="margin-top:14px;padding-top:10px;border-top:1px dashed #D9C3A5"><b>लौटाए जाने से बचना है? आवेदन से पहले जाँच करें:</b><br><a href="#mutwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#E8820C">🏠 नामांतरण</a><a href="#errwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#1F6F8B">✏️ त्रुटि सुधार</a><a href="#licwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#3E7A2B">🏪 ट्रेड लाइसेंस</a></div>
     </div>
   </details>
 
@@ -2113,7 +2129,6 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
  <tr><td>रजिस्ट्रार कार्यालय का पता</td><td><a href="https://maps.app.goo.gl/iPCG4mWjmXrTjXLM8" target="_blank" rel="noopener" style="color:var(--ink)">Google Map पर देखें &#8594;</a></td></tr>
  </table>
  <div class="note"><b>भुगतान कहाँ करें:</b> निगम मुख्यालय एवं रजिस्ट्रार कार्यालय के कैश काउंटर पर इन्दौर के <b>किसी भी वार्ड</b> का संपत्तिकर, जल उपभोक्ता प्रभार एवं कचरा प्रबंधन शुल्क जमा किया जा सकता है। ज़ोन कार्यालयों में केवल संबंधित वार्ड से जुड़े बिल ही जमा होते हैं।</div>
- <div class="note">रजिस्ट्रार कार्यालय में <b>&#8220;वन टू वन&#8221; (एक विक्रेता &#8211; एक क्रेता) नामांतरण</b> की सुविधा भी उपलब्ध है।</div>
  </div>
  </div>
 
@@ -2684,7 +2699,7 @@ kids.forEach(function(el){
  if(id==='guide1'||id==='reject1'){add(el,[id]);cur=null;return}
  if(el.tagName==='H2'&&el.classList.contains('cat')){cur=(id==='catUseful')?['catUseful','u1']:[id];add(el,cur);return}
  if(cur&&(el.matches('details.acc')||el.classList.contains('catnote')||el.classList.contains('geo'))){add(el,cur);return}
- if(el.classList.contains('acctbox')||el.classList.contains('office-box')||id==='howto'){cur=null;if(id)add(el,[id]);return}
+ if(el.classList.contains('acctbox')||el.classList.contains('office-box')||id==='howto'){cur=null;if(id)add(el,id==='extra'?['officeinfo','extra']:[id]);return}
  if(el.id==='mutwiz'||el.id==='errwiz'){add(el,[el.id]);cur=null;return}
  if(el.classList.contains('lw-root')){add(el,['licwiz']);cur=null}
 });
@@ -2745,7 +2760,7 @@ nav.addEventListener('click',function(ev){
  var id=h.slice(1);if(!document.getElementById(id))return;
  ev.preventDefault();ev.stopPropagation();
  if(curG===id){showAll(true);return}
- reveal(id,true);
+ tapLog(id);reveal(id,true);
 },true);
 wrap.addEventListener('click',function(ev){
  var a=ev.target.closest?ev.target.closest('a'):null;if(!a||nav.contains(a))return;
@@ -2757,6 +2772,19 @@ bar.querySelector('.fb-wa').addEventListener('click',function(){
  var g=curG;if(!g)return;
  window.open('https://wa.me/?text='+encodeURIComponent(T.msg+labelOf(g)+': '+pageLink(g)),'_blank','noopener');
 });
+var tapSeen={};
+function tapLog(id){
+ try{
+  if(tapSeen[id])return;tapSeen[id]=1;
+  id=String(id).replace(/[^A-Za-z0-9_]/g,'').slice(0,30);if(!id)return;
+  if(typeof google!=='undefined'&&google.script&&google.script.run&&typeof google.script.run.recordTap==='function'){google.script.run.recordTap(id,L);return}
+  if(typeof COUNTER_URL!=='undefined'&&COUNTER_URL&&COUNTER_URL.indexOf('PASTE')!==0){
+   var s=document.createElement('script');s.async=true;
+   s.src=COUNTER_URL+(COUNTER_URL.indexOf('?')<0?'?':'&')+'tap='+encodeURIComponent(id)+'&lang='+L+'&callback=tapDone&t='+Date.now();
+   window.tapDone=window.tapDone||function(){};document.head.appendChild(s);
+  }
+ }catch(e){}
+}
 function fromUrl(){
  var t=(OPEN||'')||(location.hash||'').replace('#','');
  if(!t){showAll(false);return}
@@ -2769,6 +2797,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 
 
