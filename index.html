@@ -369,20 +369,21 @@
   <header>
     <p class="campaign">मुख्यमंत्री जन-विश्वास अभियान 2026 के अंतर्गत नागरिक सुविधा</p>
     <h1>नामांतरण, नवीन खाता एवं सुधार &#8212; आवश्यक दस्तावेज़</h1>
-    <p>राजस्व विभाग &middot; नगर पालिक निगम इन्दौर</p><a class="lang" href="en.html" style="background:#123B70">English</a>
-  </header>
-
-  <!--FSZ-START-->
-<style>.fszrow{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin:6px 0 0;font-size:13px;color:var(--soft,#666)}
-.fszrow button{font:inherit;font-weight:800;font-size:15px;min-width:44px;min-height:40px;border-radius:10px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
+    <p>राजस्व विभाग &middot; नगर पालिक निगम इन्दौर</p><!--TOP-START--><style>
+.topbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 0}
+.topbar .lang{margin:0!important}
+.fszrow{display:inline-flex;gap:6px;align-items:center}
+.fszrow button{font:inherit;font-weight:800;font-size:14px;min-width:40px;min-height:38px;padding:0 8px;border-radius:19px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
 .fszrow button[aria-pressed=true]{background:#123B70;color:#fff}
-@media print{.wrap{zoom:1!important}.fszrow{display:none}}</style>
-<div class="fszrow" id="fszrow"><span>अक्षर का आकार</span><button type="button" data-z="1" aria-label="normal">A</button><button type="button" data-z="1.18" aria-label="larger">A+</button><button type="button" data-z="1.36" aria-label="largest">A++</button></div>
-<script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
+.wrap details>.body,.wrap .lead,.wrap .note,.wrap .office,.wrap .catnote{text-align:justify;text-justify:inter-word;overflow-wrap:break-word;hyphens:auto}
+.wrap summary,.wrap table,.wrap .dl,.wrap .prn,.wrap .wzgrid a,.wrap .rj-go,.wrap .lw-root,.wrap .office-box,.wrap .acctbox{text-align:left;hyphens:manual}
+@media print{.wrap{zoom:1!important}.topbar .fszrow{display:none}}
+</style><div class="topbar"><div class="fszrow" id="fszrow"><button type="button" data-z="1" aria-label="normal text size">A</button><button type="button" data-z="1.18" aria-label="larger text">A+</button><button type="button" data-z="1.36" aria-label="largest text">A++</button></div><a class="lang" href="en.html" style="background:#123B70">English</a></div><script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
 function set(z,save){w.style.zoom=(z==='1')?'':z;[].forEach.call(r.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===z?'true':'false')});if(save){try{localStorage.setItem('fsz',z)}catch(e){}}}
 var s='1';try{s=localStorage.getItem('fsz')||'1'}catch(e){}set(['1','1.18','1.36'].indexOf(s)<0?'1':s,false);
-r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button');if(b)set(b.getAttribute('data-z'),true)})})();</script>
-<!--FSZ-END-->
+r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button');if(b)set(b.getAttribute('data-z'),true)})})();</script><!--TOP-END-->
+  </header>
+
   <p class="lead">अपना प्रकरण चुनें। नीचे केवल वे दस्तावेज़ दिए हैं जो <b>आवेदक को स्वयं प्रस्तुत करने</b> हैं। आवेदन प्रपत्र भी यहीं से डाउनलोड कर सकते हैं।</p>
 
   
@@ -419,6 +420,10 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
     <a href="#catNew" onclick="var d=document.getElementById('catNew');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#2E86C9">🆕</span>
       <span class="lbl">नवीन खाता</span>
+    </a>
+    <a href="#catNOC" onclick="var d=document.getElementById('catNOC');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#6B4E9B">📜</span>
+      <span class="lbl">अनापत्ति (NOC)</span>
     </a>
     <a href="#cat_pt" onclick="var d=document.getElementById('cat_pt');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#B4720A">🧾</span>
@@ -613,6 +618,9 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
         <tr><td>कर कब जमा करूँ कि छूट मिले</td><td><a href="#u2" onclick="var d=document.getElementById('u2');if(d)d.open=true;" style="color:var(--ink)">छूट एवं सरचार्ज &#8594;</a></td></tr>
         <tr><td>एक ही संपत्ति के दो खाते चल रहे हैं</td><td><a href="#s19" onclick="var d=document.getElementById('s19');if(d)d.open=true;" style="color:var(--ink)">संबंधित श्रेणी में &#8220;दो खातों में से एक बंद करना&#8221; &#8594;</a></td></tr>
       
+        <tr><td>पूर्व स्वामी के नाम का पुराना खाता भी चल रहा है, उसे बंद करवाना है</td><td><a href="#s19b" onclick="var d=document.getElementById('s19b');if(d)d.open=true;" style="color:var(--ink)">पूर्व स्वामी का खाता बंद करना &#8594;</a></td></tr>
+        <tr><td>बहुमंजिला इमारत में सभी के खाते खुल गए, मूल खाता बंद करवाना है</td><td><a href="#s19c" onclick="var d=document.getElementById('s19c');if(d)d.open=true;" style="color:var(--ink)">मूल खाता बंद करना &#8594;</a></td></tr>
+        <tr><td>संपत्ति का अनापत्ति (NOC) / नो ड्यूज़ प्रमाण पत्र चाहिए</td><td><a href="#sNOC" onclick="var d=document.getElementById('sNOC');if(d)d.open=true;" style="color:var(--ink)">अनापत्ति प्रमाण पत्र (NOC) &#8594;</a></td></tr>
         <tr><td>मोबाइल से सुधार आवेदन दर्ज करना है, कार्यालय आए बिना</td><td><a href="#u5" onclick="var d=document.getElementById('u5');if(d)d.open=true;" style="color:var(--ink)">311 ऐप पर सुधार शिकायत &#8594;</a></td></tr></table>
     </div>
   </details>
@@ -939,7 +947,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
   <details class="acc" style="border-color:#8C2F16" id="reject1">
     <summary style="background:#FBF1EE;color:#8C2F16"><span class="t">आवेदन लौटने के आम कारण &#8212; इनसे बचें</span><span class="c"></span></summary>
     <div class="body">
-      <p style="margin:12px 0 0;font-size:15px;color:var(--soft)">आवेदन जमा करने से पहले ये सात बातें जाँच लें। अधिकांश आवेदन इन्हीं कारणों से वापस होते हैं, जिससे प्रकरण में अनावश्यक विलंब होता है।</p>
+      <p style="margin:12px 0 0;font-size:15px;color:var(--soft)">आवेदन जमा करने से पहले ये नौ बातें जाँच लें। अधिकांश आवेदन इन्हीं कारणों से वापस होते हैं, जिससे प्रकरण में अनावश्यक विलंब होता है।</p>
       <ol>
         <li>जिओ टैग फोटो के स्थान पर सादा फोटो लगाना &#8212; फोटो में अक्षांश-देशांतर अंकित होना आवश्यक है</li>
         <li>बकाया संपत्तिकर, जलकर अथवा कचरा प्रबंधन शुल्क जमा न होना</li>
@@ -948,6 +956,8 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>1500 वर्गफुट या उससे बड़े प्लॉट पर बने भवन (सभी बहुमंजिला इमारतें सहित) पर वर्षा जल संचयन ईकाई न होना &#8212; इसके बिना नामांतरण प्रक्रिया पूर्ण नहीं होती</li>
         <li>रजिस्ट्री में अंकित क्षेत्रफल तथा निगम के संपत्तिकर खाते में प्रचलित क्षेत्रफल का मेल न होना &#8212; क्रय से पूर्व दोनों का मिलान अवश्य कर लें</li>
               <li>वसीयत / इच्छापत्र के आधार पर वारिसनाते में गवाहों के शपथ पत्र (गैर-पंजीकृत वसीयत की स्थिति में) अथवा वर्तमान संपत्तिधारक से मृतक तक के दस्तावेज़ न लगाना, और दस्तावेज़ स्व-प्रमाणित न होना</li>
+        <li>बहुमंजिला इमारत में नामांतरण के समय सभी प्रकोष्ठ-स्वामियों के पहचान पत्र और सहमति न लगाना</li>
+        <li>नया संपत्तिकर खाता खुलवाने में खसरा / भू-अभिलेख की नकल और स्व-कर निर्धारण विवरणी न लगाना</li>
       </ol>
       <div class="rj-go" style="margin-top:14px;padding-top:10px;border-top:1px dashed #D9C3A5"><b>लौटाए जाने से बचना है? आवेदन से पहले जाँच करें:</b><br><a href="#mutwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#E8820C">🏠 नामांतरण</a><a href="#errwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#1F6F8B">✏️ त्रुटि सुधार</a><a href="#licwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#3E7A2B">🏪 ट्रेड लाइसेंस</a></div>
     </div>
@@ -1007,7 +1017,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>रजिस्ट्री दस्तावेज़ की स्वयं सत्यापित (खुद हस्ताक्षर की हुई) फोटोकॉपी</li>
         <li>कॉलोनाइज़र अथवा अंतिम आवंटी की सहमति</li>
         <li>संपत्तिकर, जलकर एवं कचरा शुल्क की रसीद</li>
-        <li>समस्त आधार कार्ड</li>
+        <li>कॉलोनाइज़र / अंतिम संपत्ति स्वामी एवं नामांतरण चाहने वाले सभी के पहचान पत्र (आधार कार्ड)</li>
         <li>भवन / फ्लैट / प्लॉट का रंगीन जिओ टैग फोटो</li>
         <li>अख़बार में छपवाई गई सूचना (विज्ञप्ति)</li>
         <li>नामांतरण शुल्क की रसीद</li>
@@ -1028,13 +1038,13 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>आवेदन</li>
         <li>स्व-कर निर्धारण विवरणी</li>
         <li>रजिस्ट्री / नोटरी दस्तावेज़ — पहले के सभी जुड़े कागज़ात सहित</li>
-        <li>राजस्व भूमि के प्रकरण में संबंधित अधिकारी (सक्षम प्राधिकारी) की अनुमति</li>
+        <li>राजस्व भूमि के प्रकरण में खसरे की वर्तमान (नवीनतम) प्रति &#8212; <a href="https://webgis2.mpbhulekh.gov.in/#/home/bhu-abhilekh" target="_blank" rel="noopener" style="color:var(--ink)">यहाँ से निकालें &#8594;</a></li>
         <li>ज़मीन का उपयोग बदलने का आदेश (व्यपवर्तन आदेश) की प्रति</li>
         <li>समस्त संपत्ति धारकों के पहचान पत्र</li>
         <li>भवन / फ्लैट / प्लॉट का रंगीन जिओ टैग फोटो</li>
       </ol>
       <a class="dl" data-form="dl4" href="#">स्व-कर निर्धारण विवरणी डाउनलोड करें</a>
-      <div class="note">समस्त दस्तावेज स्व-प्रमाणित होना आवश्यक है। कर निर्धारण वर्ष का प्रमाण उपलब्ध न होने पर वर्ष 1997-98 से, तथा खुली भूमि की स्थिति में वर्ष 2000-01 से करारोपण किया जाता है।</div>
+      <div class="note">समस्त दस्तावेज स्व-प्रमाणित होना आवश्यक है। कर निर्धारण वर्ष का प्रमाण उपलब्ध न होने पर वर्ष 1997-98 से, तथा खुली भूमि की स्थिति में वर्ष 2000-01 से करारोपण किया जाता है। नवीन संलग्न ग्रामीण क्षेत्रों (29 ग्राम) के संपत्तिकर खाते वर्ष 2014-15 से खोले जाते हैं।</div>
       <div class="office">मौका रिपोर्ट, टीप, अनुशंसा एवं अन्य विभागीय प्रतिवेदन कार्यालय स्तर पर तैयार किए जाते हैं। आवेदक को ये नहीं लाने हैं।</div>
       <button class="prn" onclick="window.print()">यह सूची प्रिंट करें / PDF सहेजें</button>
     </div>
@@ -1068,7 +1078,25 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       <button class="prn" onclick="window.print()">यह सूची प्रिंट करें / PDF सहेजें</button>
     </div>
   </details>
-  <h2 class="cat" id="cat_pt">संपत्तिकर खाते में त्रुटि सुधार <span>20 प्रकार</span></h2>
+  <h2 class="cat" id="catNOC">अनापत्ति प्रमाण पत्र (NOC) <span>1 प्रकार</span></h2>
+  <details class="acc" id="sNOC">
+    <summary><span class="t">अनापत्ति प्रमाण पत्र (NOC) — नो ड्यूज़ सर्टिफिकेट</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note">निगम का कोई कर देय न होने पर ही अनापत्ति प्रमाण पत्र जारी होता है।</div>
+      <h3>आवेदक द्वारा प्रस्तुत किए जाने वाले दस्तावेज़</h3>
+      <ol>
+        <li>आवेदन</li>
+        <li>TNCP (नगर तथा ग्राम निवेश) का आदेश</li>
+        <li>खसरे की वर्तमान प्रति &#8212; <a href="https://webgis2.mpbhulekh.gov.in/#/home/bhu-abhilekh" target="_blank" rel="noopener" style="color:var(--ink)">यहाँ से निकालें &#8594;</a></li>
+        <li>समस्त संपत्ति स्वामियों के आधार कार्ड</li>
+        <li>समस्त दस्तावेज़ स्व-प्रमाणित हों</li>
+      </ol>
+      <div class="office">मौका रिपोर्ट, टीप, अनुशंसा एवं अन्य विभागीय प्रतिवेदन कार्यालय स्तर पर तैयार किए जाते हैं। आवेदक को ये नहीं लाने हैं।</div>
+      <button class="prn" onclick="window.print()">यह सूची प्रिंट करें / PDF सहेजें</button>
+    </div>
+  </details>
+
+<h2 class="cat" id="cat_pt">संपत्तिकर खाते में त्रुटि सुधार <span>22 प्रकार</span></h2>
 <p class="catnote wzlink">✅ आवेदन से पहले जाँच करें: <a href="#errwiz">त्रुटि सुधार सहायक खोलें →</a></p>
   <div class="catnote">संपत्तिकर खातों में 50,000 रु. से अधिक मांग राशि कम करने हेतु अपर आयुक्त (राजस्व) का अनुमोदन आवश्यक होता है, अतः ऐसे प्रकरणों में समय अधिक लगता है।</div>
   <details class="acc" id="s7">
@@ -1366,6 +1394,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       <ol>
         <li>आवेदन पत्र (नीचे से डाउनलोड करें)</li>
         <li>रजिस्टर्ड विक्रय पत्र की छाया प्रति</li>
+        <li>रजिस्टर्ड दस्तावेज़ उपलब्ध न होने पर: बिजली का बिल, नोटरी तथा आधार कार्ड की छायाप्रति</li>
         <li>दोनों खातों की रसीद अथवा डिमांड की प्रति</li>
         <li>भवन / फ्लैट / प्लॉट का रंगीन जिओ टैग फोटो</li>
         <li>आवेदक का आधार कार्ड</li>
@@ -1375,6 +1404,42 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       <button class="prn" onclick="window.print()">यह सूची प्रिंट करें / PDF सहेजें</button>
     </div>
   </details>
+  <details class="acc" id="s19b">
+    <summary><span class="t">पूर्व स्वामी एवं वर्तमान स्वामी के नाम से दो खाते — पूर्व स्वामी का खाता बंद करना</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>आवेदन में लिखें:</b> पूर्व स्वामी के नाम के खाते का नंबर और वर्तमान स्वामी के नाम के खाते का नंबर।</div>
+      <h3>आवेदक द्वारा प्रस्तुत किए जाने वाले दस्तावेज़</h3>
+      <ol>
+        <li>आवेदन पत्र (नीचे से डाउनलोड करें)</li>
+        <li>पूर्व स्वामी से वर्तमान स्वामी तक के समस्त लिंक दस्तावेज़ (रजिस्टर्ड दस्तावेज़ — मूल दस्तावेज़ से प्रमाणित)</li>
+        <li>दोनों खातों की रसीद अथवा डिमांड की प्रति</li>
+        <li>भवन / फ्लैट / प्लॉट का रंगीन जिओ टैग फोटो</li>
+        <li>आवेदक का आधार कार्ड</li>
+      </ol>
+      <div class="office">मौका रिपोर्ट, टीप, अनुशंसा एवं अन्य विभागीय प्रतिवेदन कार्यालय स्तर पर तैयार किए जाते हैं। आवेदक को ये नहीं लाने हैं।</div>
+      <a class="dl" data-form="dl3" href="#">आवेदन प्रपत्र डाउनलोड करें</a>
+      <button class="prn" onclick="window.print()">यह सूची प्रिंट करें / PDF सहेजें</button>
+    </div>
+  </details>
+  <details class="acc" id="s19c">
+    <summary><span class="t">बहुमंजिला इमारत का मूल खाता बंद करना (सभी प्रकोष्ठों के खाते खुल जाने पर)</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>आवेदन में लिखें:</b> इमारत का मूल खाता नंबर और प्रकोष्ठों के खाता नंबर।</div>
+      <h3>आवेदक द्वारा प्रस्तुत किए जाने वाले दस्तावेज़</h3>
+      <ol>
+        <li>आवेदन पत्र (नीचे से डाउनलोड करें)</li>
+        <li>प्रकोष्ठ डीड / प्रकोष्ठ से संबंधित रजिस्टर्ड दस्तावेज़</li>
+        <li>प्रकोष्ठ डीड के अनुसार सभी प्रकोष्ठों के खातों का विवरण</li>
+        <li>मूल खाते के क्षेत्रफल का सभी प्रकोष्ठों के क्षेत्रफल से मिलान सूची</li>
+        <li>इमारत का रंगीन जिओ टैग फोटो</li>
+        <li>आवेदक का आधार कार्ड</li>
+      </ol>
+      <div class="office">मौका रिपोर्ट, टीप, अनुशंसा एवं अन्य विभागीय प्रतिवेदन कार्यालय स्तर पर तैयार किए जाते हैं। आवेदक को ये नहीं लाने हैं।</div>
+      <a class="dl" data-form="dl3" href="#">आवेदन प्रपत्र डाउनलोड करें</a>
+      <button class="prn" onclick="window.print()">यह सूची प्रिंट करें / PDF सहेजें</button>
+    </div>
+  </details>
+
   <details class="acc" id="s20">
     <summary><span class="t">संपत्तिकर खाते में डिमांड सुधार</span><span class="c"></span></summary>
     <div class="body">
@@ -2087,6 +2152,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
       <table>
         <tr><td>भार-मुक्त प्रमाण पत्र</td><td><a href="https://maps.app.goo.gl/iPCG4mWjmXrTjXLM8" target="_blank" rel="noopener" style="color:var(--ink)">पंजीयक कार्यालय, कलेक्ट्रेट &#8594;</a></td></tr>
         <tr><td>रजिस्ट्री की प्रति</td><td><a href="https://maps.app.goo.gl/iPCG4mWjmXrTjXLM8" target="_blank" rel="noopener" style="color:var(--ink)">पंजीयक कार्यालय, कलेक्ट्रेट &#8594;</a></td></tr>
+        <tr><td>खसरा नकल</td><td><a href="https://webgis2.mpbhulekh.gov.in/#/home/bhu-abhilekh" target="_blank" rel="noopener" style="color:var(--ink)">MP भू-अभिलेख पोर्टल &#8594;</a></td></tr>
         <tr><td>जिओ टैग फोटो</td><td>स्वयं &#8212; <a href="https://play.google.com/store/apps/details?id=com.gpsmapcamera.geotagginglocationonphoto" target="_blank" rel="noopener" style="color:var(--ink)">GPS Camera ऐप डाउनलोड करें &#8594;</a></td></tr>
         <tr><td>कर एवं शुल्क की रसीद</td><td><a href="https://enagarpalika.mp.gov.in/home" target="_blank" rel="noopener" style="color:var(--ink)">e-NagarPalika ऐप &#8594;</a> अथवा <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;" style="color:var(--ink)">अपने ज़ोन कार्यालय &#8594;</a></td></tr>
         <tr><td>सुधार आवेदन पंजीयन</td><td><a href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore" target="_blank" rel="noopener" style="color:var(--ink)">311 ऐप &#8594;</a> पर भी पंजीकृत कर सकते हैं</td></tr>
@@ -2180,6 +2246,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
   <footer>
     यह पन्ना केवल जानकारी हेतु है। प्रकरण की परिस्थिति के अनुसार अतिरिक्त दस्तावेज़ माँगे जा सकते हैं।
     आवेदन की स्थिति जानने हेतु अपने PT नंबर से <a href="https://enagarpalika.mp.gov.in/home" target="_blank" rel="noopener" style="color:var(--soft);text-decoration:underline;font-weight:700">e-palika वेबसाइट</a> पर देखें।
+  <p class="verline" style="margin:12px 0 0;font-size:12.5px;color:var(--soft);text-align:center">संस्करण 2.0 &middot; अंतिम अद्यतन: 18 अक्टूबर 2026</p>
   <p style="margin:14px 0 0;font-size:12.5px;color:var(--soft);text-align:center">संकल्पना एवं निर्माण: <b style="color:var(--ink)">तरुण पाराशर</b>, राजस्व विभाग, नगर पालिक निगम इन्दौर</p>
 
   </footer>
@@ -2726,7 +2793,7 @@ function setHash(g){try{var u=location.pathname+location.search+(g?'#'+g:'');his
 function focus(g,push){
  curG=g;
  kids.forEach(function(el){
-  if((ALWAYS.test(el.tagName)&&!el.hasAttribute('data-grp'))||el.classList.contains('navgrid')||el.classList.contains('visit')||el.classList.contains('sharebox')||el.classList.contains('fbbox')||el.classList.contains('pwabanner')||el===bar){el.classList.remove('fo-h');return}
+  if((ALWAYS.test(el.tagName)&&!el.hasAttribute('data-grp'))||el.classList.contains('navgrid')||el.classList.contains('visit')||el.classList.contains('topbar')||el.classList.contains('sharebox')||el.classList.contains('fbbox')||el.classList.contains('pwabanner')||el===bar){el.classList.remove('fo-h');return}
   var a=(el.getAttribute('data-grp')||'').split(' ');
   if(a.indexOf(g)>-1)el.classList.remove('fo-h');else el.classList.add('fo-h');
  });
@@ -2797,6 +2864,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 
 
