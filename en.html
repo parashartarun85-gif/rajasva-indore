@@ -24,9 +24,9 @@
   .wrap{max-width:480px;margin:0 auto}
 
   header{border-bottom:2px solid var(--ink);padding-bottom:14px}
-  header,h1,header p{text-align:justify}
+  header,h1,header p{text-align:center}
   .campaign{margin:0 0 8px;font-size:17px;font-weight:700;color:var(--gold);
-            letter-spacing:.01em;text-align:justify}
+            letter-spacing:.01em;text-align:center}
   h1{font-size:21px;font-weight:700;margin:0 0 4px;line-height:1.35}
   header p{margin:0;font-size:14px;color:var(--soft)}
   .lead{font-size:15px;color:var(--soft);margin:16px 0 18px}
@@ -376,7 +376,10 @@
 .fszrow button{font:inherit;font-weight:800;font-size:14px;min-width:40px;min-height:38px;padding:0 8px;border-radius:19px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
 .fszrow button[aria-pressed=true]{background:#123B70;color:#fff}
 .wrap details>.body,.wrap .lead,.wrap .note,.wrap .office,.wrap .catnote{text-align:justify;text-justify:inter-word;overflow-wrap:break-word;hyphens:auto}
-.wrap summary,.wrap table,.wrap .dl,.wrap .prn,.wrap .wzgrid a,.wrap .rj-go,.wrap .lw-root,.wrap .office-box,.wrap .acctbox{text-align:left;hyphens:manual}
+.wrap table,.wrap .wzgrid a,.wrap .rj-go,.wrap .lw-root,.wrap .office-box,.wrap .acctbox{text-align:left;hyphens:manual}
+.wrap summary,.wrap h2.cat,.wrap .dl,.wrap .prn,.wrap .lw-hd,.wrap header,.wrap header h1,.wrap header p,.wrap .campaign{text-align:center;hyphens:manual}
+.wrap .acc>summary::before{content:'';flex:none;width:22px}
+.topbar{justify-content:space-between}
 @media print{.wrap{zoom:1!important}.topbar .fszrow{display:none}}
 </style><div class="topbar"><div class="fszrow" id="fszrow"><button type="button" data-z="1" aria-label="normal text size">A</button><button type="button" data-z="1.18" aria-label="larger text">A+</button><button type="button" data-z="1.36" aria-label="largest text">A++</button></div><a class="lang" href="index.html" style="background:#123B70">हिन्दी</a></div><script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
 function set(z,save){w.style.zoom=(z==='1')?'':z;[].forEach.call(r.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===z?'true':'false')});if(save){try{localStorage.setItem('fsz',z)}catch(e){}}}
@@ -1083,6 +1086,8 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>Current copy of the khasra &#8212; <a href="https://webgis2.mpbhulekh.gov.in/#/home/bhu-abhilekh" target="_blank" rel="noopener" style="color:var(--ink)">get it here &#8594;</a></li>
         <li>Aadhaar cards of all property owners</li>
         <li>All documents must be self-attested</li>
+        <li>Copy of the diversion (vyavartan) order</li>
+        <li>No tax should be due to the Corporation &#8212; clear any dues first</li>
       </ol>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
