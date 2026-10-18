@@ -369,20 +369,21 @@
   <header>
     <p class="campaign">A citizen facility under Mukhyamantri Jan-Vishwas Abhiyan 2026</p>
     <h1>Mutation, New Account and Corrections &#8212; Required Documents</h1>
-    <p>Revenue Department &middot; Indore Municipal Corporation</p><a class="lang" href="index.html" style="background:#123B70">हिन्दी</a>
-  </header>
-
-  <!--FSZ-START-->
-<style>.fszrow{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin:6px 0 0;font-size:13px;color:var(--soft,#666)}
-.fszrow button{font:inherit;font-weight:800;font-size:15px;min-width:44px;min-height:40px;border-radius:10px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
+    <p>Revenue Department &middot; Indore Municipal Corporation</p><!--TOP-START--><style>
+.topbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 0}
+.topbar .lang{margin:0!important}
+.fszrow{display:inline-flex;gap:6px;align-items:center}
+.fszrow button{font:inherit;font-weight:800;font-size:14px;min-width:40px;min-height:38px;padding:0 8px;border-radius:19px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
 .fszrow button[aria-pressed=true]{background:#123B70;color:#fff}
-@media print{.wrap{zoom:1!important}.fszrow{display:none}}</style>
-<div class="fszrow" id="fszrow"><span>Text size</span><button type="button" data-z="1" aria-label="normal">A</button><button type="button" data-z="1.18" aria-label="larger">A+</button><button type="button" data-z="1.36" aria-label="largest">A++</button></div>
-<script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
+.wrap details>.body,.wrap .lead,.wrap .note,.wrap .office,.wrap .catnote{text-align:justify;text-justify:inter-word;overflow-wrap:break-word;hyphens:auto}
+.wrap summary,.wrap table,.wrap .dl,.wrap .prn,.wrap .wzgrid a,.wrap .rj-go,.wrap .lw-root,.wrap .office-box,.wrap .acctbox{text-align:left;hyphens:manual}
+@media print{.wrap{zoom:1!important}.topbar .fszrow{display:none}}
+</style><div class="topbar"><div class="fszrow" id="fszrow"><button type="button" data-z="1" aria-label="normal text size">A</button><button type="button" data-z="1.18" aria-label="larger text">A+</button><button type="button" data-z="1.36" aria-label="largest text">A++</button></div><a class="lang" href="index.html" style="background:#123B70">हिन्दी</a></div><script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
 function set(z,save){w.style.zoom=(z==='1')?'':z;[].forEach.call(r.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===z?'true':'false')});if(save){try{localStorage.setItem('fsz',z)}catch(e){}}}
 var s='1';try{s=localStorage.getItem('fsz')||'1'}catch(e){}set(['1','1.18','1.36'].indexOf(s)<0?'1':s,false);
-r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button');if(b)set(b.getAttribute('data-z'),true)})})();</script>
-<!--FSZ-END-->
+r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button');if(b)set(b.getAttribute('data-z'),true)})})();</script><!--TOP-END-->
+  </header>
+
   <p class="lead">Choose your case. Only the documents that the <b>applicant has to submit</b> are listed below. Application forms can also be downloaded here.</p>
 
   
@@ -419,6 +420,10 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
     <a href="#catNew" onclick="var d=document.getElementById('catNew');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#2E86C9">🆕</span>
       <span class="lbl">New Account</span>
+    </a>
+    <a href="#catNOC" onclick="var d=document.getElementById('catNOC');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#6B4E9B">📜</span>
+      <span class="lbl">NOC Certificate</span>
     </a>
     <a href="#cat_pt" onclick="var d=document.getElementById('cat_pt');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#B4720A">🧾</span>
@@ -606,6 +611,9 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
         <tr><td>The waste collection vehicle does not come but a fee is charged</td><td><a href="#s29" onclick="var d=document.getElementById('s29');if(d)d.open=true;" style="color:var(--ink)">Solid waste fee correction &#8594;</a></td></tr>
         <tr><td>Two accounts are running for the same property</td><td><a href="#s19" onclick="var d=document.getElementById('s19');if(d)d.open=true;" style="color:var(--ink)">See &#8220;closing one of two accounts&#8221; &#8594;</a></td></tr>
       
+        <tr><td>An old account in the previous owner's name is still running; I want it closed</td><td><a href="#s19b" onclick="var d=document.getElementById('s19b');if(d)d.open=true;" style="color:var(--ink)">Closing the previous owner's account &#8594;</a></td></tr>
+        <tr><td>Accounts of all units in a multi-storey building are opened; the original account must be closed</td><td><a href="#s19c" onclick="var d=document.getElementById('s19c');if(d)d.open=true;" style="color:var(--ink)">Closing the original account &#8594;</a></td></tr>
+        <tr><td>I need a No Objection / No Dues Certificate (NOC) for the property</td><td><a href="#sNOC" onclick="var d=document.getElementById('sNOC');if(d)d.open=true;" style="color:var(--ink)">No Objection Certificate (NOC) &#8594;</a></td></tr>
         <tr><td>Want to file a correction complaint by mobile, without visiting the office</td><td><a href="#u5" onclick="var d=document.getElementById('u5');if(d)d.open=true;" style="color:var(--ink)">311 app correction complaint &#8594;</a></td></tr></table>
     </div>
   </details>
@@ -941,6 +949,8 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>No rainwater harvesting unit on a building on a plot of 1500 sq ft or more (including all multi-storey buildings) &#8212; mutation is not completed without it</li>
         <li>The area in the sale deed not matching the area recorded in the Corporation's property tax account &#8212; always compare the two before buying</li>
               <li>In inheritance by will / bequest, not attaching the witnesses' affidavits (for an unregistered will) or the documents from the present owner back to the deceased, and documents not being self-attested</li>
+        <li>In mutation of a multi-storey building, not attaching the identity proofs and consent of all unit owners</li>
+        <li>For a new property tax account, not attaching the khasra / land-record copy and the self-assessment return</li>
       </ol>
       <div class="rj-go" style="margin-top:14px;padding-top:10px;border-top:1px dashed #D9C3A5"><b>Want to avoid a return? Check before you apply:</b><br><a href="#mutwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#E8820C">🏠 Mutation</a><a href="#errwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#1F6F8B">✏️ Correction</a><a href="#licwiz" style="display:inline-block;margin:4px 6px 0 0;padding:9px 12px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;background:#3E7A2B">🏪 Trade Licence</a></div>
     </div>
@@ -1000,7 +1010,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>Self-attested copy of the registered document</li>
         <li>Consent of the coloniser or the last allottee</li>
         <li>Property tax, water charges and solid waste fee receipts</li>
-        <li>Aadhaar cards of all concerned</li>
+        <li>Identity proofs (Aadhaar) of the coloniser / last property owner and of everyone seeking the mutation</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
         <li>Public notice published in a daily newspaper (विज्ञप्ति)</li>
         <li>Mutation fee receipt</li>
@@ -1021,13 +1031,13 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>Application</li>
         <li>Self-assessment return</li>
         <li>Sale deed / notarised document with all link documents</li>
-        <li>Permission of the competent authority in case of revenue land</li>
+        <li>Current (latest) copy of the khasra in case of revenue land &#8212; <a href="https://webgis2.mpbhulekh.gov.in/#/home/bhu-abhilekh" target="_blank" rel="noopener" style="color:var(--ink)">get it here &#8594;</a></li>
         <li>Copy of the diversion order (व्यपवर्तन आदेश)</li>
         <li>Identity proof of all property holders</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
       </ol>
       <a class="dl" data-form="dl4" href="#">Download Self-Assessment Return</a>
-      <div class="note">All documents must be self-attested. Where proof of the assessment year is unavailable, assessment is made from 1997-98, and from 2000-01 in the case of open land.</div>
+      <div class="note">All documents must be self-attested. Where proof of the assessment year is unavailable, assessment is made from 1997-98, and from 2000-01 in the case of open land. Accounts of the newly attached rural areas (29 villages) are opened from 2014-15.</div>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
@@ -1061,7 +1071,25 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
-  <h2 class="cat" id="cat_pt">Property Tax Account &#8212; Error Correction (त्रुटि सुधार) <span>20 types</span></h2>
+  <h2 class="cat" id="catNOC">No Objection Certificate (NOC) <span>1 type</span></h2>
+  <details class="acc" id="sNOC">
+    <summary><span class="t">No Objection Certificate (NOC) — No Dues Certificate</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note">The NOC is issued only if no tax is due to the Corporation.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application</li>
+        <li>TNCP (Town and Country Planning) order</li>
+        <li>Current copy of the khasra &#8212; <a href="https://webgis2.mpbhulekh.gov.in/#/home/bhu-abhilekh" target="_blank" rel="noopener" style="color:var(--ink)">get it here &#8594;</a></li>
+        <li>Aadhaar cards of all property owners</li>
+        <li>All documents must be self-attested</li>
+      </ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
+<h2 class="cat" id="cat_pt">Property Tax Account &#8212; Error Correction (त्रुटि सुधार) <span>22 types</span></h2>
 <p class="catnote wzlink">✅ Check before you apply: <a href="#errwiz">Open the Correction helper →</a></p>
   <div class="catnote">Reducing a demand of more than Rs. 50,000 in a property tax account requires approval of the Additional Commissioner (Revenue), so such cases take longer.</div>
   <details class="acc" id="s7">
@@ -1359,6 +1387,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       <ol>
         <li>Application form (download below)</li>
         <li>Photocopy of the registered sale deed</li>
+        <li>If the registered document is not available: electricity bill, notarised document and photocopy of the Aadhaar card</li>
         <li>Receipt or demand copy of both accounts</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
         <li>Applicant's Aadhaar card</li>
@@ -1368,6 +1397,42 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
     </div>
   </details>
+  <details class="acc" id="s19b">
+    <summary><span class="t">Two accounts in the names of the previous owner and the present owner — closing the previous owner's account</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the account number in the previous owner's name and the account number in the present owner's name.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>All link documents from the previous owner to the present owner (registered documents — certified from the original)</li>
+        <li>Receipt or demand copy of both accounts</li>
+        <li>Colour geo-tagged photograph of the building / flat / plot</li>
+        <li>Applicant's Aadhaar card</li>
+      </ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <a class="dl" data-form="dl3" href="#">Download application form</a>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+  <details class="acc" id="s19c">
+    <summary><span class="t">Closing the original account of a multi-storey building (after accounts of all units are opened)</span><span class="c"></span></summary>
+    <div class="body">
+      <div class="note"><b>Write in the application:</b> the original account number of the building and the account numbers of the units.</div>
+      <h3>Documents to be submitted by the applicant</h3>
+      <ol>
+        <li>Application form (download below)</li>
+        <li>Unit deeds / registered documents of the units</li>
+        <li>Details of the accounts of all units as per the unit deeds</li>
+        <li>Statement matching the area of the original account with the areas of all units</li>
+        <li>Colour geo-tagged photograph of the building</li>
+        <li>Applicant's Aadhaar card</li>
+      </ol>
+      <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
+      <a class="dl" data-form="dl3" href="#">Download application form</a>
+      <button class="prn" onclick="window.print()">Print this list / Save as PDF</button>
+    </div>
+  </details>
+
   <details class="acc" id="s20">
     <summary><span class="t">Correction of demand in the property tax account</span><span class="c"></span></summary>
     <div class="body">
@@ -2081,6 +2146,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
       <table>
         <tr><td>Encumbrance Certificate</td><td><a href="https://maps.app.goo.gl/iPCG4mWjmXrTjXLM8" target="_blank" rel="noopener" style="color:var(--ink)">Registrar Office, Collectorate &#8594;</a></td></tr>
         <tr><td>Copy of the sale deed</td><td><a href="https://maps.app.goo.gl/iPCG4mWjmXrTjXLM8" target="_blank" rel="noopener" style="color:var(--ink)">Registrar Office, Collectorate &#8594;</a></td></tr>
+        <tr><td>Copy of khasra</td><td><a href="https://webgis2.mpbhulekh.gov.in/#/home/bhu-abhilekh" target="_blank" rel="noopener" style="color:var(--ink)">MP Bhu-Abhilekh portal &#8594;</a></td></tr>
         <tr><td>Geo-tagged photograph</td><td>Yourself &#8212; <a href="https://play.google.com/store/apps/details?id=com.gpsmapcamera.geotagginglocationonphoto" target="_blank" rel="noopener" style="color:var(--ink)">Download GPS Camera app &#8594;</a></td></tr>
         <tr><td>Tax and fee receipts</td><td><a href="https://enagarpalika.mp.gov.in/home" target="_blank" rel="noopener" style="color:var(--ink)">e-NagarPalika app &#8594;</a> or <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;" style="color:var(--ink)">your zone office &#8594;</a></td></tr>
         <tr><td>Correction application registration</td><td><a href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore" target="_blank" rel="noopener" style="color:var(--ink)">Can also be registered on the <a>311 app &#8594;</a></td></tr>
@@ -2174,6 +2240,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
   <footer>
     This page is for information only. Additional documents may be asked for depending on the circumstances of the case.
     To check the status of an application, use your PT number on the <a href="https://enagarpalika.mp.gov.in/home" target="_blank" rel="noopener" style="color:var(--soft);text-decoration:underline;font-weight:700">e-palika website</a>.
+  <p class="verline" style="margin:12px 0 0;font-size:12.5px;color:var(--soft);text-align:center">Version 2.0 &middot; Last updated: 18 October 2026</p>
   <p style="margin:14px 0 0;font-size:12.5px;color:var(--soft);text-align:center">Concept and development: <b style="color:var(--ink)">Tarun Parashar</b>, Revenue Department, Indore Municipal Corporation</p>
 
   </footer>
@@ -2720,7 +2787,7 @@ function setHash(g){try{var u=location.pathname+location.search+(g?'#'+g:'');his
 function focus(g,push){
  curG=g;
  kids.forEach(function(el){
-  if((ALWAYS.test(el.tagName)&&!el.hasAttribute('data-grp'))||el.classList.contains('navgrid')||el.classList.contains('visit')||el.classList.contains('sharebox')||el.classList.contains('fbbox')||el.classList.contains('pwabanner')||el===bar){el.classList.remove('fo-h');return}
+  if((ALWAYS.test(el.tagName)&&!el.hasAttribute('data-grp'))||el.classList.contains('navgrid')||el.classList.contains('visit')||el.classList.contains('topbar')||el.classList.contains('sharebox')||el.classList.contains('fbbox')||el.classList.contains('pwabanner')||el===bar){el.classList.remove('fo-h');return}
   var a=(el.getAttribute('data-grp')||'').split(' ');
   if(a.indexOf(g)>-1)el.classList.remove('fo-h');else el.classList.add('fo-h');
  });
@@ -2791,6 +2858,7 @@ window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(f
 })();
 </script>
 <!--FOCUS-END-->
+
 
 
 
