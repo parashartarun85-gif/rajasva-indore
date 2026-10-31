@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="manifest.json">
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}</script>
 <title>Revenue Department Indore — Required Documents and Applications</title>
 <meta name="description" content="Documents, forms and procedure for mutation, new accounts and corrections — Revenue Department, Indore Municipal Corporation">
 <meta name="theme-color" content="#123B70">
@@ -703,7 +705,7 @@ en:{
  q_will:'Did the property come through a will / bequest?',o_will:['No, there is no will','Yes, a registered will','Yes, an unregistered will / bequest'],
  q_due:'Is any property tax, water charge or garbage fee pending?',o_due:['No, all paid','Yes, pending','Not sure'],
  q_area:'Does the area in the registry match the area in the Corporation property tax account?',o_area:['Yes, it matches','No, it does not match','Not sure'],
- result:'Your checklist',docs:'Documents for you',stopH:'Do this first (stop)',
+ swmFlat:'Solid waste fee receipt — the flat\'s own receipt, or the receipt of the building\'s bulk account if there is one (fee must be paid)',combFlat:'Property tax and solid waste fee receipts — the flat\'s own, or the building\'s bulk account receipt (fee must be paid)',combPlot:'Property tax receipt',nFlat:'For a flat, a water charges receipt is not required. A solid waste fee receipt is mandatory and the fee must be paid.',nPlot:'For an empty plot, water charges and solid waste fee receipts are not required. If a water or waste account is already open on the plot, attach its receipt.',result:'Your checklist',docs:'Documents for you',stopH:'Do this first (stop)',
  w_due:'Pay the pending property tax / water charge / garbage fee first. Mutation is not done while any amount is due to the Corporation.',
  w_due_u:'Check the pending status of all three charges on e-NagarPalika. Pay any dues first.',
  w_rain_n:'Install the rainwater harvesting unit first. Mutation is not completed without it.',
@@ -753,6 +755,14 @@ function blockDocs(id,will){
 function compute(){
  var id=[IDS.reg,IDS.war,IDS.multi][st.basis],docs=blockDocs(id,st.basis===1?st.will:0);
  var stop=[],warn=[],flat=(st.prop===1),plotQ=(st.prop===0);
+ if(docs){var _w=new RegExp('water','i'),_s=new RegExp('waste','i');
+  if(st.prop===1||st.prop===2){docs=docs.map(function(d){
+   if(typeof d!=='string')return d;var hw=_w.test(d),hs=_s.test(d);
+   if(hw&&hs)return st.prop===1?X.combFlat:X.combPlot;
+   if(hw)return null;
+   if(hs)return st.prop===1?X.swmFlat:null;
+   return d}).filter(function(d){return d!==null})}
+  if(st.prop===1)warn.unshift(X.nFlat);else if(st.prop===2)warn.unshift(X.nPlot)}
  if(st.due===1)stop.push(X.w_due);else if(st.due===2)warn.push(X.w_due_u);
  if(flat){if(st.rain===1)stop.push(X.w_rain_n);else if(st.rain===2)warn.push(X.w_rain_u);else if(st.rain===-1)warn.push(X.w_rain_flat)}
  if(plotQ){
@@ -975,6 +985,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>Public notice published in a daily newspaper (विज्ञप्ति)</li>
         <li>Mutation fee receipt</li>
       </ol>
+      <div class="note" data-recpt="1">Note: for a flat, a water charges receipt is not required. A solid waste fee receipt (the flat's own, or the building's bulk account receipt) is mandatory and the fee must be paid. For an empty plot, water and solid waste receipts are not required (attach them if an account is already open).</div>
       <div class="note">Mutation is completed only if a rainwater harvesting unit exists on a building constructed on a plot of 1500 sq ft or more (including multi-storey buildings).</div>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl1" href="#">Download application form</a>
@@ -998,6 +1009,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>Public notice published in a daily newspaper (विज्ञप्ति)</li>
         <li>Mutation fee receipt</li>
       </ol>
+      <div class="note" data-recpt="1">Note: for a flat, a water charges receipt is not required. A solid waste fee receipt (the flat's own, or the building's bulk account receipt) is mandatory and the fee must be paid. For an empty plot, water and solid waste receipts are not required (attach them if an account is already open).</div>
       <div class="note">A 45-day objection period is allowed as per rules, so these cases take longer.</div>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
       <a class="dl" data-form="dl2" href="#">Download application form</a>
@@ -1018,6 +1030,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>Public notice published in a daily newspaper (विज्ञप्ति)</li>
         <li>Mutation fee receipt</li>
       </ol>
+      <div class="note" data-recpt="1">Note: for a flat, a water charges receipt is not required. A solid waste fee receipt (the flat's own, or the building's bulk account receipt) is mandatory and the fee must be paid. For an empty plot, water and solid waste receipts are not required (attach them if an account is already open).</div>
       <div class="note" data-rw="1">Mutation is completed only if a rainwater harvesting unit exists on the multi-storey building.</div>
       <div class="note">Any amount due to the Corporation must be cleared first.</div>
       <div class="office">Spot reports, notings, recommendations and other departmental papers are prepared by the office. The applicant does not have to bring these.</div>
