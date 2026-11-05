@@ -681,7 +681,7 @@ hi:{
  q_prop:'संपत्ति किस प्रकार की है?',o_prop:['बना हुआ मकान / दुकान','फ्लैट (बहुमंजिला इमारत में)','खाली प्लॉट'],
  q_plot:'प्लॉट का क्षेत्रफल कितना है?',h_plot:'वर्षा जल संचयन ईकाई 1500 वर्गफुट या उससे बड़े प्लॉट पर आवश्यक है।',o_plot:['1500 वर्गफुट या अधिक','1500 वर्गफुट से कम','मालूम नहीं'],
  q_rain:'क्या वर्षा जल संचयन ईकाई लगी है?',h_rain:'इसके बिना नामांतरण पूर्ण नहीं होता।',o_rain:['हाँ, लगी है','नहीं लगी','मालूम नहीं'],
- q_will:'क्या संपत्ति वसीयत / इच्छापत्र के आधार पर मिली है?',o_will:['नहीं, वसीयत नहीं है','हाँ, पंजीकृत (रजिस्टर्ड) वसीयत','हाँ, गैर-पंजीकृत वसीयत / इच्छापत्र'],
+ q_will:'क्या संपत्ति वसीयत / इच्छापत्र के आधार पर मिली है?',o_will:['नहीं, वसीयत नहीं है','हाँ, वसीयत / इच्छापत्र है'],
  q_due:'क्या संपत्तिकर, जलकर या कचरा शुल्क बकाया है?',o_due:['नहीं, सब जमा है','हाँ, बकाया है','मालूम नहीं'],
  q_area:'क्या रजिस्ट्री का क्षेत्रफल और निगम के संपत्तिकर खाते का क्षेत्रफल मिलता है?',o_area:['हाँ, मिलता है','नहीं मिलता','मालूम नहीं'],
  result:'आपकी जाँच-सूची',docs:'आपके लिए दस्तावेज़ सूची',stopH:'पहले यह करें (रुकें)',
@@ -706,7 +706,7 @@ en:{
  q_prop:'What kind of property is it?',o_prop:['Constructed house / shop','Flat (in a multi-storey building)','Vacant plot'],
  q_plot:'What is the plot area?',h_plot:'A rainwater harvesting unit is required on plots of 1500 sq ft or more.',o_plot:['1500 sq ft or more','Less than 1500 sq ft','Not sure'],
  q_rain:'Is a rainwater harvesting unit installed?',h_rain:'Mutation is not completed without it.',o_rain:['Yes, installed','Not installed','Not sure'],
- q_will:'Did the property come through a will / bequest?',o_will:['No, there is no will','Yes, a registered will','Yes, an unregistered will / bequest'],
+ q_will:'Did the property come through a will / bequest?',o_will:['No, there is no will','Yes, there is a will / bequest'],
  q_due:'Is any property tax, water charge or garbage fee pending?',o_due:['No, all paid','Yes, pending','Not sure'],
  q_area:'Does the area in the registry match the area in the Corporation property tax account?',o_area:['Yes, it matches','No, it does not match','Not sure'],
  swmFlat:'Solid waste fee receipt — the flat\'s own receipt, or the receipt of the building\'s bulk account if there is one (fee must be paid)',combFlat:'Property tax and solid waste fee receipts — the flat\'s own, or the building\'s bulk account receipt (fee must be paid)',combPlot:'Property tax receipt',nFlat:'For a flat, a water charges receipt is not required. A solid waste fee receipt is mandatory and the fee must be paid.',nPlot:'For an empty plot, water charges and solid waste fee receipts are not required. If a water or waste account is already open on the plot, attach its receipt.',result:'Your checklist',docs:'Documents for you',stopH:'Do this first (stop)',
@@ -751,7 +751,7 @@ function blockDocs(id,will){
   if(ul||li.hasAttribute('data-will')){
    if(will<=0)return;
    var head=(li.firstChild&&li.firstChild.textContent&&li.querySelector('b'))?li.querySelector('b').textContent.trim():'';
-   var sub=[];[].forEach.call(ul.children,function(x){var w=x.getAttribute('data-w');if(w==='unreg'&&will!==2)return;sub.push(x.textContent.replace(/^\s*[☐]\s*/,'').replace(/\s+/g,' ').trim())});
+   var sub=[];[].forEach.call(ul.children,function(x){var w=x.getAttribute('data-w');sub.push(x.textContent.replace(/^\s*[☐]\s*/,'').replace(/\s+/g,' ').trim())});
    out.push({t:head.replace(/:$/,''),sub:sub});return}
   out.push(li.textContent.replace(/\s+/g,' ').trim());
  });return out;
@@ -965,7 +965,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
         <li>Missing Aadhaar cards or notarised affidavit of all heirs in inheritance cases</li>
         <li>No rainwater harvesting unit on a building on a plot of 1500 sq ft or more (including all multi-storey buildings) &#8212; mutation is not completed without it</li>
         <li>The area in the sale deed not matching the area recorded in the Corporation's property tax account &#8212; always compare the two before buying</li>
-              <li>In inheritance by will / bequest, not attaching the witnesses' affidavits (for an unregistered will) or the documents from the present owner back to the deceased, and documents not being self-attested</li>
+              <li>In inheritance by will / bequest, not attaching a copy of the will (original for verification), and documents not being self-attested</li>
         <li>In mutation of a multi-storey building, not attaching the identity proofs and consent of all unit owners</li>
         <li>For a new property tax account, not attaching the khasra / land-record copy and the self-assessment return</li>
       </ol>
@@ -1001,15 +1001,15 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
     <div class="body">
       <h3>Documents to be submitted by the applicant</h3>
       <ol>
-        <li>Self-attested copy of the registered sale deed</li>
+        <li>Self-attested copy of the deceased owner's registered ownership document (sale deed etc.)</li>
+        <li data-will="1"><b>If there is a will / bequest, also attach:</b><ul style="list-style:none;margin:4px 0 0;padding-left:0"><li>&#9744; True copy of the will (original to be shown for verification)</li><li>&#9744; All documents must be <b>self-attested</b></li></ul></li>
         <li>Photocopy of property tax receipt</li>
         <li>Photocopy of water charges receipt</li>
         <li>Solid waste management fee receipt</li>
         <li>Death certificate</li>
-        <li data-will="1"><b>If the property came through a will / bequest, also attach:</b><ul style="list-style:none;margin:4px 0 0;padding-left:0"><li>&#9744; Self-attested copy of the will / bequest</li><li data-w="unreg">&#9744; In the case of an unregistered will / bequest, <b>affidavits of the witnesses</b></li><li>&#9744; All registered / notarised documents from the present owner back to the deceased (the full chain of title)</li><li>&#9744; All documents must be <b>self-attested</b></li></ul></li>
-        <li>Photocopies of Aadhaar cards of all legal heirs</li>
+        <li>Photocopies of Aadhaar cards of all legal heirs / will beneficiaries</li>
         <li>Colour geo-tagged photograph of the building / flat / plot</li>
-        <li>Notarised affidavit (शपथ पत्र) of all heirs on Rs. 200 stamp</li>
+        <li>Notarised affidavit (शपथ पत्र) on Rs. 200 stamp</li>
         <li>Public notice published in a daily newspaper (विज्ञप्ति)</li>
         <li>Mutation fee receipt</li>
       </ol>
@@ -1757,7 +1757,75 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
     </div>
   </details>
   <h2 class="cat" id="catEWS">EWS Certificate <span>2 cases, with affidavit</span></h2>
-<p class="catnote">The EWS certificate is valid for 1 year. Open the option below that matches your case (self-owned / rented property).</p>
+<p class="catnote">The EWS certificate is valid from the date of issue until the end of that financial year (31 March); a new one must be made after 1 April. Read the information first, then open the option below that matches your case (self-owned / rented property).</p>
+  <details class="acc" id="sE0">
+    <summary><span class="t">What is EWS &#8212; eligibility, rules and process (read first)</span><span class="c"></span></summary>
+    <div class="body">
+      <style>.ewst{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 4px}.ewst th,.ewst td{border:1px solid var(--rule);padding:7px 8px;vertical-align:top;text-align:left;line-height:1.5}.ewst th{background:#EEF2F8;font-weight:700}.ewst td:first-child{font-weight:700;width:24%}</style>
+      <h3>What is EWS</h3>
+      <ol>
+        <li>EWS stands for <b>Economically Weaker Section</b>.</li>
+        <li>The Constitution (103rd Amendment) Act, 2019 inserted Articles <b>15(6)</b> and <b>16(6)</b>. They allow reservation of <b>up to 10%</b> for economically weaker citizens in admission to educational institutions (except minority educational institutions) and in government jobs. This is in addition to the existing reservations.</li>
+        <li>The benefit is for those who do not fall under Scheduled Castes, Scheduled Tribes or the Other Backward Classes notified by the Government of Madhya Pradesh.</li>
+        <li>The Amendment does not itself state income or property limits. These limits are fixed by government orders &#8212; for Madhya Pradesh, the General Administration Department order No. F 7-11/2019/A.P./Ek (June 2021).</li>
+      </ol>
+
+      <h3>Eligibility limits</h3>
+      <table class="ewst">
+        <tr><th>Criterion</th><th>Madhya Pradesh Govt. (Indore Municipal Corporation area)</th><th>Central Government rules</th></tr>
+        <tr><td>Annual family income</td><td>Below Rs. 8 lakh (all sources &#8212; salary, agriculture, business etc.)</td><td>Below Rs. 8 lakh (all sources)</td></tr>
+        <tr><td>Agricultural land</td><td>Not eligible if more than 5 acres (land recorded in the khasra as barren, rocky or uncultivable continuously for 3 years is not counted)</td><td>Not eligible if 5 acres or more</td></tr>
+        <tr><td>Residential house / flat</td><td>In a Municipal Corporation area, not eligible if more than 1200 sq. ft.</td><td>Not eligible if a residential flat of 1000 sq. ft. or more</td></tr>
+        <tr><td>Residential plot</td><td>No separate limit is given in the order</td><td>Not eligible if 100 sq. yards or more in a notified municipality; 200 sq. yards or more in other areas</td></tr>
+      </table>
+      <div class="note">Note: the figures in the right-hand column are <b>Central Government</b> rules. The order gives separate criteria for Madhya Pradesh and for the Central Government.</div>
+      <ol>
+        <li><b>Family</b> means: the applicant, his/her parents, spouse, and brothers/sisters and sons/daughters below 18 years of age.</li>
+        <li>Property held by the family in different places / cities is <b>added together</b>.</li>
+      </ol>
+
+      <h3>Who issues the certificate and how long it is valid</h3>
+      <ol>
+        <li>The EWS (income and asset) certificate is issued by the <b>Collector&#8217;s office</b> &#8212; by a Tehsildar or a higher officer (SDO). It is not issued by the Municipal Corporation.</li>
+        <li>A complete application is disposed of within <b>15 working days</b>.</li>
+        <li><b>Validity:</b> the certificate is valid from the date of issue <b>until the end of that financial year (31 March)</b>. So a separate certificate is made for each financial year.</li>
+        <li><b>When to get a new one:</b> after 31 March you must get a new certificate for the new financial year (from 1 April). Example: a certificate made in November remains valid only up to the next 31 March. The certificate must be valid on the date of your job or admission application, so check its validity before you apply.</li>
+        <li>If the income or property shown in the certificate goes down or up, you can apply with a copy of the old certificate and the required documents; the officer can cancel the old certificate and issue a new one.</li>
+      </ol>
+
+      <h3>Process in Indore</h3>
+      <ol>
+        <li>Get a certificate from <b>both the Indore Municipal Corporation and the Indore Development Authority</b> that the applicant&#8217;s family does not hold property above the limit within the Corporation limits / Authority area.</li>
+        <li>For the Municipal Corporation certificate, submit the affidavit at the Revenue Department of your zone office &#8212; documents and formats are in the options below (self-owned / rented property).</li>
+        <li>Take both certificates to the <b>Collector&#8217;s office</b> and apply for the EWS certificate &#8212; online on the MP e-District portal, at a Lok Seva Kendra, or at the Collector&#8217;s office. You get an acknowledgement receipt on applying; keep it safe.</li>
+        <li>In urban areas the Revenue Inspector does a field verification on site.</li>
+        <li>A false affidavit or false declaration can lead to legal action under the Indian Penal Code and other provisions.</li>
+      </ol>
+
+      <h3>Documents for the application at the Collector&#8217;s office (as per the order)</h3>
+      <ol>
+        <li>Samagra ID (of the family)</li>
+        <li>If you hold property: registry / patta / nazool papers (land, plot, flat, house)</li>
+        <li>If you own agricultural land: khasra and B-1</li>
+        <li>If salaried, a trader, a professional etc.: Form 16 / ITR-V (previous financial year) / pay slip</li>
+        <li>Self-declaration</li>
+      </ol>
+      <div class="note">Fee: there is no departmental fee. If you apply through a Lok Seva Kendra, the Kendra&#8217;s fixed service charge is paid separately to the operator.</div>
+
+      <h3>Appeal if the application is rejected or not decided in time</h3>
+      <ol>
+        <li><b>First appeal:</b> to the Collector, within 30 days. The Collector decides within 30 working days.</li>
+        <li><b>Second appeal:</b> to the Divisional Commissioner, within 60 days.</li>
+      </ol>
+
+      <h3>Use of the certificate</h3>
+      <ol>
+        <li>To claim the 10% reservation in admission to educational institutions and in government jobs.</li>
+      </ol>
+      <div class="note">This information is only for applicants residing within the Indore Municipal Corporation limits. Rules can change from time to time; the final decision rests with the Collector&#8217;s office.</div>
+      <button class="prn" onclick="window.print()">Print / save this information as PDF</button>
+    </div>
+  </details>
   <details class="acc" id="sE1">
     <summary><span class="t">EWS Certificate &#8212; Self-owned property</span><span class="c"></span></summary>
     <div class="body">
@@ -1776,7 +1844,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       </ol>
       <a class="dlx" href="https://parashartarun85-gif.github.io/rajasva-indore/forms/shapath_patra_EWS_swayam_sampatti.pdf" target="_blank" rel="noopener">Download affidavit format (self-owned property) (PDF)</a>
       <a class="dlx" style="background:linear-gradient(135deg,#1B5FA8 0%,#2E86C9 100%);box-shadow:0 3px 10px rgba(27,95,168,.3)" href="https://parashartarun85-gif.github.io/rajasva-indore/forms/shapath_patra_EWS_swayam_sampatti.docx" target="_blank" rel="noopener">Download affidavit format (self-owned property) (Word &#8212; fillable)</a>
-      <div class="note"><b>Validity:</b> This certificate is valid for 1 year only. After it expires, you have to apply again and get a new one.</div>
+      <div class="note"><b>Validity:</b> The EWS certificate is valid from the date of issue until the end of that financial year (31 March). After 31 March, you have to apply again and get a new certificate for the new financial year (from 1 April).</div>
       <div class="note">Keep every document clear and legible. If any tax is outstanding, pay it first. The affidavit format is for guidance only &#8212; get the affidavit notarised on a &#8377;200 stamp paper. (The affidavit format is in Hindi, as used on stamp paper.)</div>
       <button class="prn" onclick="window.print()">Print / save this list as PDF</button>
     </div>
@@ -1800,7 +1868,7 @@ window.ERRWIZ={state:function(){return st},shareText:shareText};
       </ol>
       <a class="dlx" href="https://parashartarun85-gif.github.io/rajasva-indore/forms/shapath_patra_EWS_kirayedari.pdf" target="_blank" rel="noopener">Download affidavit format (rented property) (PDF)</a>
       <a class="dlx" style="background:linear-gradient(135deg,#1B5FA8 0%,#2E86C9 100%);box-shadow:0 3px 10px rgba(27,95,168,.3)" href="https://parashartarun85-gif.github.io/rajasva-indore/forms/shapath_patra_EWS_kirayedari.docx" target="_blank" rel="noopener">Download affidavit format (rented property) (Word &#8212; fillable)</a>
-      <div class="note"><b>Validity:</b> This certificate is valid for 1 year only. After it expires, you have to apply again and get a new one.</div>
+      <div class="note"><b>Validity:</b> The EWS certificate is valid from the date of issue until the end of that financial year (31 March). After 31 March, you have to apply again and get a new certificate for the new financial year (from 1 April).</div>
       <div class="note">Keep every document clear and legible. If any tax is outstanding, pay it first. The affidavit format is for guidance only &#8212; get the affidavit notarised on a &#8377;200 stamp paper. (The affidavit format is in Hindi, as used on stamp paper.)</div>
       <button class="prn" onclick="window.print()">Print / save this list as PDF</button>
     </div>
