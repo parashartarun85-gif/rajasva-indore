@@ -755,7 +755,7 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
 #mutwiz .lw-chk{display:flex;gap:9px;align-items:flex-start;padding:7px 2px;font-size:15px}
 #mutwiz .lw-chk input{width:20px;height:20px;margin-top:2px;flex:none}
 #mutwiz .lw-sm{font-size:12.5px;color:#777;margin-top:10px}
-@media print{body *{visibility:hidden}#mutwiz,#mutwiz *{visibility:visible}#mutwiz{position:absolute;left:0;top:0;width:100%}#mutwiz .lw-nav,#mutwiz .lw-prog,#mutwiz .lw-chip button{display:none}}
+@media print{body.pw-mutwiz *{visibility:hidden}body.pw-mutwiz #mutwiz,body.pw-mutwiz #mutwiz *{visibility:visible}body.pw-mutwiz #mutwiz{position:absolute;left:0;top:0;width:100%}body.pw-mutwiz #mutwiz .lw-nav,body.pw-mutwiz #mutwiz .lw-prog,body.pw-mutwiz #mutwiz .lw-chip button{display:none}}
 </style>
 <div id="mutwiz" class="lw-root"><div class="lw-card">
 <div class="lw-hd"><b id="mw_t"></b><span id="mw_s"></span></div>
@@ -899,7 +899,7 @@ app.addEventListener('click',function(e){
   step++;drawStep();return}
  if(a==='back'){step=Math.max(0,step-1);drawStep();return}
  if(a==='again'){reset();drawStep();return}
- if(a==='prn'){window.print();return}
+ if(a==='prn'){document.body.classList.add('pw-mutwiz');window.addEventListener('afterprint',function(){document.body.classList.remove('pw-mutwiz')},{once:true});window.print();return}
  if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
  if(a==='full'){var d=$(last&&last.id);if(d){d.open=true;try{if(window.LICFOCUS){}}catch(x){}var g=document.createElement('a');g.href='#'+last.id;var w=document.querySelector('.wrap');w.appendChild(g);g.click();w.removeChild(g)}return}
 });
@@ -942,7 +942,7 @@ window.MUTWIZ={state:function(){return st},shareText:shareText};
 #errwiz .lw-chk{display:flex;gap:9px;align-items:flex-start;padding:7px 2px;font-size:15px}
 #errwiz .lw-chk input{width:20px;height:20px;margin-top:2px;flex:none}
 #errwiz .lw-sm{font-size:12.5px;color:#777;margin-top:10px}
-@media print{body *{visibility:hidden}#errwiz,#errwiz *{visibility:visible}#errwiz{position:absolute;left:0;top:0;width:100%}#errwiz .lw-nav,#errwiz .lw-prog,#errwiz .lw-chip button{display:none}}
+@media print{body.pw-errwiz *{visibility:hidden}body.pw-errwiz #errwiz,body.pw-errwiz #errwiz *{visibility:visible}body.pw-errwiz #errwiz{position:absolute;left:0;top:0;width:100%}body.pw-errwiz #errwiz .lw-nav,body.pw-errwiz #errwiz .lw-prog,body.pw-errwiz #errwiz .lw-chip button{display:none}}
 </style><style>#errwiz .lw-chk label{flex:1;cursor:pointer}#errwiz .lw-cnt{font-size:13.5px;color:#14506A;margin:2px 0 6px}#errwiz .lw-list{max-height:420px;overflow:auto}</style>
 <div id="errwiz" class="lw-root"><div class="lw-card">
 <div class="lw-hd"><b id="ew_t"></b><span id="ew_s"></span></div>
@@ -1036,7 +1036,7 @@ app.addEventListener('click',function(e){
  if(a==='prob'){st.prob=parseInt(el.getAttribute('data-i'),10);step=3;drawStep();return}
  if(a==='back'){step=Math.max(0,step-1);drawStep();return}
  if(a==='again'){reset();drawStep();return}
- if(a==='prn'){window.print();return}
+ if(a==='prn'){document.body.classList.add('pw-errwiz');window.addEventListener('afterprint',function(){document.body.classList.remove('pw-errwiz')},{once:true});window.print();return}
  if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
  if(a==='full'){if(last)go(last.id);return}
  if(a==='h311'){go(U5);return}
@@ -2138,7 +2138,7 @@ function printAff(){var d=document.getElementById('affDoc');if(!d)return;
 #licwiz .lw-chk{display:flex;gap:9px;align-items:flex-start;padding:7px 2px;font-size:15px}
 #licwiz .lw-chk input{width:20px;height:20px;margin-top:2px;flex:none}
 #licwiz .lw-sm{font-size:12.5px;color:#777;margin-top:10px}
-@media print{body *{visibility:hidden}#licwiz,#licwiz *{visibility:visible}#licwiz{position:absolute;left:0;top:0;width:100%}#licwiz .lw-nav,#licwiz .lw-prog,#licwiz .lw-chip button{display:none}}
+@media print{body.pw-licwiz *{visibility:hidden}body.pw-licwiz #licwiz,body.pw-licwiz #licwiz *{visibility:visible}body.pw-licwiz #licwiz{position:absolute;left:0;top:0;width:100%}body.pw-licwiz #licwiz .lw-nav,body.pw-licwiz #licwiz .lw-prog,body.pw-licwiz #licwiz .lw-chip button{display:none}}
 </style>
 <div id="licwiz" class="lw-root"><div class="lw-card">
 <div class="lw-hd"><b id="lw_t"></b><span id="lw_s"></span></div>
@@ -2382,7 +2382,7 @@ app.addEventListener('click',function(e){
  if(a==='next'){if(step===2){var v=$('lw_a');st.area=v?v.value:''}go(step+1);return}
  if(a==='back'){if(step===2){var v2=$('lw_a');if(v2)st.area=v2.value}go(step-1);return}
  if(a==='again'){reset();go(0);return}
- if(a==='prn'){window.print();return}
+ if(a==='prn'){document.body.classList.add('pw-licwiz');window.addEventListener('afterprint',function(){document.body.classList.remove('pw-licwiz')},{once:true});window.print();return}
  if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
 });
 app.addEventListener('change',function(e){var el=e.target;if(el.getAttribute&&el.getAttribute('data-a')==='sp'){st.sp[el.getAttribute('data-i')]=el.checked}});
