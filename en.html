@@ -501,6 +501,7 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
     var t=String(e.results[0][0].transcript||'').replace(/[\u0964.,]+$/,'').trim();
     if(!t)return;i.value=t;
     if(typeof filterCases==='function')filterCases(t);
+    setTimeout(function(){var f=[].filter.call(document.querySelectorAll('details.acc'),function(e){return e.offsetParent!==null&&!e.classList.contains('hide')})[0];if(f)f.scrollIntoView({behavior:'smooth',block:'start'})},150);
     i.focus()};
    r.start();
   }catch(x){note('Mic not available here, please type')}
@@ -632,6 +633,30 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
       <button class="prn" onclick="window.print()">Print this / Save as PDF</button>
     </div>
   </details>
+  <details class="acc" id="u7">
+    <summary><span class="t">How to pay online (e-Nagarpalika Citizen app)</span><span class="c"></span></summary>
+    <div class="body">
+      <p style="margin:12px 0 14px;font-size:14.5px;line-height:1.65;color:var(--soft)">Property tax, water charges and solid waste management (SWM) charges are all paid the same way. Get the app here: <a href="https://play.google.com/store/apps/details?id=com.mpuadd.enpcitizen" target="_blank" rel="noopener" style="color:var(--ink)"><b>e-Nagarpalika Citizen app (Google Play Store) &#8594;</b></a></p>
+      <ol>
+        <li><b>Open the app.</b> On the home screen choose by payment: <b>Property Tax</b> for property tax, <b>Water Charges</b> for water, <b>Door To Door</b> for the waste (SWM) charge.</li>
+        <li><b>Select the corporation.</b> The ULB <b>0152 &#8211; Indore Nagar Nigam</b> is pre-selected. Enter your account number and tap <b>Search</b> &#8212;
+          <ul>
+            <li>Property tax: <b>Property ID</b></li>
+            <li>Water: <b>water account number</b> (10 digits, starts with 5000; new accounts start with WC-2026)</li>
+            <li>SWM: <b>D2D ID</b> (10 digits, starts with 100; new accounts start with DC-2026)</li>
+          </ul></li>
+        <li><b>Tap your card.</b> Name, address etc. are shown. Confirm it is your account.</li>
+        <li><b>Check the bill.</b> Arrear, current-year amount, Rebate and total payable are shown. Then tap <b>Pay</b>.</li>
+        <li><b>Under Payment Mode choose Axis Bank,</b> then tap <b>Proceed</b>.</li>
+        <li><b>On the Axis Easypay page check the amount.</b> Note down the <b>URN</b> shown there, then tick <b>Terms and Conditions</b>.</li>
+        <li><b>Choose the payment method:</b> Internet Banking, Cards, UPI or NEFT/RTGS. For UPI, enter your UPI ID, fill in the verification code and tap <b>Complete Payment on Phone</b>, then approve in your UPI app.</li>
+        <li><b>Complete the payment within 3 minutes,</b> otherwise the transaction is cancelled. After success a <b>Download Receipt</b> option appears &#8212; tap it to download your receipt.</li>
+      </ol>
+      <div class="note"><b>Caution:</b> Read the red disclaimer on the bill (the calculation follows system data; if a difference is found you may have to pay it later). Keep your UPI app and network ready because of the 3-minute limit. If money is debited but you get no receipt, contact your zone office quoting the URN.</div>
+      <button class="prn" onclick="window.print()">Print / Save this information as PDF</button>
+    </div>
+  </details>
+
 
 
 
@@ -2396,7 +2421,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
 
   
 
-  <div class="visit" id="visitBar" style="display:none"><b id="visitN">0</b>Total number of times this page has been viewed<br><span id="visitP" style="font-size:12.5px;color:var(--soft)"></span></div>
+  <div class="visit" id="visitBar" style="display:none"><b id="visitN">0</b>Total number of times this page has been viewed</div>
 
  <div class="sharebox">
     <a class="wabtn" id="waShare" href="#" target="_blank" rel="noopener">
@@ -2507,7 +2532,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
     var shown = 0, total = 0;
     items.forEach(function(el){
       // guide/rejection/useful-info boxes should not be hidden by case-search
-      if(el.id === 'guide1' || el.id === 'reject1' || el.closest('h2') || el.id === 'u1' || el.id === 'u2' || el.id === 'u3' || el.id === 'u4' || el.id === 'u5' || el.id === 'ptbox'){
+      if(el.id === 'guide1' || el.id === 'reject1' || el.closest('h2') || el.id === 'u1' || el.id === 'u2' || el.id === 'u3' || el.id === 'u4' || el.id === 'u5' || el.id === 'u7' || el.id === 'ptbox'){
         return;
       }
       total++;
@@ -2537,7 +2562,6 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
  try{ localStorage.setItem('rv_seen','1'); }catch(e){}
  var bar = document.getElementById('visitBar');
  document.getElementById('visitN').textContent = Number(r.total).toLocaleString('en-IN') + ' ';
- document.getElementById('visitP').textContent = '(about ' + Number(r.people).toLocaleString('en-IN') + ' distinct visitors)';
  if(bar) bar.style.display = 'block';
  };
  var s = document.createElement('script');
@@ -2984,6 +3008,18 @@ function showAll(push){
  bar.classList.remove('on');[].forEach.call(nav.querySelectorAll('a'),function(a){a.classList.remove('fo-cur')});
  if(push)setHash('')
 }
+window.foSearch=function(q){
+ if(curG)return;
+ if(!String(q||'').trim()){showAll(false);return}
+ var skip=/^(guide1|reject1|u1|u2|u3|u4|u5|u7|ptbox)$/;
+ kids.forEach(function(el){
+  if(!el.hasAttribute('data-grp'))return;
+  var ok=el.matches('details.acc')&&!skip.test(el.id)&&!el.classList.contains('hide');
+  if(ok)el.classList.remove('fo-h');
+  else if(!ALWAYS.test(el.tagName.replace(/^P$/,'X')))el.classList.add('fo-h');
+ });
+};
+if(typeof filterCases==='function'&&!window.__fcw){var _fc=filterCases;window.filterCases=function(q){_fc(q);window.foSearch(q)};window.__fcw=1}
 function setHash(g){try{var u=location.pathname+location.search+(g?'#'+g:'');history.pushState(null,'',u)}catch(e){try{location.hash=g}catch(e2){}}}
 function focus(g,push){
  curG=g;
