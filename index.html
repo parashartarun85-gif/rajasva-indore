@@ -376,6 +376,8 @@
 .topbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 0}
 .topbar .lang{margin:0!important}
 .fszrow{display:inline-flex;gap:6px;align-items:center}
+.fszwrap{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.fszcap{font-size:12px;font-weight:700;color:var(--soft,#5a6b85);padding-left:4px}
 .fszrow button{font:inherit;font-weight:800;font-size:14px;min-width:40px;min-height:38px;padding:0 8px;border-radius:19px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
 .fszrow button[aria-pressed=true]{background:#123B70;color:#fff}
 .wrap details>.body,.wrap .lead,.wrap .note,.wrap .office,.wrap .catnote{text-align:justify;text-justify:inter-word;overflow-wrap:break-word;hyphens:auto}
@@ -383,8 +385,8 @@
 .wrap summary,.wrap h2.cat,.wrap .dl,.wrap .prn,.wrap .lw-hd,.wrap header,.wrap header h1,.wrap header p,.wrap .campaign{text-align:center;hyphens:manual}
 .wrap .acc>summary::before{content:'';flex:none;width:22px}
 .topbar{justify-content:space-between}
-@media print{.wrap{zoom:1!important}.topbar .fszrow{display:none}}
-</style><div class="topbar"><div class="fszrow" id="fszrow"><button type="button" data-z="1" aria-label="normal text size">A</button><button type="button" data-z="1.18" aria-label="larger text">A+</button><button type="button" data-z="1.36" aria-label="largest text">A++</button></div><a class="lang" href="en.html" style="background:#123B70">English</a></div><script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
+@media print{.wrap{zoom:1!important}.topbar .fszrow,.topbar .fszcap{display:none}}
+</style><div class="topbar"><div class="fszwrap"><div class="fszrow" id="fszrow"><button type="button" data-z="1" aria-label="normal text size">A</button><button type="button" data-z="1.18" aria-label="larger text">A+</button><button type="button" data-z="1.36" aria-label="largest text">A++</button></div><div class="fszcap">&#2309;&#2325;&#2381;&#2359;&#2352; &#2325;&#2366; &#2310;&#2325;&#2366;&#2352; &#2348;&#2342;&#2354;&#2375;&#2306;</div></div><a class="lang" href="en.html" style="background:#123B70">English</a></div><script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
 function set(z,save){w.style.zoom=(z==='1')?'':z;[].forEach.call(r.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===z?'true':'false')});if(save){try{localStorage.setItem('fsz',z)}catch(e){}}}
 var s='1';try{s=localStorage.getItem('fsz')||'1'}catch(e){}set(['1','1.18','1.36'].indexOf(s)<0?'1':s,false);
 r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button');if(b)set(b.getAttribute('data-z'),true)})})();</script><!--TOP-END-->
@@ -419,9 +421,9 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
       <span class="ico" style="background:#8C2F16">&#9888;&#65039;</span>
       <span class="lbl">&#2310;&#2357;&#2375;&#2342;&#2344; &#2354;&#2380;&#2335;&#2344;&#2375; &#2325;&#2375; &#2325;&#2366;&#2352;&#2339;</span>
     </a>
-    <a href="#howto" onclick="var d=document.getElementById('howto');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#4B5D7A">&#128205;</span>
-      <span class="lbl">&#2310;&#2357;&#2375;&#2342;&#2344; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2342;&#2375;&#2326;&#2375;&#2306;</span>
+    <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
+      <span class="ico" style="background:#123B70">&#127970;</span>
+      <span class="lbl">&#2325;&#2366;&#2352;&#2381;&#2351;&#2366;&#2354;&#2351; &#2325;&#2368; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span>
     </a>
     <a href="#catMut" onclick="var d=document.getElementById('catMut');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#12653F">&#127968;</span>
@@ -437,11 +439,11 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
     </a>
     <a href="#cat_pt" onclick="var d=document.getElementById('cat_pt');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#B4720A">&#129534;</span>
-      <span class="lbl">&#2360;&#2306;&#2346;&#2340;&#2381;&#2340;&#2367;&#2325;&#2352; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
+      <span class="lbl">&#2360;&#2306;&#2346;&#2340;&#2381;&#2340;&#2367;&#2325;&#2352; &#2326;&#2366;&#2340;&#2366; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
     </a>
     <a href="#catWater" onclick="var d=document.getElementById('catWater');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#1B7AA8">&#128167;</span>
-      <span class="lbl">&#2332;&#2354; &#2313;&#2346;&#2349;&#2379;&#2325;&#2381;&#2340;&#2366; &#2346;&#2381;&#2352;&#2349;&#2366;&#2352; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
+      <span class="lbl">&#2332;&#2354;&#2325;&#2352; &#2326;&#2366;&#2340;&#2366; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
     </a>
     <a href="#catWaste" onclick="var d=document.getElementById('catWaste');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#5C7A3D">&#128465;&#65039;</span>
@@ -460,19 +462,20 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
     
     
     
-    <a href="#sourcebox" onclick="var d=document.getElementById('sourcebox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
+    
+    
+  
+ 
+  
+
+  <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">&#128203;</span><span class="lbl">&#2335;&#2381;&#2352;&#2375;&#2337; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2310;&#2357;&#2375;&#2342;&#2344; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span></a>
+ <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D">&#128199;</span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2326;&#2379;&#2332;&#2375;&#2306;</span></a>
+ <a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C">&#8377;</span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2358;&#2369;&#2354;&#2381;&#2325; &#2357; &#2325;&#2379;&#2337; &#2332;&#2366;&#2344;&#2375;&#2306;</span></a>
+ <a href="#sourcebox" onclick="var d=document.getElementById('sourcebox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
       <span class="ico" style="background:#7A5C2E">&#128196;</span>
       <span class="lbl">&#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2364; &#2325;&#2361;&#2366;&#2305; &#2360;&#2375; &#2346;&#2381;&#2352;&#2366;&#2346;&#2381;&#2340; &#2325;&#2352;&#2375;&#2306;</span>
     </a>
-    <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
-      <span class="ico" style="background:#123B70">&#127970;</span>
-      <span class="lbl">&#2325;&#2366;&#2352;&#2381;&#2351;&#2366;&#2354;&#2351; &#2325;&#2368; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span>
-    </a>
-  
- <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">&#128203;</span><span class="lbl">&#2335;&#2381;&#2352;&#2375;&#2337; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2310;&#2357;&#2375;&#2342;&#2344; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span></a>
-  <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D">&#128199;</span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2326;&#2379;&#2332;&#2375;&#2306;</span></a>
-<a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C">&#8377;</span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2358;&#2369;&#2354;&#2381;&#2325; &#2357; &#2325;&#2379;&#2337; &#2332;&#2366;&#2344;&#2375;&#2306;</span></a>
- </div>
+</div>
 
   <div class="searchbox">
     <input type="text" id="searchBox" placeholder="&#2346;&#2381;&#2352;&#2325;&#2352;&#2339; &#2326;&#2379;&#2332;&#2375;&#2306; &#8212; &#2332;&#2376;&#2360;&#2375; &#2352;&#2375;&#2335; &#2333;&#2379;&#2344;, &#2344;&#2366;&#2350;&#2366;&#2306;&#2340;&#2352;&#2339;, &#2332;&#2354; &#2325;&#2352;" oninput="filterCases(this.value)" autocomplete="off">
@@ -510,6 +513,35 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
    r.start();
   }catch(x){note('\u0907\u0938 \u092a\u0928\u094d\u0928\u0947 \u092a\u0930 \u092e\u093e\u0907\u0915 \u0909\u092a\u0932\u092c\u094d\u0927 \u0928\u0939\u0940\u0902, \u091f\u093e\u0907\u092a \u0915\u0930\u0947\u0902')}
  };
+})();
+</script>
+
+<script>
+/* "Print this list" buttons: print only that card (not the whole page) */
+(function(){
+ var FOOT='\u0928\u0917\u0930 \u092a\u093e\u0932\u093f\u0915 \u0928\u093f\u0917\u092e \u0907\u0928\u094d\u0926\u094c\u0930 \u00b7 \u0930\u093e\u091c\u0938\u094d\u0935 \u0935\u093f\u092d\u093e\u0917 \u00b7 \u092f\u0939 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0915\u0947\u0935\u0932 \u092e\u093e\u0930\u094d\u0917\u0926\u0930\u094d\u0936\u0928 \u0939\u0947\u0924\u0941 \u0939\u0948';
+ function cardPrint(btn){
+  var card=btn.closest('details.acc');if(!card)return false;
+  var all=card.querySelectorAll('*'),i;
+  for(i=0;i<all.length;i++){if(all[i].offsetParent===null&&all[i].tagName!=='SCRIPT')all[i].setAttribute('data-hx','1')}
+  var cl=card.cloneNode(true);
+  for(i=0;i<all.length;i++)all[i].removeAttribute('data-hx');
+  [].forEach.call(cl.querySelectorAll('[data-hx],script,button,.c'),function(e){e.parentNode&&e.parentNode.removeChild(e)});
+  var t=card.querySelector('summary .t'),title=t?t.textContent:'';
+  var sm=cl.querySelector('summary');if(sm)sm.parentNode.removeChild(sm);
+  var w=null;try{w=window.open('','_blank')}catch(e){}
+  if(!w)return false;
+  var css='body{font-family:"Noto Sans Devanagari","Noto Sans",Arial,sans-serif;font-size:15px;line-height:1.75;margin:26px;color:#000}h1{font-size:20px;border-bottom:2px solid #000;padding-bottom:8px;margin:0 0 14px}h3{font-size:16px;margin:16px 0 6px}ol,ul{padding-left:24px}li{margin:6px 0}.note,.office{border:1px solid #888;padding:8px 12px;margin:12px 0;border-radius:6px;font-size:14px}a{color:#000;text-decoration:none}.foot{margin-top:22px;border-top:1px solid #999;padding-top:6px;font-size:12px;color:#444}details{display:block}';
+  w.document.open();
+  w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>'+title.replace(/</g,'&lt;')+'</title><style>'+css+'</style></head><body><h1>'+title.replace(/</g,'&lt;')+'</h1>'+cl.innerHTML+'<div class="foot">'+FOOT+'</div></body></html>');
+  w.document.close();w.focus();setTimeout(function(){try{w.print()}catch(e){}},500);
+  return true;
+ }
+ document.addEventListener('click',function(ev){
+  var b=ev.target.closest&&ev.target.closest('button.prn');
+  if(!b||String(b.getAttribute('onclick')||'').indexOf('window.print')<0)return;
+  if(cardPrint(b)){ev.stopPropagation();ev.preventDefault()}
+ },true);
 })();
 </script>
 
