@@ -376,6 +376,8 @@
 .topbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 0}
 .topbar .lang{margin:0!important}
 .fszrow{display:inline-flex;gap:6px;align-items:center}
+.fszwrap{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.fszcap{font-size:12px;font-weight:700;color:var(--soft,#5a6b85);padding-left:4px}
 .fszrow button{font:inherit;font-weight:800;font-size:14px;min-width:40px;min-height:38px;padding:0 8px;border-radius:19px;border:1.5px solid #123B70;background:#fff;color:#123B70;cursor:pointer}
 .fszrow button[aria-pressed=true]{background:#123B70;color:#fff}
 .wrap details>.body,.wrap .lead,.wrap .note,.wrap .office,.wrap .catnote{text-align:justify;text-justify:inter-word;overflow-wrap:break-word;hyphens:auto}
@@ -383,8 +385,8 @@
 .wrap summary,.wrap h2.cat,.wrap .dl,.wrap .prn,.wrap .lw-hd,.wrap header,.wrap header h1,.wrap header p,.wrap .campaign{text-align:center;hyphens:manual}
 .wrap .acc>summary::before{content:'';flex:none;width:22px}
 .topbar{justify-content:space-between}
-@media print{.wrap{zoom:1!important}.topbar .fszrow{display:none}}
-</style><div class="topbar"><div class="fszrow" id="fszrow"><button type="button" data-z="1" aria-label="normal text size">A</button><button type="button" data-z="1.18" aria-label="larger text">A+</button><button type="button" data-z="1.36" aria-label="largest text">A++</button></div><a class="lang" href="index.html" style="background:#123B70">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</a></div><script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
+@media print{.wrap{zoom:1!important}.topbar .fszrow,.topbar .fszcap{display:none}}
+</style><div class="topbar"><div class="fszwrap"><div class="fszrow" id="fszrow"><button type="button" data-z="1" aria-label="normal text size">A</button><button type="button" data-z="1.18" aria-label="larger text">A+</button><button type="button" data-z="1.36" aria-label="largest text">A++</button></div><div class="fszcap">Change text size</div></div><a class="lang" href="index.html" style="background:#123B70">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</a></div><script>(function(){var w=document.querySelector('.wrap'),r=document.getElementById('fszrow');if(!w||!r)return;
 function set(z,save){w.style.zoom=(z==='1')?'':z;[].forEach.call(r.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-z')===z?'true':'false')});if(save){try{localStorage.setItem('fsz',z)}catch(e){}}}
 var s='1';try{s=localStorage.getItem('fsz')||'1'}catch(e){}set(['1','1.18','1.36'].indexOf(s)<0?'1':s,false);
 r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button');if(b)set(b.getAttribute('data-z'),true)})})();</script><!--TOP-END-->
@@ -419,9 +421,9 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
       <span class="ico" style="background:#8C2F16">&#9888;&#65039;</span>
       <span class="lbl">Rejection Reasons</span>
     </a>
-    <a href="#howto" onclick="var d=document.getElementById('howto');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#4B5D7A">&#128205;</span>
-      <span class="lbl">Track Application Status</span>
+    <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
+      <span class="ico" style="background:#123B70">&#127970;</span>
+      <span class="lbl">Office Information</span>
     </a>
     <a href="#catMut" onclick="var d=document.getElementById('catMut');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#12653F">&#127968;</span>
@@ -437,11 +439,11 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
     </a>
     <a href="#cat_pt" onclick="var d=document.getElementById('cat_pt');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#B4720A">&#129534;</span>
-      <span class="lbl">Property Tax Fix</span>
+      <span class="lbl">Property Tax Account Fix</span>
     </a>
     <a href="#catWater" onclick="var d=document.getElementById('catWater');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#1B7AA8">&#128167;</span>
-      <span class="lbl">Water Charge Fix</span>
+      <span class="lbl">Water Tax Account Fix</span>
     </a>
     <a href="#catWaste" onclick="var d=document.getElementById('catWaste');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
       <span class="ico" style="background:#5C7A3D">&#128465;&#65039;</span>
@@ -460,19 +462,20 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
     
     
     
-    <a href="#sourcebox" onclick="var d=document.getElementById('sourcebox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
+    
+    
+  
+ 
+  
+
+  <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">&#128203;</span><span class="lbl">Trade Licence Application Info</span></a>
+ <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D">&#128199;</span><span class="lbl">Find Trade Licence</span></a>
+ <a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C">&#8377;</span><span class="lbl">Know Licence Fee and Code</span></a>
+ <a href="#sourcebox" onclick="var d=document.getElementById('sourcebox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
       <span class="ico" style="background:#7A5C2E">&#128196;</span>
       <span class="lbl">Where to Get Documents</span>
     </a>
-    <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
-      <span class="ico" style="background:#123B70">&#127970;</span>
-      <span class="lbl">Office Information</span>
-    </a>
-  
- <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">&#128203;</span><span class="lbl">Trade Licence Application Info</span></a>
-  <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D">&#128199;</span><span class="lbl">Find Trade Licence</span></a>
-<a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C">&#8377;</span><span class="lbl">Know Licence Fee and Code</span></a>
- </div>
+</div>
 
   <div class="searchbox">
     <input type="text" id="searchBox" placeholder="Search a case &#8212; e.g. rate zone, mutation, water tax" oninput="filterCases(this.value)" autocomplete="off">
@@ -510,6 +513,35 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
    r.start();
   }catch(x){note('Mic not available here, please type')}
  };
+})();
+</script>
+
+<script>
+/* "Print this list" buttons: print only that card (not the whole page) */
+(function(){
+ var FOOT='Indore Municipal Corporation \u00b7 Revenue Department \u00b7 For guidance only';
+ function cardPrint(btn){
+  var card=btn.closest('details.acc');if(!card)return false;
+  var all=card.querySelectorAll('*'),i;
+  for(i=0;i<all.length;i++){if(all[i].offsetParent===null&&all[i].tagName!=='SCRIPT')all[i].setAttribute('data-hx','1')}
+  var cl=card.cloneNode(true);
+  for(i=0;i<all.length;i++)all[i].removeAttribute('data-hx');
+  [].forEach.call(cl.querySelectorAll('[data-hx],script,button,.c'),function(e){e.parentNode&&e.parentNode.removeChild(e)});
+  var t=card.querySelector('summary .t'),title=t?t.textContent:'';
+  var sm=cl.querySelector('summary');if(sm)sm.parentNode.removeChild(sm);
+  var w=null;try{w=window.open('','_blank')}catch(e){}
+  if(!w)return false;
+  var css='body{font-family:"Noto Sans Devanagari","Noto Sans",Arial,sans-serif;font-size:15px;line-height:1.75;margin:26px;color:#000}h1{font-size:20px;border-bottom:2px solid #000;padding-bottom:8px;margin:0 0 14px}h3{font-size:16px;margin:16px 0 6px}ol,ul{padding-left:24px}li{margin:6px 0}.note,.office{border:1px solid #888;padding:8px 12px;margin:12px 0;border-radius:6px;font-size:14px}a{color:#000;text-decoration:none}.foot{margin-top:22px;border-top:1px solid #999;padding-top:6px;font-size:12px;color:#444}details{display:block}';
+  w.document.open();
+  w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>'+title.replace(/</g,'&lt;')+'</title><style>'+css+'</style></head><body><h1>'+title.replace(/</g,'&lt;')+'</h1>'+cl.innerHTML+'<div class="foot">'+FOOT+'</div></body></html>');
+  w.document.close();w.focus();setTimeout(function(){try{w.print()}catch(e){}},500);
+  return true;
+ }
+ document.addEventListener('click',function(ev){
+  var b=ev.target.closest&&ev.target.closest('button.prn');
+  if(!b||String(b.getAttribute('onclick')||'').indexOf('window.print')<0)return;
+  if(cardPrint(b)){ev.stopPropagation();ev.preventDefault()}
+ },true);
 })();
 </script>
 
