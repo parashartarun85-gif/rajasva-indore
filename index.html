@@ -125,11 +125,8 @@
   .miss{margin-top:16px;border-radius:8px;background:#FBF1EE;
         border:2px dashed #C0431E;padding:14px;color:#8C2F16;font-weight:500;font-size:14.5px}
   @media print{ .pt{display:none !important} }
-  .visit{margin-top:24px;padding:14px;text-align:center;
-         background:linear-gradient(135deg,#F7FAFE,#EAF2FB);
-         border:1px solid #D7E6F7;border-radius:10px;
-         font-size:13.5px;color:var(--soft)}
-  .visit b{display:block;font-size:24px;color:#123B70;margin-bottom:2px}
+  .visit{margin-top:14px;padding:7px 10px;text-align:center;background:none;border:0;border-top:1px solid #D7E6F7;border-radius:0;font-size:12px;color:var(--soft)}
+  .visit b{display:inline;font-size:15px;color:#123B70;margin:0 6px 0 0}
   .remind{display:block;margin-top:10px;padding:12px 14px;
       background:linear-gradient(135deg,#1B5FA8 0%,#2E86C9 100%);
       color:#fff;text-decoration:none;border-radius:8px;
@@ -142,6 +139,23 @@
   .navgrid .ico{width:50px;height:50px;border-radius:14px;display:flex;
                 align-items:center;justify-content:center;font-size:23px;
                 box-shadow:0 3px 8px rgba(20,33,58,.22)}
+  .navgrid .ico .si{width:24px;height:24px;stroke:#fff;filter:drop-shadow(0 1.5px 1px rgba(0,0,0,.35))}
+  .navgrid .wzgrid a.wz .ico .si{width:28px;height:28px}
+  .navgrid .ico{position:relative;overflow:hidden;transition:transform .09s ease,box-shadow .09s ease;
+                box-shadow:inset 0 2px 0 rgba(255,255,255,.38),inset 0 -4px 6px rgba(0,0,0,.28),0 6px 10px rgba(20,33,58,.30),0 2px 0 rgba(0,0,0,.18)}
+  .navgrid .ico::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+                background:linear-gradient(160deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,0) 52%,rgba(0,0,0,.16) 100%)}
+  .navgrid a:active .ico{transform:translateY(3px) scale(.93);box-shadow:inset 0 2px 0 rgba(255,255,255,.25),inset 0 -2px 4px rgba(0,0,0,.3),0 1px 3px rgba(20,33,58,.3)}
+  .navgrid .wzgrid a.wz{position:relative;overflow:hidden;transition:transform .09s ease,box-shadow .09s ease;
+                box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -4px 7px rgba(0,0,0,.25),0 7px 12px rgba(20,33,58,.30)}
+  .navgrid .wzgrid a.wz::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+                background:linear-gradient(160deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,0) 55%,rgba(0,0,0,.14) 100%)}
+  .navgrid .wzgrid a.wz:active{transform:translateY(3px) scale(.97);box-shadow:inset 0 2px 0 rgba(255,255,255,.25),0 2px 5px rgba(20,33,58,.3)}
+  .navgrid .wzgrid a.wz .ico::after{display:none}
+  .navgrid .wzgrid a.wz .ico{overflow:visible;box-shadow:none}
+  .navgrid .rip{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:rgba(255,255,255,.6);pointer-events:none;transform:scale(0);animation:ripa .55s ease-out forwards;z-index:2}
+  @keyframes ripa{to{transform:scale(7);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.navgrid .ico,.navgrid .wzgrid a.wz{transition:none}.navgrid a:active .ico,.navgrid .wzgrid a.wz:active{transform:none}.navgrid .rip{display:none}}
   .navgrid .lbl{font-size:10.5px;text-align:center;color:var(--ink);
                 font-weight:700;line-height:1.25;max-width:74px}
   .sharebox{margin-top:20px;text-align:center}
@@ -394,89 +408,6 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
 
   <p class="lead">&#2309;&#2346;&#2344;&#2366; &#2346;&#2381;&#2352;&#2325;&#2352;&#2339; &#2330;&#2369;&#2344;&#2375;&#2306;&#2404; &#2344;&#2368;&#2330;&#2375; &#2325;&#2375;&#2357;&#2354; &#2357;&#2375; &#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2364; &#2342;&#2367;&#2319; &#2361;&#2376;&#2306; &#2332;&#2379; <b>&#2310;&#2357;&#2375;&#2342;&#2325; &#2325;&#2379; &#2360;&#2381;&#2357;&#2351;&#2306; &#2346;&#2381;&#2352;&#2360;&#2381;&#2340;&#2369;&#2340; &#2325;&#2352;&#2344;&#2375;</b> &#2361;&#2376;&#2306;&#2404; &#2310;&#2357;&#2375;&#2342;&#2344; &#2346;&#2381;&#2352;&#2346;&#2340;&#2381;&#2352; &#2349;&#2368; &#2351;&#2361;&#2368;&#2306; &#2360;&#2375; &#2337;&#2366;&#2313;&#2344;&#2354;&#2379;&#2337; &#2325;&#2352; &#2360;&#2325;&#2340;&#2375; &#2361;&#2376;&#2306;&#2404;</p>
 
-  
-  <div class="navgrid">
-    <!--WZROW-START--><style>
-.wzh{grid-column:1/-1;font-weight:800;font-size:14.5px;color:var(--ink);margin:0 0 -2px}
-.wzgrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
-.navgrid .wzgrid a.wz{flex-direction:column;justify-content:flex-start;align-items:center;gap:4px;padding:11px 4px 9px;border-radius:14px;color:#fff;box-shadow:0 3px 9px rgba(20,33,58,.25);text-align:center}
-.navgrid .wzgrid a.wz .ico{width:auto;height:auto;background:none!important;box-shadow:none;font-size:27px;border-radius:0}
-.navgrid .wzgrid a.wz .lbl{color:#fff;max-width:none;font-size:13px;line-height:1.25}
-.navgrid .wzgrid a.wz .lbl small{display:block;font-weight:600;font-size:10.5px;opacity:.95;margin-top:2px}
-.wzlink{font-size:14.5px}.wzlink a{font-weight:700}
-</style><div class="wzh">&#9989; &#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330; (2 &#2350;&#2367;&#2344;&#2335;)</div><div class="wzgrid"><a class="wz" href="#mutwiz" style="background:linear-gradient(135deg,#E8820C,#F2A33D)" onclick="var d=document.getElementById('mutwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico">&#127968;</span><span class="lbl"><b>&#2344;&#2366;&#2350;&#2366;&#2306;&#2340;&#2352;&#2339;</b> <small>&#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330;</small></span></a><a class="wz" href="#errwiz" style="background:linear-gradient(135deg,#1F6F8B,#4FA3C0)" onclick="var d=document.getElementById('errwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico">&#9999;&#65039;</span><span class="lbl"><b>&#2340;&#2381;&#2352;&#2369;&#2335;&#2367; &#2360;&#2369;&#2343;&#2366;&#2352;</b> <small>&#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330;</small></span></a><a class="wz" href="#licwiz" style="background:linear-gradient(135deg,#3E7A2B,#6BA84F)" onclick="var d=document.getElementById('licwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico">&#127978;</span><span class="lbl"><b>&#2335;&#2381;&#2352;&#2375;&#2337; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360;</b> <small>&#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330;</small></span></a></div><!--WZROW-END-->
-    <a href="#u1" onclick="return openUseful(event);">
-      <span class="ico" style="background:#8A6D1F">&#128161;</span>
-      <span class="lbl">&#2313;&#2346;&#2351;&#2379;&#2327;&#2368; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span>
-    </a>
-    <a href="#catOnline" onclick="var d=document.getElementById('catOnline');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#0F7A5C">&#128241;</span>
-      <span class="lbl">&#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2349;&#2369;&#2327;&#2340;&#2366;&#2344; &#2319;&#2357;&#2306; &#2358;&#2367;&#2325;&#2366;&#2351;&#2340;</span>
-    </a>
-    <a href="#guide1" onclick="var d=document.getElementById('guide1');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#1B5FA8">&#128269;</span>
-      <span class="lbl">&#2350;&#2375;&#2352;&#2366; &#2346;&#2381;&#2352;&#2325;&#2352;&#2339; &#2325;&#2380;&#2344; &#2360;&#2366; &#2361;&#2376;</span>
-    </a>
-    <a href="#reject1" onclick="var d=document.getElementById('reject1');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#8C2F16">&#9888;&#65039;</span>
-      <span class="lbl">&#2310;&#2357;&#2375;&#2342;&#2344; &#2354;&#2380;&#2335;&#2344;&#2375; &#2325;&#2375; &#2325;&#2366;&#2352;&#2339;</span>
-    </a>
-    <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
-      <span class="ico" style="background:#123B70">&#127970;</span>
-      <span class="lbl">&#2325;&#2366;&#2352;&#2381;&#2351;&#2366;&#2354;&#2351; &#2325;&#2368; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span>
-    </a>
-    <a href="#catMut" onclick="var d=document.getElementById('catMut');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#12653F">&#127968;</span>
-      <span class="lbl">&#2344;&#2366;&#2350;&#2366;&#2306;&#2340;&#2352;&#2339;</span>
-    </a>
-    <a href="#catNew" onclick="var d=document.getElementById('catNew');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#2E86C9">&#127381;</span>
-      <span class="lbl">&#2344;&#2357;&#2368;&#2344; &#2326;&#2366;&#2340;&#2366;</span>
-    </a>
-    <a href="#catNOC" onclick="var d=document.getElementById('catNOC');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#6B4E9B">&#128220;</span>
-      <span class="lbl">&#2309;&#2344;&#2366;&#2346;&#2340;&#2381;&#2340;&#2367; (NOC)</span>
-    </a>
-    <a href="#cat_pt" onclick="var d=document.getElementById('cat_pt');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#B4720A">&#129534;</span>
-      <span class="lbl">&#2360;&#2306;&#2346;&#2340;&#2381;&#2340;&#2367;&#2325;&#2352; &#2326;&#2366;&#2340;&#2366; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
-    </a>
-    <a href="#catWater" onclick="var d=document.getElementById('catWater');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#1B7AA8">&#128167;</span>
-      <span class="lbl">&#2332;&#2354;&#2325;&#2352; &#2326;&#2366;&#2340;&#2366; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
-    </a>
-    <a href="#catWaste" onclick="var d=document.getElementById('catWaste');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#5C7A3D">&#128465;&#65039;</span>
-      <span class="lbl">&#2325;&#2330;&#2352;&#2366; &#2346;&#2381;&#2352;&#2348;&#2306;&#2343;&#2344; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
-    </a>
-    <a href="#catEWS" onclick="var d=document.getElementById('catEWS');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#7A3E9B">&#128209;</span>
-      <span class="lbl">EWS &#2346;&#2381;&#2352;&#2350;&#2366;&#2339; &#2346;&#2340;&#2381;&#2352;</span>
-    </a>
-    <!--
-    <a href="#ptbox" onclick="var d=document.getElementById('ptbox');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
-      <span class="ico" style="background:#123B70">&#128290;</span>
-      <span class="lbl">&#2309;&#2346;&#2344;&#2366; PT &#2344;&#2306;&#2348;&#2352; &#2332;&#2366;&#2344;&#2375;&#2306;</span>
-    </a>
-    -->
-    
-    
-    
-    
-    
-  
- 
-  
-
-  <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12">&#128203;</span><span class="lbl">&#2335;&#2381;&#2352;&#2375;&#2337; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2310;&#2357;&#2375;&#2342;&#2344; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span></a>
- <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D">&#128199;</span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2326;&#2379;&#2332;&#2375;&#2306;</span></a>
- <a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C">&#8377;</span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2358;&#2369;&#2354;&#2381;&#2325; &#2357; &#2325;&#2379;&#2337; &#2332;&#2366;&#2344;&#2375;&#2306;</span></a>
- <a href="#sourcebox" onclick="var d=document.getElementById('sourcebox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
-      <span class="ico" style="background:#7A5C2E">&#128196;</span>
-      <span class="lbl">&#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2364; &#2325;&#2361;&#2366;&#2305; &#2360;&#2375; &#2346;&#2381;&#2352;&#2366;&#2346;&#2381;&#2340; &#2325;&#2352;&#2375;&#2306;</span>
-    </a>
-</div>
-
   <div class="searchbox">
     <input type="text" id="searchBox" placeholder="&#2346;&#2381;&#2352;&#2325;&#2352;&#2339; &#2326;&#2379;&#2332;&#2375;&#2306; &#8212; &#2332;&#2376;&#2360;&#2375; &#2352;&#2375;&#2335; &#2333;&#2379;&#2344;, &#2344;&#2366;&#2350;&#2366;&#2306;&#2340;&#2352;&#2339;, &#2332;&#2354; &#2325;&#2352;" oninput="filterCases(this.value)" autocomplete="off">
  <button type="button" id="micBtn" class="mic" aria-label="&#2348;&#2379;&#2354;&#2325;&#2352; &#2326;&#2379;&#2332;&#2375;&#2306;" title="&#2348;&#2379;&#2354;&#2325;&#2352; &#2326;&#2379;&#2332;&#2375;&#2306;" style="display:none">&#127908;</button>
@@ -492,7 +423,9 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
 (function(){
  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
  var b=document.getElementById('micBtn'),i=document.getElementById('searchBox');
- if(!SR||!b||!i)return;
+ var gas=false;try{gas=!!(window.google&&google.script&&google.script.run)}catch(e){}
+ /* Apps Script (zone) pages run in a sandboxed iframe where the browser blocks the microphone -> no mic button there */
+ if(!SR||!b||!i||gas)return;
  b.style.display='block';i.style.paddingRight='84px';
  var r=null,on=false,ph=i.placeholder;
  function note(t){i.placeholder=t;setTimeout(function(){i.placeholder=ph},3500)}
@@ -541,6 +474,106 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
   var b=ev.target.closest&&ev.target.closest('button.prn');
   if(!b||String(b.getAttribute('onclick')||'').indexOf('window.print')<0)return;
   if(cardPrint(b)){ev.stopPropagation();ev.preventDefault()}
+ },true);
+})();
+</script>
+
+
+  
+  <div class="navgrid">
+    <!--WZROW-START--><style>
+.wzh{grid-column:1/-1;font-weight:800;font-size:14.5px;color:var(--ink);margin:0 0 -2px}
+.wzgrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
+.navgrid .wzgrid a.wz{flex-direction:column;justify-content:flex-start;align-items:center;gap:4px;padding:11px 4px 9px;border-radius:14px;color:#fff;box-shadow:0 3px 9px rgba(20,33,58,.25);text-align:center}
+.navgrid .wzgrid a.wz .ico{width:auto;height:auto;background:none!important;box-shadow:none;font-size:27px;border-radius:0}
+.navgrid .wzgrid a.wz .lbl{color:#fff;max-width:none;font-size:13px;line-height:1.25}
+.navgrid .wzgrid a.wz .lbl small{display:block;font-weight:600;font-size:10.5px;opacity:.95;margin-top:2px}
+.wzlink{font-size:14.5px}.wzlink a{font-weight:700}
+</style><div class="wzh">&#9989; &#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330; (2 &#2350;&#2367;&#2344;&#2335;)</div><div class="wzgrid"><a class="wz" href="#mutwiz" style="background:linear-gradient(135deg,#E8820C,#F2A33D)" onclick="var d=document.getElementById('mutwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="lbl"><b>&#2344;&#2366;&#2350;&#2366;&#2306;&#2340;&#2352;&#2339;</b> <small>&#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330;</small></span></a><a class="wz" href="#errwiz" style="background:linear-gradient(135deg,#1F6F8B,#4FA3C0)" onclick="var d=document.getElementById('errwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></span><span class="lbl"><b>&#2340;&#2381;&#2352;&#2369;&#2335;&#2367; &#2360;&#2369;&#2343;&#2366;&#2352;</b> <small>&#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330;</small></span></a><a class="wz" href="#licwiz" style="background:linear-gradient(135deg,#3E7A2B,#6BA84F)" onclick="var d=document.getElementById('licwiz');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></svg></span><span class="lbl"><b>&#2335;&#2381;&#2352;&#2375;&#2337; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360;</b> <small>&#2310;&#2357;&#2375;&#2342;&#2344; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2332;&#2366;&#2305;&#2330;</small></span></a></div><!--WZROW-END-->
+    <a href="#u1" onclick="return openUseful(event);">
+      <span class="ico" style="background:#8A6D1F"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 00-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0012 3z"/></svg></span>
+      <span class="lbl">&#2313;&#2346;&#2351;&#2379;&#2327;&#2368; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span>
+    </a>
+    <a href="#catOnline" onclick="var d=document.getElementById('catOnline');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#0F7A5C"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+      <span class="lbl">&#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2349;&#2369;&#2327;&#2340;&#2366;&#2344; &#2319;&#2357;&#2306; &#2358;&#2367;&#2325;&#2366;&#2351;&#2340;</span>
+    </a>
+    <a href="#guide1" onclick="var d=document.getElementById('guide1');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#1B5FA8"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+      <span class="lbl">&#2350;&#2375;&#2352;&#2366; &#2346;&#2381;&#2352;&#2325;&#2352;&#2339; &#2325;&#2380;&#2344; &#2360;&#2366; &#2361;&#2376;</span>
+    </a>
+    <a href="#reject1" onclick="var d=document.getElementById('reject1');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#8C2F16"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5"/><path d="M12 18h.01"/></svg></span>
+      <span class="lbl">&#2310;&#2357;&#2375;&#2342;&#2344; &#2354;&#2380;&#2335;&#2344;&#2375; &#2325;&#2375; &#2325;&#2366;&#2352;&#2339;</span>
+    </a>
+    <a href="#officeinfo" onclick="var d=document.getElementById('officeinfo');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
+      <span class="ico" style="background:#123B70"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></span>
+      <span class="lbl">&#2325;&#2366;&#2352;&#2381;&#2351;&#2366;&#2354;&#2351; &#2325;&#2368; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span>
+    </a>
+    <a href="#catMut" onclick="var d=document.getElementById('catMut');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#12653F"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+      <span class="lbl">&#2344;&#2366;&#2350;&#2366;&#2306;&#2340;&#2352;&#2339;</span>
+    </a>
+    <a href="#catNew" onclick="var d=document.getElementById('catNew');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#2E86C9"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+      <span class="lbl">&#2344;&#2357;&#2368;&#2344; &#2326;&#2366;&#2340;&#2366;</span>
+    </a>
+    <a href="#catNOC" onclick="var d=document.getElementById('catNOC');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#6B4E9B"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5"/><path d="M9 14l2 2 4-4"/></svg></span>
+      <span class="lbl">&#2309;&#2344;&#2366;&#2346;&#2340;&#2381;&#2340;&#2367; (NOC)</span>
+    </a>
+    <a href="#cat_pt" onclick="var d=document.getElementById('cat_pt');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#B4720A"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+      <span class="lbl">&#2360;&#2306;&#2346;&#2340;&#2381;&#2340;&#2367;&#2325;&#2352; &#2326;&#2366;&#2340;&#2366; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
+    </a>
+    <a href="#catWater" onclick="var d=document.getElementById('catWater');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#1B7AA8"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/></svg></span>
+      <span class="lbl">&#2332;&#2354;&#2325;&#2352; &#2326;&#2366;&#2340;&#2366; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
+    </a>
+    <a href="#catWaste" onclick="var d=document.getElementById('catWaste');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#5C7A3D"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></span>
+      <span class="lbl">&#2325;&#2330;&#2352;&#2366; &#2346;&#2381;&#2352;&#2348;&#2306;&#2343;&#2344; &#2360;&#2369;&#2343;&#2366;&#2352;</span>
+    </a>
+    <a href="#catEWS" onclick="var d=document.getElementById('catEWS');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#7A3E9B"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h9l3 3v13a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M4 7v14h12"/></svg></span>
+      <span class="lbl">EWS &#2346;&#2381;&#2352;&#2350;&#2366;&#2339; &#2346;&#2340;&#2381;&#2352;</span>
+    </a>
+    <!--
+    <a href="#ptbox" onclick="var d=document.getElementById('ptbox');if(d){if(d.tagName==='DETAILS')d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}return false;">
+      <span class="ico" style="background:#123B70"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14M5 15h14M10 4L8 20M16 4l-2 16"/></svg></span>
+      <span class="lbl">&#2309;&#2346;&#2344;&#2366; PT &#2344;&#2306;&#2348;&#2352; &#2332;&#2366;&#2344;&#2375;&#2306;</span>
+    </a>
+    -->
+    
+    
+    
+    
+    
+  
+ 
+  
+
+  <a href="#catLicense" onclick="var d=document.getElementById('catLicense');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#8A4B12"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M9 12h6M9 16h4"/></svg></span><span class="lbl">&#2335;&#2381;&#2352;&#2375;&#2337; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2310;&#2357;&#2375;&#2342;&#2344; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368;</span></a>
+ <a href="#licsrch" onclick="var d=document.getElementById('licsrch');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#A0522D"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 2-2 3-2s2.4.4 3 2M15 10h3M15 14h3"/></svg></span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2326;&#2379;&#2332;&#2375;&#2306;</span></a>
+ <a href="#licbox" onclick="var d=document.getElementById('licbox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;"><span class="ico" style="background:#E8820C"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h12M6 9h12M18 4c0 3-3 5-7 5H8l9 11"/></svg></span><span class="lbl">&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2358;&#2369;&#2354;&#2381;&#2325; &#2357; &#2325;&#2379;&#2337; &#2332;&#2366;&#2344;&#2375;&#2306;</span></a>
+ <a href="#sourcebox" onclick="var d=document.getElementById('sourcebox');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});return false;">
+      <span class="ico" style="background:#7A5C2E"><svg class="si" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></span>
+      <span class="lbl">&#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2364; &#2325;&#2361;&#2366;&#2305; &#2360;&#2375; &#2346;&#2381;&#2352;&#2366;&#2346;&#2381;&#2340; &#2325;&#2352;&#2375;&#2306;</span>
+    </a>
+</div>
+<script>
+(function(){
+ var red=false;try{red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+ if(red)return;
+ document.addEventListener('pointerdown',function(ev){
+  try{
+   var a=ev.target.closest&&ev.target.closest('.navgrid a');if(!a)return;
+   var host=a.classList.contains('wz')?a:a.querySelector('.ico');if(!host)return;
+   var r=host.getBoundingClientRect(),s=document.createElement('span');s.className='rip';
+   s.style.left=(ev.clientX-r.left)+'px';s.style.top=(ev.clientY-r.top)+'px';host.appendChild(s);
+   setTimeout(function(){if(s.parentNode)s.parentNode.removeChild(s)},600);
+   if(ev.pointerType==='touch'&&navigator.vibrate)navigator.vibrate(10);
+  }catch(e){}
  },true);
 })();
 </script>
@@ -656,6 +689,27 @@ r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest(
       </ol>
       <div class="note">&#2332;&#2379; &#2344;&#2306;&#2348;&#2352; &#2319;&#2325; &#2348;&#2366;&#2352; &#2354;&#2367;&#2306;&#2325; &#2361;&#2379; &#2332;&#2366;&#2340;&#2366; &#2361;&#2376;, &#2357;&#2361;&#2368; &#2310;&#2327;&#2375; &#2330;&#2354;&#2325;&#2352; 311 &#2320;&#2346; &#2332;&#2376;&#2360;&#2368; &#2309;&#2344;&#2381;&#2351; &#2360;&#2375;&#2357;&#2366;&#2323;&#2306; &#2350;&#2375;&#2306; OTP-&#2360;&#2340;&#2381;&#2351;&#2366;&#2346;&#2344; &#2325;&#2375; &#2354;&#2367;&#2319; &#2349;&#2368; &#2325;&#2366;&#2350; &#2310;&#2340;&#2366; &#2361;&#2376; &#8212; &#2319;&#2325; &#2348;&#2366;&#2352; &#2309;&#2346;&#2337;&#2375;&#2335;, &#2325;&#2312; &#2332;&#2327;&#2361; &#2313;&#2346;&#2351;&#2379;&#2327;&#2368;&#2404;</div>
       <button class="prn" onclick="window.print()">&#2351;&#2361; &#2332;&#2366;&#2344;&#2325;&#2366;&#2352;&#2368; &#2346;&#2381;&#2352;&#2367;&#2306;&#2335; &#2325;&#2352;&#2375;&#2306; / PDF &#2360;&#2361;&#2375;&#2332;&#2375;&#2306;</button>
+    </div>
+  </details>
+
+ <details class="acc" id="howto">
+    <summary><span class="t">&#2310;&#2357;&#2375;&#2342;&#2344; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2325;&#2376;&#2360;&#2375; &#2342;&#2375;&#2326;&#2375;&#2306;? &#8212; &#2346;&#2370;&#2352;&#2368; &#2357;&#2367;&#2343;&#2367;</span><span class="c"></span></summary>
+    <div class="body">
+      <h3>Track Application &#2360;&#2375; &#8212; PT &#2344;&#2306;&#2348;&#2352; &#2337;&#2366;&#2354;&#2325;&#2352;</h3>
+      <ol>
+        <li>&#2350;&#2379;&#2348;&#2366;&#2311;&#2354; &#2350;&#2375;&#2306; <b>MP e-NagarPalika</b> &#2320;&#2346; &#2326;&#2379;&#2354;&#2375;&#2306; (Play Store &#2360;&#2375; &#2344;&#2367;&#2307;&#2358;&#2369;&#2354;&#2381;&#2325;)</li>
+        <li>Citizen Dashboard &#8594; <b>Quick Services</b> &#8594; <b>Property Tax</b></li>
+        <li><b>Track Application</b> &#2346;&#2352; &#2332;&#2366;&#2319;&#2305;</li>
+        <li><b>Enter Application ID</b> &#2350;&#2375;&#2306; &#2309;&#2346;&#2344;&#2366; <b>PT &#2344;&#2306;&#2348;&#2352;</b> &#2337;&#2366;&#2354;&#2375;&#2306; &#8594; <b>Search</b></li>
+      </ol>
+      <h3>Property Transfer &#2360;&#2375; &#8212; Property ID &#2337;&#2366;&#2354;&#2325;&#2352;</h3>
+      <ol>
+        <li><b>Property Tax</b> &#8594; <b>Property Transfer</b></li>
+        <li><b>Transfer Type</b> &#2330;&#2369;&#2344;&#2375;&#2306; &#8212; One to One &#2309;&#2341;&#2357;&#2366; One to Many</li>
+        <li><b>Property ID</b> &#2337;&#2366;&#2354;&#2375;&#2306; &#8594; <b>Search</b></li>
+      </ol>
+      <div class="note">&#2320;&#2346; &#2350;&#2375;&#2306; &#2314;&#2346;&#2352; &#2342;&#2366;&#2312;&#2306; &#2323;&#2352; <b>&#2309; / E</b> &#2360;&#2375; &#2349;&#2366;&#2359;&#2366; &#2348;&#2342;&#2354;&#2368; &#2332;&#2366; &#2360;&#2325;&#2340;&#2368; &#2361;&#2376;&#2404; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2344; &#2342;&#2367;&#2326;&#2375; &#2340;&#2379; &#2310;&#2357;&#2375;&#2342;&#2344; &#2309;&#2349;&#2368; &#2346;&#2379;&#2352;&#2381;&#2335;&#2354; &#2346;&#2352; &#2342;&#2352;&#2381;&#2332; &#2361;&#2379;&#2344;&#2366; &#2358;&#2375;&#2359; &#2361;&#2379; &#2360;&#2325;&#2340;&#2366; &#2361;&#2376; &#8212; &#2309;&#2327;&#2354;&#2375; &#2342;&#2367;&#2344; &#2346;&#2369;&#2344;&#2307; &#2346;&#2381;&#2352;&#2351;&#2366;&#2360; &#2325;&#2352;&#2375;&#2306;&#2404;</div>
+      <button class="prn" onclick="window.print()">&#2351;&#2361; &#2357;&#2367;&#2343;&#2367; &#2346;&#2381;&#2352;&#2367;&#2306;&#2335; &#2325;&#2352;&#2375;&#2306; / PDF &#2360;&#2361;&#2375;&#2332;&#2375;&#2306;</button>
     </div>
   </details>
 
@@ -932,7 +986,7 @@ app.addEventListener('click',function(e){
  if(a==='back'){step=Math.max(0,step-1);drawStep();return}
  if(a==='again'){reset();drawStep();return}
  if(a==='prn'){document.body.classList.add('pw-mutwiz');window.addEventListener('afterprint',function(){document.body.classList.remove('pw-mutwiz')},{once:true});window.print();return}
- if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
+ if(a==='wa'){(window.shareWA||function(t){window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener')})(shareText());return}
  if(a==='full'){var d=$(last&&last.id);if(d){d.open=true;try{if(window.LICFOCUS){}}catch(x){}var g=document.createElement('a');g.href='#'+last.id;var w=document.querySelector('.wrap');w.appendChild(g);g.click();w.removeChild(g)}return}
 });
 drawStep();
@@ -1069,7 +1123,7 @@ app.addEventListener('click',function(e){
  if(a==='back'){step=Math.max(0,step-1);drawStep();return}
  if(a==='again'){reset();drawStep();return}
  if(a==='prn'){document.body.classList.add('pw-errwiz');window.addEventListener('afterprint',function(){document.body.classList.remove('pw-errwiz')},{once:true});window.print();return}
- if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
+ if(a==='wa'){(window.shareWA||function(t){window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener')})(shareText());return}
  if(a==='full'){if(last)go(last.id);return}
  if(a==='h311'){go(U5);return}
 });
@@ -1349,6 +1403,7 @@ function printAff(){var d=document.getElementById('affDoc');if(!d)return;
       <ol>
         <li>&#2310;&#2357;&#2375;&#2342;&#2344; &#2346;&#2340;&#2381;&#2352; (&#2344;&#2368;&#2330;&#2375; &#2360;&#2375; &#2337;&#2366;&#2313;&#2344;&#2354;&#2379;&#2337; &#2325;&#2352;&#2375;&#2306;)</li>
         <li>&#2350;&#2370;&#2354; &#2352;&#2360;&#2368;&#2342; &#2309;&#2341;&#2357;&#2366; &#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2352;&#2360;&#2368;&#2342; &#2325;&#2368; &#2346;&#2381;&#2352;&#2340;&#2367;</li>
+        <li>&#2330;&#2375;&#2325; &#2351;&#2366; &#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2349;&#2369;&#2327;&#2340;&#2366;&#2344; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2350;&#2375;&#2306; &#2348;&#2376;&#2306;&#2325; &#2360;&#2381;&#2335;&#2375;&#2335;&#2350;&#2375;&#2306;&#2335; &#2325;&#2368; &#2346;&#2381;&#2352;&#2340;&#2367;</li>
         <li>&#2310;&#2357;&#2375;&#2342;&#2325; &#2325;&#2366; &#2310;&#2343;&#2366;&#2352; &#2325;&#2366;&#2352;&#2381;&#2337;</li>
       </ol>
       <div class="note">&#2350;&#2370;&#2354; &#2352;&#2360;&#2368;&#2342; &#2360;&#2366;&#2341; &#2354;&#2366;&#2319;&#2305; &#8212; &#2348;&#2367;&#2354; &#2325;&#2354;&#2375;&#2325;&#2381;&#2335;&#2352; &#2342;&#2381;&#2357;&#2366;&#2352;&#2366; &#2360;&#2340;&#2381;&#2351;&#2366;&#2346;&#2344; &#2325;&#2352;&#2366;&#2351;&#2366; &#2332;&#2366;&#2340;&#2366; &#2361;&#2376;&#2404;</div>
@@ -1396,6 +1451,7 @@ function printAff(){var d=document.getElementById('affDoc');if(!d)return;
         <li>&#2344;&#2366;&#2350;&#2366;&#2306;&#2340;&#2352;&#2339; &#2342;&#2366;&#2326;&#2354;&#2366; &#2325;&#2368; &#2325;&#2377;&#2346;&#2368;</li>
         <li>&#2352;&#2332;&#2367;&#2360;&#2381;&#2335;&#2352;&#2381;&#2337; &#2357;&#2367;&#2325;&#2381;&#2352;&#2351; &#2346;&#2340;&#2381;&#2352; &#2325;&#2368; &#2331;&#2366;&#2351;&#2366; &#2346;&#2381;&#2352;&#2340;&#2367;</li>
         <li>&#2360;&#2306;&#2346;&#2340;&#2381;&#2340;&#2367;&#2325;&#2352; &#2325;&#2368; &#2344;&#2357;&#2368;&#2344;&#2340;&#2350; &#2352;&#2360;&#2368;&#2342; &#2325;&#2368; &#2331;&#2366;&#2351;&#2366;&#2346;&#2381;&#2352;&#2340;&#2367;</li>
+        <li>&#2349;&#2357;&#2344; / &#2347;&#2381;&#2354;&#2376;&#2335; / &#2346;&#2381;&#2354;&#2377;&#2335; &#2325;&#2366; &#2352;&#2306;&#2327;&#2368;&#2344; &#2332;&#2367;&#2323; &#2335;&#2376;&#2327; &#2347;&#2379;&#2335;&#2379;</li>
         <li>&#2310;&#2357;&#2375;&#2342;&#2325; &#2325;&#2366; &#2310;&#2343;&#2366;&#2352; &#2325;&#2366;&#2352;&#2381;&#2337;</li></ol>
       <div class="office">&#2350;&#2380;&#2325;&#2366; &#2352;&#2367;&#2346;&#2379;&#2352;&#2381;&#2335;, &#2335;&#2368;&#2346;, &#2309;&#2344;&#2369;&#2358;&#2306;&#2360;&#2366; &#2319;&#2357;&#2306; &#2309;&#2344;&#2381;&#2351; &#2357;&#2367;&#2349;&#2366;&#2327;&#2368;&#2351; &#2346;&#2381;&#2352;&#2340;&#2367;&#2357;&#2375;&#2342;&#2344; &#2325;&#2366;&#2352;&#2381;&#2351;&#2366;&#2354;&#2351; &#2360;&#2381;&#2340;&#2352; &#2346;&#2352; &#2340;&#2376;&#2351;&#2366;&#2352; &#2325;&#2367;&#2319; &#2332;&#2366;&#2340;&#2375; &#2361;&#2376;&#2306;&#2404; &#2310;&#2357;&#2375;&#2342;&#2325; &#2325;&#2379; &#2351;&#2375; &#2344;&#2361;&#2368;&#2306; &#2354;&#2366;&#2344;&#2375; &#2361;&#2376;&#2306;&#2404;</div>
       <a class="dl" data-form="dl3" href="#">&#2310;&#2357;&#2375;&#2342;&#2344; &#2346;&#2381;&#2352;&#2346;&#2340;&#2381;&#2352; &#2337;&#2366;&#2313;&#2344;&#2354;&#2379;&#2337; &#2325;&#2352;&#2375;&#2306;</a>
@@ -1449,7 +1505,6 @@ function printAff(){var d=document.getElementById('affDoc');if(!d)return;
         <li>&#2360;&#2306;&#2346;&#2340;&#2381;&#2340;&#2367;&#2325;&#2352; &#2325;&#2368; &#2344;&#2357;&#2368;&#2344;&#2340;&#2350; &#2352;&#2360;&#2368;&#2342; &#2325;&#2368; &#2331;&#2366;&#2351;&#2366;&#2346;&#2381;&#2352;&#2340;&#2367;</li>
         <li>&#2349;&#2357;&#2344; / &#2347;&#2381;&#2354;&#2376;&#2335; / &#2346;&#2381;&#2354;&#2377;&#2335; &#2325;&#2366; &#2352;&#2306;&#2327;&#2368;&#2344; &#2332;&#2367;&#2323; &#2335;&#2376;&#2327; &#2347;&#2379;&#2335;&#2379;</li>
         <li>&#2360;&#2381;&#2357;-&#2325;&#2352; &#2344;&#2367;&#2352;&#2381;&#2343;&#2366;&#2352;&#2339; &#2357;&#2367;&#2357;&#2352;&#2339;&#2368;</li>
-        <li>&#2349;&#2357;&#2344; &#2309;&#2344;&#2369;&#2332;&#2381;&#2334;&#2366; &#2325;&#2368; &#2346;&#2381;&#2352;&#2340;&#2367; (&#2351;&#2342;&#2367; &#2354;&#2368; &#2327;&#2312; &#2361;&#2379;)</li>
         <li>&#2310;&#2357;&#2375;&#2342;&#2325; &#2325;&#2366; &#2310;&#2343;&#2366;&#2352; &#2325;&#2366;&#2352;&#2381;&#2337;</li></ol>
       <div class="office">&#2350;&#2380;&#2325;&#2366; &#2352;&#2367;&#2346;&#2379;&#2352;&#2381;&#2335;, &#2335;&#2368;&#2346;, &#2309;&#2344;&#2369;&#2358;&#2306;&#2360;&#2366; &#2319;&#2357;&#2306; &#2309;&#2344;&#2381;&#2351; &#2357;&#2367;&#2349;&#2366;&#2327;&#2368;&#2351; &#2346;&#2381;&#2352;&#2340;&#2367;&#2357;&#2375;&#2342;&#2344; &#2325;&#2366;&#2352;&#2381;&#2351;&#2366;&#2354;&#2351; &#2360;&#2381;&#2340;&#2352; &#2346;&#2352; &#2340;&#2376;&#2351;&#2366;&#2352; &#2325;&#2367;&#2319; &#2332;&#2366;&#2340;&#2375; &#2361;&#2376;&#2306;&#2404; &#2310;&#2357;&#2375;&#2342;&#2325; &#2325;&#2379; &#2351;&#2375; &#2344;&#2361;&#2368;&#2306; &#2354;&#2366;&#2344;&#2375; &#2361;&#2376;&#2306;&#2404;</div>
       <a class="dl" data-form="dl3" href="#">&#2310;&#2357;&#2375;&#2342;&#2344; &#2346;&#2381;&#2352;&#2346;&#2340;&#2381;&#2352; &#2337;&#2366;&#2313;&#2344;&#2354;&#2379;&#2337; &#2325;&#2352;&#2375;&#2306;</a>
@@ -1502,7 +1557,6 @@ function printAff(){var d=document.getElementById('affDoc');if(!d)return;
       <h3>&#2310;&#2357;&#2375;&#2342;&#2325; &#2342;&#2381;&#2357;&#2366;&#2352;&#2366; &#2346;&#2381;&#2352;&#2360;&#2381;&#2340;&#2369;&#2340; &#2325;&#2367;&#2319; &#2332;&#2366;&#2344;&#2375; &#2357;&#2366;&#2354;&#2375; &#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2364;</h3>
       <ol>
         <li>&#2310;&#2357;&#2375;&#2342;&#2344; &#2346;&#2340;&#2381;&#2352; (&#2344;&#2368;&#2330;&#2375; &#2360;&#2375; &#2337;&#2366;&#2313;&#2344;&#2354;&#2379;&#2337; &#2325;&#2352;&#2375;&#2306;)</li>
-        <li>&#2349;&#2357;&#2344; &#2309;&#2344;&#2369;&#2332;&#2381;&#2334;&#2366; &#2325;&#2368; &#2346;&#2381;&#2352;&#2340;&#2367; &#2309;&#2341;&#2357;&#2366; &#2332;&#2364;&#2350;&#2368;&#2344; &#2325;&#2366; &#2313;&#2346;&#2351;&#2379;&#2327; &#2348;&#2342;&#2354;&#2344;&#2375; &#2325;&#2375; &#2310;&#2342;&#2375;&#2358; (&#2357;&#2381;&#2351;&#2346;&#2357;&#2352;&#2381;&#2340;&#2344; &#2310;&#2342;&#2375;&#2358;) &#2325;&#2368; &#2325;&#2377;&#2346;&#2368;</li>
         <li>&#2360;&#2381;&#2357;-&#2325;&#2352; &#2344;&#2367;&#2352;&#2381;&#2343;&#2366;&#2352;&#2339; &#2357;&#2367;&#2357;&#2352;&#2339;&#2368;</li>
         <li>&#2360;&#2381;&#2357;&#2366;&#2350;&#2367;&#2340;&#2381;&#2357; &#2360;&#2306;&#2348;&#2306;&#2343;&#2368; &#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332; &#2325;&#2368; &#2331;&#2366;&#2351;&#2366;&#2346;&#2381;&#2352;&#2340;&#2367;</li>
         <li>&#2360;&#2306;&#2346;&#2340;&#2381;&#2340;&#2367;&#2325;&#2352; &#2325;&#2368; &#2344;&#2357;&#2368;&#2344;&#2340;&#2350; &#2352;&#2360;&#2368;&#2342; &#2325;&#2368; &#2331;&#2366;&#2351;&#2366;&#2346;&#2381;&#2352;&#2340;&#2367;</li>
@@ -2126,11 +2180,17 @@ function printAff(){var d=document.getElementById('affDoc');if(!d)return;
   <button class="acct-toggle" onclick="lsToggle()">&#2350;&#2379;&#2348;&#2366;&#2311;&#2354; &#2344;&#2306;&#2348;&#2352; &#2332;&#2369;&#2337;&#2364;&#2366; &#2344;&#2361;&#2368;&#2306; &#2361;&#2376;? &#2344;&#2366;&#2350; / &#2347;&#2352;&#2381;&#2350; / Trade ID &#2360;&#2375; &#2326;&#2379;&#2332;&#2375;&#2306; &#8594;</button>
   <div class="acct-name-block" id="ls_nameBlock">
    <p style="margin:0 0 10px;font-size:12.5px;color:var(--soft)">&#2357;&#2366;&#2352;&#2381;&#2337; &#2330;&#2369;&#2344;&#2344;&#2366; &#2357;&#2376;&#2325;&#2354;&#2381;&#2346;&#2367;&#2325; &#2361;&#2376;&#2404; &#2325;&#2312; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2346;&#2369;&#2352;&#2366;&#2344;&#2375; &#2352;&#2367;&#2325;&#2377;&#2352;&#2381;&#2337; &#2350;&#2375;&#2306; &#2325;&#2367;&#2360;&#2368; &#2342;&#2370;&#2360;&#2352;&#2375; &#2357;&#2366;&#2352;&#2381;&#2337; &#2350;&#2375;&#2306; &#2342;&#2352;&#2381;&#2332; &#2361;&#2376;&#2306;, &#2311;&#2360;&#2354;&#2367;&#2319; &#2344; &#2350;&#2367;&#2354;&#2344;&#2375; &#2346;&#2352; &#2357;&#2366;&#2352;&#2381;&#2337; &#2326;&#2366;&#2354;&#2368; &#2331;&#2379;&#2337;&#2364;&#2325;&#2352; &#2326;&#2379;&#2332;&#2375;&#2306;&#2404; &#2344;&#2366;&#2350; &#2309;&#2341;&#2357;&#2366; &#2347;&#2352;&#2381;&#2350; &#2325;&#2366; &#2344;&#2366;&#2350; &#2361;&#2367;&#2306;&#2342;&#2368; &#2351;&#2366; &#2309;&#2306;&#2327;&#2381;&#2352;&#2375;&#2332;&#2364;&#2368; &#2350;&#2375;&#2306; &#2354;&#2367;&#2326;&#2375;&#2306;</p>
+   <label for="ls_q">&#2346;&#2381;&#2352;&#2379;&#2346;&#2352;&#2366;&#2311;&#2335;&#2352; &#2325;&#2366; &#2344;&#2366;&#2350; / &#2347;&#2352;&#2381;&#2350; &#2325;&#2366; &#2344;&#2366;&#2350; / Trade ID</label>
+   <input id="ls_q" type="text" placeholder="&#2332;&#2376;&#2360;&#2375;: &#2358;&#2352;&#2381;&#2350;&#2366; / sharma &#2309;&#2341;&#2357;&#2366; &#2354;&#2366;&#2311;&#2335; &#2346;&#2381;&#2354;&#2375;&#2344;&#2375;&#2335; / light planet">
    <label for="ls_w">&#2357;&#2366;&#2352;&#2381;&#2337; &#2330;&#2369;&#2344;&#2375;&#2306; (&#2357;&#2376;&#2325;&#2354;&#2381;&#2346;&#2367;&#2325;)</label>
    <select id="ls_w"><option value="">-- &#2360;&#2349;&#2368; &#2357;&#2366;&#2352;&#2381;&#2337; --</option><option value="1">&#2357;&#2366;&#2352;&#2381;&#2337; 1</option><option value="2">&#2357;&#2366;&#2352;&#2381;&#2337; 2</option><option value="3">&#2357;&#2366;&#2352;&#2381;&#2337; 3</option><option value="4">&#2357;&#2366;&#2352;&#2381;&#2337; 4</option><option value="5">&#2357;&#2366;&#2352;&#2381;&#2337; 5</option><option value="6">&#2357;&#2366;&#2352;&#2381;&#2337; 6</option><option value="7">&#2357;&#2366;&#2352;&#2381;&#2337; 7</option><option value="8">&#2357;&#2366;&#2352;&#2381;&#2337; 8</option><option value="9">&#2357;&#2366;&#2352;&#2381;&#2337; 9</option><option value="10">&#2357;&#2366;&#2352;&#2381;&#2337; 10</option><option value="11">&#2357;&#2366;&#2352;&#2381;&#2337; 11</option><option value="12">&#2357;&#2366;&#2352;&#2381;&#2337; 12</option><option value="13">&#2357;&#2366;&#2352;&#2381;&#2337; 13</option><option value="14">&#2357;&#2366;&#2352;&#2381;&#2337; 14</option><option value="15">&#2357;&#2366;&#2352;&#2381;&#2337; 15</option><option value="16">&#2357;&#2366;&#2352;&#2381;&#2337; 16</option><option value="17">&#2357;&#2366;&#2352;&#2381;&#2337; 17</option><option value="18">&#2357;&#2366;&#2352;&#2381;&#2337; 18</option><option value="19">&#2357;&#2366;&#2352;&#2381;&#2337; 19</option><option value="20">&#2357;&#2366;&#2352;&#2381;&#2337; 20</option><option value="21">&#2357;&#2366;&#2352;&#2381;&#2337; 21</option><option value="22">&#2357;&#2366;&#2352;&#2381;&#2337; 22</option><option value="23">&#2357;&#2366;&#2352;&#2381;&#2337; 23</option><option value="24">&#2357;&#2366;&#2352;&#2381;&#2337; 24</option><option value="25">&#2357;&#2366;&#2352;&#2381;&#2337; 25</option><option value="26">&#2357;&#2366;&#2352;&#2381;&#2337; 26</option><option value="27">&#2357;&#2366;&#2352;&#2381;&#2337; 27</option><option value="28">&#2357;&#2366;&#2352;&#2381;&#2337; 28</option><option value="29">&#2357;&#2366;&#2352;&#2381;&#2337; 29</option><option value="30">&#2357;&#2366;&#2352;&#2381;&#2337; 30</option><option value="31">&#2357;&#2366;&#2352;&#2381;&#2337; 31</option><option value="32">&#2357;&#2366;&#2352;&#2381;&#2337; 32</option><option value="33">&#2357;&#2366;&#2352;&#2381;&#2337; 33</option><option value="34">&#2357;&#2366;&#2352;&#2381;&#2337; 34</option><option value="35">&#2357;&#2366;&#2352;&#2381;&#2337; 35</option><option value="36">&#2357;&#2366;&#2352;&#2381;&#2337; 36</option><option value="37">&#2357;&#2366;&#2352;&#2381;&#2337; 37</option><option value="38">&#2357;&#2366;&#2352;&#2381;&#2337; 38</option><option value="39">&#2357;&#2366;&#2352;&#2381;&#2337; 39</option><option value="40">&#2357;&#2366;&#2352;&#2381;&#2337; 40</option><option value="41">&#2357;&#2366;&#2352;&#2381;&#2337; 41</option><option value="42">&#2357;&#2366;&#2352;&#2381;&#2337; 42</option><option value="43">&#2357;&#2366;&#2352;&#2381;&#2337; 43</option><option value="44">&#2357;&#2366;&#2352;&#2381;&#2337; 44</option><option value="45">&#2357;&#2366;&#2352;&#2381;&#2337; 45</option><option value="46">&#2357;&#2366;&#2352;&#2381;&#2337; 46</option><option value="47">&#2357;&#2366;&#2352;&#2381;&#2337; 47</option><option value="48">&#2357;&#2366;&#2352;&#2381;&#2337; 48</option><option value="49">&#2357;&#2366;&#2352;&#2381;&#2337; 49</option><option value="50">&#2357;&#2366;&#2352;&#2381;&#2337; 50</option><option value="51">&#2357;&#2366;&#2352;&#2381;&#2337; 51</option><option value="52">&#2357;&#2366;&#2352;&#2381;&#2337; 52</option><option value="53">&#2357;&#2366;&#2352;&#2381;&#2337; 53</option><option value="54">&#2357;&#2366;&#2352;&#2381;&#2337; 54</option><option value="55">&#2357;&#2366;&#2352;&#2381;&#2337; 55</option><option value="56">&#2357;&#2366;&#2352;&#2381;&#2337; 56</option><option value="57">&#2357;&#2366;&#2352;&#2381;&#2337; 57</option><option value="58">&#2357;&#2366;&#2352;&#2381;&#2337; 58</option><option value="59">&#2357;&#2366;&#2352;&#2381;&#2337; 59</option><option value="60">&#2357;&#2366;&#2352;&#2381;&#2337; 60</option><option value="61">&#2357;&#2366;&#2352;&#2381;&#2337; 61</option><option value="62">&#2357;&#2366;&#2352;&#2381;&#2337; 62</option><option value="63">&#2357;&#2366;&#2352;&#2381;&#2337; 63</option><option value="64">&#2357;&#2366;&#2352;&#2381;&#2337; 64</option><option value="65">&#2357;&#2366;&#2352;&#2381;&#2337; 65</option><option value="66">&#2357;&#2366;&#2352;&#2381;&#2337; 66</option><option value="67">&#2357;&#2366;&#2352;&#2381;&#2337; 67</option><option value="68">&#2357;&#2366;&#2352;&#2381;&#2337; 68</option><option value="69">&#2357;&#2366;&#2352;&#2381;&#2337; 69</option><option value="70">&#2357;&#2366;&#2352;&#2381;&#2337; 70</option><option value="71">&#2357;&#2366;&#2352;&#2381;&#2337; 71</option><option value="72">&#2357;&#2366;&#2352;&#2381;&#2337; 72</option><option value="73">&#2357;&#2366;&#2352;&#2381;&#2337; 73</option><option value="74">&#2357;&#2366;&#2352;&#2381;&#2337; 74</option><option value="75">&#2357;&#2366;&#2352;&#2381;&#2337; 75</option><option value="76">&#2357;&#2366;&#2352;&#2381;&#2337; 76</option><option value="77">&#2357;&#2366;&#2352;&#2381;&#2337; 77</option><option value="78">&#2357;&#2366;&#2352;&#2381;&#2337; 78</option><option value="79">&#2357;&#2366;&#2352;&#2381;&#2337; 79</option><option value="80">&#2357;&#2366;&#2352;&#2381;&#2337; 80</option><option value="81">&#2357;&#2366;&#2352;&#2381;&#2337; 81</option><option value="82">&#2357;&#2366;&#2352;&#2381;&#2337; 82</option><option value="83">&#2357;&#2366;&#2352;&#2381;&#2337; 83</option><option value="84">&#2357;&#2366;&#2352;&#2381;&#2337; 84</option><option value="85">&#2357;&#2366;&#2352;&#2381;&#2337; 85</option></select>
-   <label for="ls_q">&#2344;&#2366;&#2350; / &#2347;&#2352;&#2381;&#2350; &#2325;&#2366; &#2344;&#2366;&#2350; / Trade ID</label>
-   <input id="ls_q" type="text" placeholder="&#2332;&#2376;&#2360;&#2375;: &#2358;&#2352;&#2381;&#2350;&#2366; / sharma &#2309;&#2341;&#2357;&#2366; &#2354;&#2366;&#2311;&#2335; &#2346;&#2381;&#2354;&#2375;&#2344;&#2375;&#2335; / light planet">
    <button class="go" id="ls_btn2" onclick="lsName()">&#2326;&#2379;&#2332;&#2375;&#2306;</button>
+  </div>
+    <div class="paybox" style="margin-top:14px;padding:12px 14px;border:1px dashed #C9D8EC;border-radius:10px;background:#F7FAFE;font-size:14px;line-height:1.65">
+   <b>&#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2358;&#2369;&#2354;&#2381;&#2325; &#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2349;&#2352;&#2344;&#2366; &#2361;&#2376;?</b><br>
+   e-Nagarpalika &#2325;&#2375; &#2361;&#2379;&#2350; &#2346;&#2375;&#2332; &#2346;&#2352; &#2309;&#2346;&#2344;&#2366; &#2354;&#2366;&#2311;&#2360;&#2375;&#2306;&#2360; &#2326;&#2379;&#2332;&#2325;&#2352; &#2349;&#2369;&#2327;&#2340;&#2366;&#2344; &#2349;&#2368; &#2325;&#2352; &#2360;&#2325;&#2340;&#2375; &#2361;&#2376;&#2306;:<br>
+   <a href="https://enagarpalika.mp.gov.in" target="_blank" rel="noopener" style="display:inline-block;margin:8px 8px 4px 0;padding:9px 14px;border-radius:8px;background:#123B70;color:#fff;text-decoration:none;font-weight:700">e-Nagarpalika &#2361;&#2379;&#2350; &#2346;&#2375;&#2332; &#2326;&#2379;&#2354;&#2375;&#2306; &#8594;</a>
+   <a href="#catOnline" onclick="var a=document.querySelector('.navgrid a[href=\'#catOnline\']');if(a){a.click();}else{var d=document.getElementById('catOnline');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});}return false;" style="display:inline-block;margin:8px 0 4px;padding:9px 14px;border-radius:8px;border:1.5px solid #123B70;color:#123B70;text-decoration:none;font-weight:700">&#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2349;&#2369;&#2327;&#2340;&#2366;&#2344; &#2325;&#2376;&#2360;&#2375; &#2325;&#2352;&#2375;&#2306; &#8594;</a>
   </div>
   <div id="ls_out"></div>
  </div>
@@ -2415,7 +2475,7 @@ app.addEventListener('click',function(e){
  if(a==='back'){if(step===2){var v2=$('lw_a');if(v2)st.area=v2.value}go(step-1);return}
  if(a==='again'){reset();go(0);return}
  if(a==='prn'){document.body.classList.add('pw-licwiz');window.addEventListener('afterprint',function(){document.body.classList.remove('pw-licwiz')},{once:true});window.print();return}
- if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(shareText()),'_blank','noopener');return}
+ if(a==='wa'){(window.shareWA||function(t){window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener')})(shareText());return}
 });
 app.addEventListener('change',function(e){var el=e.target;if(el.getAttribute&&el.getAttribute('data-a')==='sp'){st.sp[el.getAttribute('data-i')]=el.checked}});
 draw();
@@ -2499,30 +2559,136 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
  </div>
  </div>
 
- <details class="acc" id="howto">
-    <summary><span class="t">&#2310;&#2357;&#2375;&#2342;&#2344; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2325;&#2376;&#2360;&#2375; &#2342;&#2375;&#2326;&#2375;&#2306;? &#8212; &#2346;&#2370;&#2352;&#2368; &#2357;&#2367;&#2343;&#2367;</span><span class="c"></span></summary>
-    <div class="body">
-      <h3>Track Application &#2360;&#2375; &#8212; PT &#2344;&#2306;&#2348;&#2352; &#2337;&#2366;&#2354;&#2325;&#2352;</h3>
-      <ol>
-        <li>&#2350;&#2379;&#2348;&#2366;&#2311;&#2354; &#2350;&#2375;&#2306; <b>MP e-NagarPalika</b> &#2320;&#2346; &#2326;&#2379;&#2354;&#2375;&#2306; (Play Store &#2360;&#2375; &#2344;&#2367;&#2307;&#2358;&#2369;&#2354;&#2381;&#2325;)</li>
-        <li>Citizen Dashboard &#8594; <b>Quick Services</b> &#8594; <b>Property Tax</b></li>
-        <li><b>Track Application</b> &#2346;&#2352; &#2332;&#2366;&#2319;&#2305;</li>
-        <li><b>Enter Application ID</b> &#2350;&#2375;&#2306; &#2309;&#2346;&#2344;&#2366; <b>PT &#2344;&#2306;&#2348;&#2352;</b> &#2337;&#2366;&#2354;&#2375;&#2306; &#8594; <b>Search</b></li>
-      </ol>
-      <h3>Property Transfer &#2360;&#2375; &#8212; Property ID &#2337;&#2366;&#2354;&#2325;&#2352;</h3>
-      <ol>
-        <li><b>Property Tax</b> &#8594; <b>Property Transfer</b></li>
-        <li><b>Transfer Type</b> &#2330;&#2369;&#2344;&#2375;&#2306; &#8212; One to One &#2309;&#2341;&#2357;&#2366; One to Many</li>
-        <li><b>Property ID</b> &#2337;&#2366;&#2354;&#2375;&#2306; &#8594; <b>Search</b></li>
-      </ol>
-      <div class="note">&#2320;&#2346; &#2350;&#2375;&#2306; &#2314;&#2346;&#2352; &#2342;&#2366;&#2312;&#2306; &#2323;&#2352; <b>&#2309; / E</b> &#2360;&#2375; &#2349;&#2366;&#2359;&#2366; &#2348;&#2342;&#2354;&#2368; &#2332;&#2366; &#2360;&#2325;&#2340;&#2368; &#2361;&#2376;&#2404; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2344; &#2342;&#2367;&#2326;&#2375; &#2340;&#2379; &#2310;&#2357;&#2375;&#2342;&#2344; &#2309;&#2349;&#2368; &#2346;&#2379;&#2352;&#2381;&#2335;&#2354; &#2346;&#2352; &#2342;&#2352;&#2381;&#2332; &#2361;&#2379;&#2344;&#2366; &#2358;&#2375;&#2359; &#2361;&#2379; &#2360;&#2325;&#2340;&#2366; &#2361;&#2376; &#8212; &#2309;&#2327;&#2354;&#2375; &#2342;&#2367;&#2344; &#2346;&#2369;&#2344;&#2307; &#2346;&#2381;&#2352;&#2351;&#2366;&#2360; &#2325;&#2352;&#2375;&#2306;&#2404;</div>
-      <button class="prn" onclick="window.print()">&#2351;&#2361; &#2357;&#2367;&#2343;&#2367; &#2346;&#2381;&#2352;&#2367;&#2306;&#2335; &#2325;&#2352;&#2375;&#2306; / PDF &#2360;&#2361;&#2375;&#2332;&#2375;&#2306;</button>
-    </div>
-  </details>
-
   
 
   <div class="visit" id="visitBar" style="display:none"><b id="visitN">0</b>&#2311;&#2360; &#2346;&#2344;&#2381;&#2344;&#2375; &#2325;&#2379; &#2309;&#2348; &#2340;&#2325; &#2325;&#2369;&#2354; &#2311;&#2340;&#2344;&#2368; &#2348;&#2366;&#2352; &#2342;&#2375;&#2326;&#2366; &#2327;&#2351;&#2366;</div>
+<style>
+/* ---- \928 \940 \91a \947  \915 \940  \924 \94d \935 \930 \93f \924  \92a \91f \94d \91f \940  ---- */
+#pbar{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(480px,100%);z-index:60;display:flex;gap:2px;padding:6px 6px calc(6px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #D7E6F7;box-shadow:0 -4px 14px rgba(20,33,58,.14);transition:transform .2s ease}
+@supports ((-webkit-backdrop-filter:blur(8px)) or (backdrop-filter:blur(8px))){#pbar{background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6)}}
+#pbar.hid{transform:translateX(-50%) translateY(110%)}
+#pbar button{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border:0;border-radius:12px;background:none;color:#123B70;font:inherit;font-size:11.5px;font-weight:700;cursor:pointer;transition:transform .08s ease,background .12s}
+#pbar button:active{transform:scale(.92);background:rgba(27,95,168,.14)}
+#pbar svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#pbar button.pri{color:#C26A00}
+.wrap{padding-bottom:74px}
+#acctToast{bottom:84px!important}
+#toTop{display:none!important}
+a[href="#"][style*="right:8px"]{bottom:64px!important}
+/* \915 \93e \901 \91a  \91c \948 \938 \940  \92b \93c \94b \915 \938  \92a \91f \94d \91f \940  */
+@supports ((-webkit-backdrop-filter:blur(8px)) or (backdrop-filter:blur(8px))){#fbar.on{background:rgba(255,248,239,.8);-webkit-backdrop-filter:blur(12px) saturate(1.5);backdrop-filter:blur(12px) saturate(1.5)}}
+/* \916 \941 \932 \928 \947  \92a \930  \928 \930 \92e  \905 \938 \930  */
+details[open]>:not(summary){animation:dop .26s ease both}
+@keyframes dop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}
+.rv.rv-in{opacity:1;transform:none}
+.ac-cp.ok{animation:pop .32s ease;background:var(--c)!important;color:#fff!important}
+@keyframes pop{40%{transform:scale(1.14)}}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.2s}
+/* \936 \940 \930 \94d \937  \92a \930  \936 \939 \930  \915 \940  \930 \947 \916 \93e \913 \902  \935 \93e \932 \940  \939 \932 \94d \915 \940  \91a \93f \924 \94d \930 \915 \93e \930 \940  */
+header{position:relative;padding-bottom:70px!important}
+header>*{position:relative;z-index:1}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:66px;background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 8 400 112%22 preserveAspectRatio=%22xMidYMax meet%22%3E%3Crect x=%2214%22 y=%2292%22 width=%22372%22 height=%2228%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M24 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M57 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M90 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M123 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M156 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M189 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M222 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M255 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M288 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M321 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M354 120V104.0a6.0 6.0 0 0 1 12 0V120z%22 fill=%22%23fff%22/%3E%3Crect x=%2210%22 y=%2290%22 width=%22380%22 height=%224%22 fill=%22%23123B70%22/%3E%3Crect x=%22120%22 y=%2236%22 width=%22160%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M126 50V43.5a4.5 4.5 0 0 1 9 0V50z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M148 50V43.5a4.5 4.5 0 0 1 9 0V50z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M170 50V43.5a4.5 4.5 0 0 1 9 0V50z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M192 50V43.5a4.5 4.5 0 0 1 9 0V50z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M214 50V43.5a4.5 4.5 0 0 1 9 0V50z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M236 50V43.5a4.5 4.5 0 0 1 9 0V50z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M258 50V43.5a4.5 4.5 0 0 1 9 0V50z%22 fill=%22%23fff%22/%3E%3Crect x=%22115%22 y=%2248%22 width=%22170%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22120%22 y=%2250%22 width=%22160%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M126 64V57.5a4.5 4.5 0 0 1 9 0V64z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M148 64V57.5a4.5 4.5 0 0 1 9 0V64z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M170 64V57.5a4.5 4.5 0 0 1 9 0V64z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M192 64V57.5a4.5 4.5 0 0 1 9 0V64z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M214 64V57.5a4.5 4.5 0 0 1 9 0V64z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M236 64V57.5a4.5 4.5 0 0 1 9 0V64z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M258 64V57.5a4.5 4.5 0 0 1 9 0V64z%22 fill=%22%23fff%22/%3E%3Crect x=%22115%22 y=%2262%22 width=%22170%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22120%22 y=%2264%22 width=%22160%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M126 78V71.5a4.5 4.5 0 0 1 9 0V78z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M148 78V71.5a4.5 4.5 0 0 1 9 0V78z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M170 78V71.5a4.5 4.5 0 0 1 9 0V78z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M192 78V71.5a4.5 4.5 0 0 1 9 0V78z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M214 78V71.5a4.5 4.5 0 0 1 9 0V78z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M236 78V71.5a4.5 4.5 0 0 1 9 0V78z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M258 78V71.5a4.5 4.5 0 0 1 9 0V78z%22 fill=%22%23fff%22/%3E%3Crect x=%22115%22 y=%2276%22 width=%22170%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22120%22 y=%2278%22 width=%22160%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M126 92V85.5a4.5 4.5 0 0 1 9 0V92z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M148 92V85.5a4.5 4.5 0 0 1 9 0V92z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M170 92V85.5a4.5 4.5 0 0 1 9 0V92z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M192 92V85.5a4.5 4.5 0 0 1 9 0V92z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M214 92V85.5a4.5 4.5 0 0 1 9 0V92z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M236 92V85.5a4.5 4.5 0 0 1 9 0V92z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M258 92V85.5a4.5 4.5 0 0 1 9 0V92z%22 fill=%22%23fff%22/%3E%3Crect x=%22115%22 y=%2290%22 width=%22170%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%2240%22 y=%2252%22 width=%2260%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M46 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M60 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M74 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M88 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Crect x=%2236%22 y=%2264%22 width=%2268%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%2240%22 y=%2266%22 width=%2260%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M46 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M60 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M74 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M88 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Crect x=%2236%22 y=%2278%22 width=%2268%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%2240%22 y=%2280%22 width=%2260%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M46 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M60 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M74 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M88 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Crect x=%2236%22 y=%2292%22 width=%2268%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%2250%22 y=%2246%22 width=%2240%22 height=%226%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M58 46a12 12 0 0 1 24 0z%22 fill=%22%23123B70%22/%3E%3Crect x=%2259%22 y=%2246%22 width=%2222%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%2269.2%22 y=%2228%22 width=%221.6%22 height=%226%22 fill=%22%23123B70%22/%3E%3Crect x=%22300%22 y=%2252%22 width=%2260%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M306 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M320 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M334 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M348 66V59.5a4.5 4.5 0 0 1 9 0V66z%22 fill=%22%23fff%22/%3E%3Crect x=%22296%22 y=%2264%22 width=%2268%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22300%22 y=%2266%22 width=%2260%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M306 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M320 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M334 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M348 80V73.5a4.5 4.5 0 0 1 9 0V80z%22 fill=%22%23fff%22/%3E%3Crect x=%22296%22 y=%2278%22 width=%2268%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22300%22 y=%2280%22 width=%2260%22 height=%2214%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M306 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M320 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M334 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Cpath d=%22M348 94V87.5a4.5 4.5 0 0 1 9 0V94z%22 fill=%22%23fff%22/%3E%3Crect x=%22296%22 y=%2292%22 width=%2268%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22310%22 y=%2246%22 width=%2240%22 height=%226%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M318 46a12 12 0 0 1 24 0z%22 fill=%22%23123B70%22/%3E%3Crect x=%22319%22 y=%2246%22 width=%2222%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22329.2%22 y=%2228%22 width=%221.6%22 height=%226%22 fill=%22%23123B70%22/%3E%3Crect x=%22100%22 y=%2270%22 width=%2220%22 height=%2222%22 fill=%22%23123B70%22/%3E%3Crect x=%22280%22 y=%2270%22 width=%2220%22 height=%2222%22 fill=%22%23123B70%22/%3E%3Crect x=%22150%22 y=%2230%22 width=%22100%22 height=%226%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M157 30a9 9 0 0 1 18 0z%22 fill=%22%23123B70%22/%3E%3Crect x=%22158%22 y=%2230%22 width=%2216%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22165.2%22 y=%2215%22 width=%221.6%22 height=%226%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M189 30a11 11 0 0 1 22 0z%22 fill=%22%23123B70%22/%3E%3Crect x=%22190%22 y=%2230%22 width=%2220%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22199.2%22 y=%2213%22 width=%221.6%22 height=%226%22 fill=%22%23123B70%22/%3E%3Cpath d=%22M225 30a9 9 0 0 1 18 0z%22 fill=%22%23123B70%22/%3E%3Crect x=%22226%22 y=%2230%22 width=%2216%22 height=%223%22 fill=%22%23123B70%22/%3E%3Crect x=%22233.2%22 y=%2215%22 width=%221.6%22 height=%226%22 fill=%22%23123B70%22/%3E%3Crect x=%2260%22 y=%22119%22 width=%22280%22 height=%221%22 fill=%22%23123B70%22/%3E%3C/svg%3E") center bottom/auto 100% no-repeat;opacity:.11;pointer-events:none}
+header::before{content:"";position:absolute;right:2px;top:4px;width:118px;height:138px;background:url("data:image/jpeg;base64,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") center/cover no-repeat;opacity:.16;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%)}
+/* \917 \939 \930 \93e  \930 \902 \917 -\930 \942 \92a  (\92c \91f \928  \938 \947 ) */
+html.pdark{filter:invert(1) hue-rotate(180deg);background:#fff}
+html.pdark .navgrid .ico,html.pdark .navgrid a.wz,html.pdark .acct-sum .chip,html.pdark .pbtn,html.pdark .go,html.pdark #fbar .fb-back,html.pdark #fbar .fb-wa,html.pdark .wabtn,html.pdark #pbar{filter:invert(1) hue-rotate(180deg)}
+html.pdark header::before{filter:invert(1) hue-rotate(180deg)}
+html.pdark #pbar{background:rgba(18,28,44,.88);border-top-color:#2B3A52;box-shadow:0 -4px 14px rgba(0,0,0,.5)}
+html.pdark #pbar button{color:#9CC4F5}html.pdark #pbar button.pri{color:#FFB35C}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}details[open]>:not(summary){animation:none}#pbar,#pbar button{transition:none}.ac-cp.ok{animation:none}}
+</style>
+<nav id="pbar" aria-label="NAV"></nav>
+<script>
+(function(){
+ var b0=document.getElementById('pbar');if(b0&&b0.parentNode!==document.body)document.body.appendChild(b0);
+ var T={"search": "\u0916\u093e\u0924\u093e \u0916\u094b\u091c\u0947\u0902", "lic": "\u0932\u093e\u0907\u0938\u0947\u0902\u0938 \u0916\u094b\u091c", "pay": "\u092d\u0941\u0917\u0924\u093e\u0928", "off": "\u0915\u093e\u0930\u094d\u092f\u093e\u0932\u092f", "mode": "\u0930\u0902\u0917", "top": "\u090a\u092a\u0930", "nav": "\u0924\u094d\u0935\u0930\u093f\u0924 \u092c\u091f\u0928", "dark": "\u0930\u0902\u0917-\u0930\u0942\u092a \u092c\u0926\u0932\u0947\u0902"};
+ var I={
+  search:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+  lic:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 2-2 3-2s2.4.4 3 2M15 10h3M15 14h3"/>',
+  pay:'<path d="M6 4h12M6 9h12M18 4c0 3-3 5-7 5H8l9 11"/>',
+  off:'<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>',
+  mode:'<path d="M20 14.5A8.5 8.5 0 119.5 4a7 7 0 0010.5 10.5z"/>',
+  top:'<path d="M12 19V5M5 12l7-7 7 7"/>'};
+ var red=false;try{red=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)}catch(e){}
+ function lsGet(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+ function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+ function tile(id){return document.querySelector('.navgrid a[href="#'+id+'"]')}
+ /* \u0916\u093e\u0924\u093e-\u0916\u094b\u091c \u0915\u0947 \u0938\u092d\u0940 \u0921\u093f\u092c\u094d\u092c\u0947 \u0916\u093c\u093e\u0932\u0940: \u0928\u0902\u092c\u0930, \u0928\u093e\u092e, \u0935\u093e\u0930\u094d\u0921/\u0915\u0949\u0932\u094b\u0928\u0940, \u092a\u0941\u0930\u093e\u0928\u0947 \u0928\u0924\u0940\u091c\u0947 */
+ function clearAcct(){
+  try{
+   [].forEach.call(document.querySelectorAll('.acctbox'),function(bx){
+    var t=(bx.id||'').replace('acctbox_','');
+    [].forEach.call(bx.querySelectorAll('input'),function(i){if(!/^(button|submit|checkbox|radio|hidden)$/.test(i.type))i.value=''});
+    var sw=document.getElementById('sw_'+t);if(sw&&sw.value){sw.value='';if(typeof onWardChange==='function')onWardChange(t)}
+    var o=document.getElementById('acctOut_'+t);if(o)o.innerHTML='';
+    var nb=document.getElementById('nameBlock_'+t);if(nb)nb.style.display='none';
+   });
+  }catch(e){}
+ }
+ window.clearAcct=clearAcct;
+ function go(id){
+  if(!/^acctbox_/.test(id))clearAcct();
+  var F=window.LICFOCUS;
+  if(F&&F.reveal&&document.getElementById(id)){
+   window.vtGo(function(){F.reveal(id,true)});
+   if(/^acctbox_/.test(id))setTimeout(function(){var i=document.querySelector('#'+id+' input');if(i){try{i.focus()}catch(e){}}},380);
+   return;
+  }
+  var a=tile(id);if(a){a.click();return}
+  var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})
+ }
+ function setDark(on){document.documentElement.classList.toggle('pdark',!!on);lsSet('pdark',on?'1':'0')}
+ window.vtGo=function(f){try{if(document.startViewTransition&&!red){document.startViewTransition(f);return}}catch(e){}f()};
+ window.shareWA=function(t){
+  var wa=function(){(window.shareWA||function(t){window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener')})(t)};
+  try{if(navigator.share){navigator.share({text:t}).catch(function(e){if(!e||e.name!=='AbortError')wa()});return}}catch(e){}
+  wa();
+ };
+ function init(){
+  var bar=document.getElementById('pbar');if(!bar)return;
+  if(bar.parentNode!==document.body)document.body.appendChild(bar);
+  bar.setAttribute('aria-label',T.nav);
+  var items=[];
+  if(tile('acctbox_all'))items.push(['search',T.search,function(){go('acctbox_all')},1]);
+  else if(tile('licbox'))items.push(['lic',T.lic,function(){go('licbox')},1]);
+  if(tile('catOnline'))items.push(['pay',T.pay,function(){go('catOnline')}]);
+  if(tile('officeinfo'))items.push(['off',T.off,function(){go('officeinfo')}]);
+  items.push(['mode',T.mode,function(){setDark(!document.documentElement.classList.contains('pdark'))}]);
+  items.push(['top',T.top,function(){window.scrollTo({top:0,behavior:red?'auto':'smooth'})}]);
+  items.forEach(function(x){
+   var b=document.createElement('button');b.type='button';if(x[3])b.className='pri';
+   b.setAttribute('aria-label',x[1]);
+   b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+I[x[0]]+'</svg><span>'+x[1]+'</span>';
+   b.onclick=x[2];bar.appendChild(b);
+  });
+  if(lsGet('pdark')==='1')document.documentElement.classList.add('pdark');
+  /* \u0915\u0940\u092c\u094b\u0930\u094d\u0921 \u0916\u0941\u0932\u0928\u0947 \u092a\u0930 \u092a\u091f\u094d\u091f\u0940 \u0939\u091f \u091c\u093e\u090f */
+  var tmr;
+  document.addEventListener('focusin',function(e){var t=e.target;if(t&&/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)){clearTimeout(tmr);bar.classList.add('hid')}});
+  document.addEventListener('focusout',function(){tmr=setTimeout(function(){var a=document.activeElement;if(!(a&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)))bar.classList.remove('hid')},250)});
+  /* \u0935\u093f\u0937\u092f \u092c\u0926\u0932\u0928\u0947 / "\u0938\u092d\u0940 \u0935\u093f\u0937\u092f \u0926\u0947\u0916\u0947\u0902" / \u092a\u0940\u091b\u0947 \u092c\u091f\u0928 \u092a\u0930 \u092a\u0941\u0930\u093e\u0928\u0940 \u0916\u094b\u091c \u0938\u093e\u092b\u093c */
+  document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;
+   if(t.closest('.fb-back')){clearAcct();return}
+   var a=t.closest('.navgrid a');if(a)clearAcct()},true);
+  window.addEventListener('popstate',function(){if(!/acctbox_/.test(location.hash||''))clearAcct()});
+  /* "\u0915\u0949\u092a\u0940" \u092a\u0930 \u2713 */
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.ac-cp');if(!b||b.classList.contains('ok'))return;
+   var o=b.textContent;setTimeout(function(){b.classList.add('ok');b.textContent='\u2713';setTimeout(function(){b.classList.remove('ok');b.textContent=o},1300)},120)},true);
+  /* \u0936\u0947\u092f\u0930: \u092b\u093c\u094b\u0928 \u0915\u0940 \u0936\u0947\u092f\u0930-\u0936\u0940\u091f */
+  var w=document.getElementById('waShare');
+  if(w&&navigator.share){w.addEventListener('click',function(ev){var m=/[?&]text=([^&]*)/.exec(w.getAttribute('href')||'');if(!m)return;ev.preventDefault();var t='';try{t=decodeURIComponent(m[1])}catch(e){return}window.shareWA(t)})}
+  /* \u0938\u094d\u0915\u094d\u0930\u0949\u0932 \u092a\u0930 \u0938\u0947\u0915\u094d\u0936\u0928 \u0909\u092d\u0930\u0947\u0902 */
+  if(!red&&'IntersectionObserver' in window){
+   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('rv-in');io.unobserve(en.target)}})},{threshold:.05});
+   [].forEach.call(document.querySelectorAll('.wrap>h2,.wrap>details.acc,.wrap>.acctbox,.wrap>.sharebox,.wrap>.fbbox'),function(el){el.classList.add('rv');io.observe(el)});
+   setTimeout(function(){[].forEach.call(document.querySelectorAll('.rv:not(.rv-in)'),function(el){var r=el.getBoundingClientRect();if(r.width&&r.top<innerHeight*1.2)el.classList.add('rv-in')})},2500);
+  }
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
 
  <div class="sharebox">
     <a class="wabtn" id="waShare" href="#" target="_blank" rel="noopener">
@@ -2633,7 +2799,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
     var shown = 0, total = 0;
     items.forEach(function(el){
       // guide/rejection/useful-info boxes should not be hidden by case-search
-      if(el.id === 'guide1' || el.id === 'reject1' || el.closest('h2') || el.id === 'u1' || el.id === 'u2' || el.id === 'u3' || el.id === 'u4' || el.id === 'u5' || el.id === 'u7' || el.id === 'u8' || el.id === 'ptbox'){
+      if(el.id === 'guide1' || el.id === 'reject1' || el.closest('h2') || el.id === 'u1' || el.id === 'u2' || el.id === 'u3' || el.id === 'u4' || el.id === 'u5' || el.id === 'u7' || el.id === 'u8' || el.id === 'howto' || el.id === 'ptbox'){
         return;
       }
       total++;
@@ -3112,7 +3278,7 @@ function showAll(push){
 window.foSearch=function(q){
  if(curG)return;
  if(!String(q||'').trim()){showAll(false);return}
- var skip=/^(guide1|reject1|u1|u2|u3|u4|u5|u7|u8|ptbox)$/;
+ var skip=/^(guide1|reject1|u1|u2|u3|u4|u5|u7|u8|howto|ptbox)$/;
  kids.forEach(function(el){
   if(!el.hasAttribute('data-grp'))return;
   var ok=el.matches('details.acc')&&!skip.test(el.id)&&!el.classList.contains('hide');
@@ -3159,7 +3325,7 @@ nav.addEventListener('click',function(ev){
  var id=h.slice(1);if(!document.getElementById(id))return;
  ev.preventDefault();ev.stopPropagation();
  if(curG===id){showAll(true);return}
- tapLog(id);reveal(id,true);
+ tapLog(id);(window.vtGo||function(f){f()})(function(){reveal(id,true)});
 },true);
 wrap.addEventListener('click',function(ev){
  var a=ev.target.closest?ev.target.closest('a'):null;if(!a||nav.contains(a))return;
@@ -3169,7 +3335,7 @@ wrap.addEventListener('click',function(ev){
 bar.querySelector('.fb-back').addEventListener('click',function(){showAll(true);nav.scrollIntoView({behavior:'smooth',block:'start'})});
 bar.querySelector('.fb-wa').addEventListener('click',function(){
  var g=curG;if(!g)return;
- window.open('https://wa.me/?text='+encodeURIComponent(T.msg+labelOf(g)+': '+pageLink(g)),'_blank','noopener');
+ (window.shareWA||function(t){window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener')})(T.msg+labelOf(g)+': '+pageLink(g));
 });
 var tapSeen={};
 function tapLog(id){
@@ -3192,7 +3358,7 @@ function fromUrl(){
 window.addEventListener('popstate',function(){OPEN='';fromUrl()});
 window.addEventListener('hashchange',function(){OPEN='';fromUrl()});
 setTimeout(fromUrl,120);
-window.LICFOCUS={focus:focus,showAll:showAll,groups:function(){return kids.map(function(k){return k.id+':'+(k.getAttribute('data-grp')||'')})}};
+window.LICFOCUS={focus:focus,reveal:reveal,showAll:showAll,groups:function(){return kids.map(function(k){return k.id+':'+(k.getAttribute('data-grp')||'')})}};
 })();
 </script>
 <!--FOCUS-END-->
