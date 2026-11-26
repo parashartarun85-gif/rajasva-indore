@@ -2600,7 +2600,7 @@ window.LICWIZ={state:function(){return st},shareText:shareText};
   <footer>
     This page is for information only. Additional documents may be asked for depending on the circumstances of the case.
     To check the status of an application, use your PT number on the <a href="https://enagarpalika.mp.gov.in/home" target="_blank" rel="noopener" style="color:var(--soft);text-decoration:underline;font-weight:700">e-palika website</a>.
-  <p class="verline" style="margin:12px 0 0;font-size:12.5px;color:var(--soft);text-align:center">Version 2.36 &middot; Last updated: 24 November 2026</p>
+  <p class="verline" style="margin:12px 0 0;font-size:12.5px;color:var(--soft);text-align:center">Version 2.37 &middot; Last updated: 26 November 2026</p>
   <p style="margin:14px 0 0;font-size:12.5px;color:var(--soft);text-align:center">Concept and development: <b style="color:var(--ink)">Tarun Parashar</b>, Revenue Department, Indore Municipal Corporation</p>
 
   </footer>
@@ -3123,7 +3123,22 @@ function lsName(){
   var w = document.getElementById('ls_w').value, q = document.getElementById('ls_q').value.trim();
   lsCall({action:'lic_n', q:q, w:w, lang:'en'}, document.getElementById('ls_btn2'), 'Search');
 }
-</script>
+</script><div class="wabox">
+  <div class="waq">&#128276; Get updates straight on WhatsApp</div>
+  <div class="wat">Lok Adalat, new dates and new forms will be shared as soon as they are available.</div>
+  <a class="wabtn" href="https://whatsapp.com/channel/0029VbEOKK5G8l5LhzJmd834" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">&#128172;</span><span>Join the WhatsApp channel</span></a>
+  <div class="wan">Your number is not visible to anyone when you join.</div>
+</div>
+<style>
+.wabox{margin:18px 0;padding:14px;border:1px solid #cfe6d6;border-radius:14px;background:#f4fbf6;text-align:center}
+.waq{font-size:14.5px;font-weight:700;color:#14532d}
+.wat{font-size:13px;color:#4a5a73;margin:4px 0 10px}
+.wabtn{display:inline-flex;align-items:center;gap:8px;background:#1fa855;color:#fff!important;text-decoration:none;border-radius:999px;padding:10px 22px;font-size:15px;font-weight:700}
+.wabtn:active{transform:scale(.96)}
+.wan{margin-top:8px;font-size:12px;color:#6b7a90}
+html.pdark .wabtn{filter:invert(1) hue-rotate(180deg)}
+</style>
+
 <div class="lkbox" id="lkbox" style="display:none">
   <div class="lkq">Did you find this information useful?</div>
   <button type="button" class="lkbtn" id="lkBtn">&#128077; Useful</button>
